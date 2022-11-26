@@ -45,7 +45,7 @@
       }
     });
     let mw = document.querySelector("#product-direct");
-    console.info("mw", mw, html);
+    //console.info("mw", mw, html);
     if (mw) {
       mw.innerHTML += html.join("");
     }

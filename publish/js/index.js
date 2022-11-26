@@ -46,9 +46,18 @@
     });
     let mw = document.querySelector("#product-direct");
     console.info("mw", mw, html);
-    if(mw){
-        mw.innerHTML+=html.join("");
+    if (mw) {
+      mw.innerHTML += html.join("");
     }
   }
+  function showGoogle() {
+    if (/^([0-9]{1,3}\.)/i.test(location.hostname)) return;
+    let script = document.createElement("script");
+    script.src =
+      "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2208954604036695";
+    script.setAttribute("crossorigin", "anonymous");
+    document.head.appendChild(script);
+  }
   show();
+  showGoogle();
 })();

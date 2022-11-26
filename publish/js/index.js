@@ -57,6 +57,7 @@
       "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2208954604036695";
     script.setAttribute("crossorigin", "anonymous");
     document.head.appendChild(script);
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
   }
   show();
   showGoogle();

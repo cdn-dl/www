@@ -1,34 +1,36 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require("path");
-//const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 //const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
-//const { VueLoaderPlugin } = require("vue-loader");
-const isProduction = process.env.NODE_ENV == "production";
+const { VueLoaderPlugin } = require("vue-loader");
 const webpack = require("webpack");
 const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const FileManagerPlugin = require("filemanager-webpack-plugin"); //压缩zip
-
-//const stylesHandler = "style-loader";
-//const FileManagerPlugin = require("filemanager-webpack-plugin"); //压缩zip
 const pkg = require("./package.json");
-
-const appName = pkg.name.replace(/^.*\//, "");
-console.info("================appName", appName, "=================");
-const { createCompleted } = require("./src/utils/build.dist");
-createCompleted();
+const FileManagerPlugin = require("filemanager-webpack-plugin"); //压缩zip
+const appName = pkg.name;
+const stylesHandler = "style-loader";
+//const Buffer = require("buffer").Buffer;
+const isProduction = process.env.NODE_ENV == "production";
+console.info("isProduction", isProduction, process.env.NODE_ENV);
 const config = {
    entry: {
-      "index": {
+      index: {
          import: "./src/index.ts",
          filename: "index.js",
-      },
+   /*       library: {
+            // all options under `output.library` can be used here
+            //name: "popup",
+            //type: "var",
+            //umdNamedDefine: false,
+         }, */
+      }
    },
    output: {
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, "publish"),
       clean: {
-         keep: /\/ignored\//, // 保留 'ignored/dir' 下的静态资源
+         //keep: /\/ignored\//, // 保留 'ignored/dir' 下的静态资源
       },
       /*       chunkFormat: "commonjs",
       libraryTarget: "commonjs",
@@ -44,13 +46,57 @@ const config = {
       },
    },
    target: "web",
+   node: {
+      global: true,
+      __filename: false,
+      __dirname: false,
+   },
+   resolve: {
+      extensions: [".tsx", ".ts", ".js", ".vue"],
+      alias: {
+         // 配置目录别名，来确保模块引入变得更简单
+         // 在任意目录下require('components/example') 相当于require('项目根目录/src/components/example')
+         //components: path.join(root, 'src/components'),
+         //views: path.join(root, 'src/views'),
+         //styles: path.join(root, 'src/styles'),
+         //store: path.join(root, 'src/store')
+         "@": path.resolve("src"),
+         "@coms": path.resolve("src/coms"),
+         "@public": path.resolve("public"),
+         //process: "process/browser",
+      },
+      fallback: {
+         //自定义require的模块 如 require("os") 等
+         //util: require.resolve("util"),
+         //assert: require.resolve("assert"),
+         buffer: require.resolve("buffer"),
+         //stream: require.resolve("stream-browserify"),
+         //path: require.resolve("path-browserify"),
+         //http: require.resolve("stream-http"),
+         //https: require.resolve("https-browserify"),
+         //crypto: require.resolve("crypto-browserify"),
+         //querystring: require.resolve("querystring-es3"),
+         //url: require.resolve("url"),
+         process: require.resolve("process"),
+      },
+   },
    externals: {
-
+      //"@ai-lion/liondb": "@ai-lion/liondb",
    },
    devServer: {
       open: false,
       host: "localhost",
       port: 9000,
+      hot: true,
+      client: {
+         progress: true,
+      },
+      //contentBase: path.resolve("dist"),
+      historyApiFallback: {
+         index: "/index.html", //与output的publicPath
+         rewrites: [{ from: /\.html$/, to: "/index.html" }],
+      },
+      allowedHosts: "all",
    },
    module: {
       rules: [
@@ -59,105 +105,129 @@ const config = {
             loader: "ts-loader",
             exclude: ["/node_modules/"],
          },
+         {
+            test: /\.less$/i,
+            use: [stylesHandler, "css-loader", "postcss-loader", "less-loader"],
+         },
+         {
+            test: /\.css$/i,
+            use: [stylesHandler, "css-loader", "postcss-loader"],
+         },
+         {
+            test: /\.vue$/i,
+            use: ["vue-loader"],
+         },
+         /*          {
+            test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+            type: "asset",
+         }, */
+         {
+            test: /\.(eot|svg|ttf|woff|woff2)$/i,
+            type: "asset", //asset asset/resource asset/inline asset/source   https://juejin.cn/post/6983985071699001357
+            parser: {
+               dataUrlCondition: {
+                  maxSize: 2 * 1024,
+               },
+            },
+            generator: {
+               // [ext]前面自带"."
+               filename: "fonts/[name][ext]", //自定义输出目录
+            },
+         },
+         {
+            test: /\.(jpeg|png|jpg|gif|icon)$/i,
+            type: "asset",
+            parser: {
+               dataUrlCondition: {
+                  maxSize: 2 * 1024,
+               },
+            },
+            generator: {
+               // [ext]前面自带"."
+               filename: "images/[name][ext]", //自定义输出目录
+            },
+         },
+
          // Add your rules for custom modules here
          // Learn more about loaders from https://webpack.js.org/loaders/
       ],
    },
-   resolve: {
-      extensions: [".tsx", ".ts", ".js"],
-      alias: {
-         // 配置目录别名，来确保模块引入变得更简单
-         // 在任意目录下require('components/example') 相当于require('项目根目录/src/components/example')
-         //components: path.join(root, 'src/components'),
-         //views: path.join(root, 'src/views'),
-         //styles: path.join(root, 'src/styles'),
-         //store: path.join(root, 'src/store')
-      },
-      fallback: {
-         //自定义require的模块 如 require("os") 等
-      },
-   },
-   node: {
-      global: true,
-      __filename: false,
-      __dirname: false,
-   },
+
    plugins: [
       // 目标为 nodejs 环境使用
       /*       new webpack.ProvidePlugin({
          Buffer: ["buffer", "Buffer"],
       }), 
-     
       */
-      /*       new HtmlWebpackPlugin({
-         template: "index.html",
-         filename: "index.html", // 打包输出后该html文件的名称
-         chunks: ["view"], // 数组元素为chunk名称，即entry属性值为对象的时候指定的名称，index页面只引入 view.js
+      new webpack.ProvidePlugin({
+         process: "process",
+         Buffer: ["buffer", "Buffer"],
+         stream: "stream",
+      }),
+/*       new webpack.DefinePlugin({
+         "process.env0": JSON.stringify({
+            NODE_ENV: process.env.NODE_ENV,
+            appVersion: mainfest.version,
+         }),
       }), */
+      new HtmlWebpackPlugin({
+         template: "index.html",
+         filename: "background.html", // 打包输出后该html文件的名称
+         title: "ividoes-bg",
+         chunks: ["background"], // 数组元素为chunk名称，即entry属性值为对象的时候指定的名称，index页面只引入 view.js
+      }),
       // 添加VueLoaderPlugin，以响应vue-loader
-      //new VueLoaderPlugin(),
+      new VueLoaderPlugin(),
       // Add your plugins here
       // Learn more about plugins from https://webpack.js.org/configuration/plugins/
       new CopyPlugin({
          patterns: [
-            {
-               from: "src",
-               to: "www",
-          /*      filter: async (resourcePath) => {
-                  return !/(public\/up\/)/i.test(resourcePath);
-               }, */
-            },
             //{ from: path.resolve("node_modules/@ai-lion/liondb/dist/prebuilds"), to: "service/prebuilds" },
-            //{ from: path.resolve("package.dist.json"), to: "package.json" },
+            { from: "src", to: "", filter: (v)=>/\.(js|css|html|jpg|jpeg|png|gif|ico)/i.test(v) },
             //node_modules\node-analyzer\lib\dict
-            // { from: path.resolve("databak"), to: "service/databak" },
-            // { from: path.resolve("node_modules/node-analyzer/lib/dict"), to: "service/dict" },
          ],
       }),
-      new webpack.BannerPlugin({
-         banner: "/*! xxxxxxxxxxxxxxxx */",
+      /*   new webpack.BannerPlugin({
+         banner: "*! https://www.ivideos.one *",
          raw: true,
-      }),
-      new webpack.BannerPlugin({
+      }), */
+      /*       new webpack.BannerPlugin({
          banner: "#!/usr/bin/env node",
          raw: true,
-         include: [/cli/], //包含哪些文件需要添加头部
-      }),
+         include: [/lib/], //包含哪些文件需要添加头部
+      }), */
       new FileManagerPlugin({
          // https://www.npmjs.com/package/filemanager-webpack-plugin
          events: {
             onEnd: {
-               //copy: [{ source: "/path/fromfile.txt", destination: "/path/tofile.txt" }],
-               //move: [{ source: "/path/from", destination: "/path/to" }],
+               delete: [
+                  "public/m.js", //
+                  //"dist-ext/firefox", //
+                  //"dist-ext/" + appName + ".zip", //
+               ],
+               //move: [{ source: "dist-ext/chrome/js/mds.js", destination: "dist-ext/mds.js" }],
+              /*  copy: [
+                 // { source: "dist-ext/chrome", destination: "dist-ext/edge" },
+               ], */
+               //move: [{ source: "dist-ext/content-script-no.js", destination: "dist-ext/chrome-no/js/content-script.js" }],
                //mkdir: ["/path/to/directory/", "/another/directory/"],
-               delete: [appName + ".zip"],
-               //archive: [{ source: "dist", destination: appName + ".zip" }],
+             /*   archive: [
+                  //{ source: "dist-ext/chrome", destination: "dist-ext/" + appName + ".zip" },
+               ], */
             },
          },
       }),
-      /* new FileManagerPlugin({
-         // https://www.npmjs.com/package/filemanager-webpack-plugin
-         events: {
-            onEnd: {
-               *              copy: [
-               { source: '/path/fromfile.txt', destination: '/path/tofile.txt' },
-             ],
-             move: [
-               { source: '/path/from', destination: '/path/to' },
-             ],
-             
-             mkdir: ['/path/to/directory/', '/another/directory/'], *
-               delete: [appName + ".zip"],
-               archive: [{ source: "dist", destination: appName + ".zip" }],
-            },
-         },
-      }), */
    ],
    optimization: {
-      minimize: false, //isProduction ? true : false,
+      minimize: isProduction ? true : false,
       minimizer: [
          new TerserPlugin({
             extractComments: false, //不将注释提取到单独的文件中
+            terserOptions: {
+               output: {
+                  comments: false,
+               },
+            },
          }),
       ],
    },
@@ -166,8 +236,6 @@ const config = {
 module.exports = () => {
    if (isProduction) {
       config.mode = "production";
-
-      //config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
    } else {
       config.mode = "development";
    }

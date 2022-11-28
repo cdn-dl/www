@@ -183,7 +183,7 @@ const config = {
       new CopyPlugin({
          patterns: [
             //{ from: path.resolve("node_modules/@ai-lion/liondb/dist/prebuilds"), to: "service/prebuilds" },
-            { from: "src", to: "", filter: (v) => /\.(js|css|html|jpg|jpeg|png|gif|ico)/i.test(v) },
+            { from: "src", to: "", filter: (v) => /\.(js|css|html|jpg|jpeg|png|gif|ico|md)/i.test(v) },
             //node_modules\node-analyzer\lib\dict
          ],
       }),

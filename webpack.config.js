@@ -19,12 +19,12 @@ const config = {
       index: {
          import: "./src/index.ts",
          filename: "index.js",
-         /*       library: {
+         library: {
             // all options under `output.library` can be used here
-            //name: "popup",
-            //type: "var",
+            name: "index",
+            type: "var",
             //umdNamedDefine: false,
-         }, */
+         },
       },
    },
    output: {

@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    404 xxxxxxxxxxxxxxxxxxxxxxxx 404
-</body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>404</title>
+      <style>
+         .main {
+            width: 50%;
+            height: 400px;
+            margin: 0 auto;
+         }
+      </style>
+      <script>
+         window.onload = () => {
+            let el = document.querySelector("#msg");
+            el.innerText = location.href;
+         };
+      </script>
+   </head>
+   <body>
+      <div>
+         <h1>404</h1>
+         <p id="msg"></p>
+      </div>
+   </body>
 </html>

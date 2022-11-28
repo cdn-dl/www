@@ -4,6 +4,16 @@ const fs = require("fs");
 const Koa = require("koa");
 const koaStatic = require("koa-static");
 
+let args = {};
+process.argv.slice(2).forEach((vv) => {
+   vv = vv.replace(/^([^a-z]+)/i, "");
+   let kv = vv.split("=");
+   //return {name: kv[0], value: kv[1]};
+   args[kv[0]] = kv[1];
+});
+console.info("args", args, process.env.NODE_ENV);
+let isDev = process.env.NODE_ENV == "development";
+let wwwPath = isDev ? "./src" : "./publish"
 let app = new Koa();
 
 app.use(async (ctx, next) => {
@@ -17,7 +27,7 @@ app.use(async (ctx, next) => {
 
    await next();
 });
-app.use(koaStatic("./publish"));
+app.use(koaStatic(wwwPath));
 
 app.listen(8888);
 /* 

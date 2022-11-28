@@ -12,10 +12,11 @@
     "build:dev": "webpack --mode=none --node-env=none",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "start": "node ./httpserver.js",
+    "start": "cross-env NODE_ENV=production node ./httpserver.js",
+    "dev": "cross-env NODE_ENV=development node ./httpserver.js -name=aa",
     "start0": "webpack serve --mode=development",
     "popup": "ts-node bin/popup.ts",
-    "dev": "cross-env NODE_ENV=development ts-node bin/start.ts",
+    "dev0": "cross-env NODE_ENV=development ts-node bin/start.ts",
     "format": "run-s format:*",
     "format:js": " prettier --write   \"src/**/*.ts\" \"src/**/*.js\"  "
   },

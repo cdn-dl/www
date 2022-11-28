@@ -6,7 +6,7 @@ var __webpack_exports__ = {};
     if (!prefix)
         return;
     let protocol = "http:" == location.protocol ? "https:" : location.protocol;
-    location.href = protocol + "//" + location.host + +prefix + location.pathname + location.search + location.hash;
+    location.href = protocol + "//" + location.host + prefix + location.pathname + location.search + location.hash;
 })();
 
 module.exports = __webpack_exports__;

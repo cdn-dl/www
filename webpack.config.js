@@ -19,13 +19,13 @@ const config = {
       index: {
          import: "./src/index.ts",
          filename: "index.js",
-   /*       library: {
+         /*       library: {
             // all options under `output.library` can be used here
             //name: "popup",
             //type: "var",
             //umdNamedDefine: false,
          }, */
-      }
+      },
    },
    output: {
       path: path.resolve(__dirname, "publish"),
@@ -164,7 +164,7 @@ const config = {
          Buffer: ["buffer", "Buffer"],
          stream: "stream",
       }),
-/*       new webpack.DefinePlugin({
+      /*       new webpack.DefinePlugin({
          "process.env0": JSON.stringify({
             NODE_ENV: process.env.NODE_ENV,
             appVersion: mainfest.version,
@@ -183,7 +183,7 @@ const config = {
       new CopyPlugin({
          patterns: [
             //{ from: path.resolve("node_modules/@ai-lion/liondb/dist/prebuilds"), to: "service/prebuilds" },
-            { from: "src", to: "", filter: (v)=>/\.(js|css|html|jpg|jpeg|png|gif|ico)/i.test(v) },
+            { from: "src", to: "", filter: (v) => /\.(js|css|html|jpg|jpeg|png|gif|ico)/i.test(v) },
             //node_modules\node-analyzer\lib\dict
          ],
       }),
@@ -206,12 +206,12 @@ const config = {
                   //"dist-ext/" + appName + ".zip", //
                ],
                //move: [{ source: "dist-ext/chrome/js/mds.js", destination: "dist-ext/mds.js" }],
-              /*  copy: [
+               /*  copy: [
                  // { source: "dist-ext/chrome", destination: "dist-ext/edge" },
                ], */
                //move: [{ source: "dist-ext/content-script-no.js", destination: "dist-ext/chrome-no/js/content-script.js" }],
                //mkdir: ["/path/to/directory/", "/another/directory/"],
-             /*   archive: [
+               /*   archive: [
                   //{ source: "dist-ext/chrome", destination: "dist-ext/" + appName + ".zip" },
                ], */
             },
@@ -219,7 +219,7 @@ const config = {
       }),
    ],
    optimization: {
-      minimize: isProduction ? true : false,
+      minimize: false, //isProduction ? true : false,
       minimizer: [
          new TerserPlugin({
             extractComments: false, //不将注释提取到单独的文件中

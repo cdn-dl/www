@@ -1,1 +1,64 @@
-(()=>{let t=new class{async getList(){let t=await fetch("https://w.iee.one/api/mds/list").then((async t=>{if(200!=t.status)return[];return((await t.json()).data||{}).list||[]}));return console.info("list",t),t}};!async function(){let a=await t.getList(),s=[];a.forEach((t=>{"direct"==t.type&&s.push(`<div class="product-item">\n                <a href="${t.url}" target="_blank">\n                <div class="product-single">\n                    <div class="product-img">\n                        <img src="${t.images[0]}" alt="Product Image"/>\n                    </div>\n                    <div class="product-content">\n                        <div class="product-title">\n                            <h2><a href="">${t.title}</a></h2>\n                        </div>\n                        <div class="product-ratting">\n                            <i class="fa fa-star"></i>\n                            <i class="fa fa-star"></i>\n                            <i class="fa fa-star"></i>\n                            <i class="fa fa-star"></i>\n                            <i class="fa fa-star-half-o"></i>\n                        </div>\n      \n                    </div>\n                </div>\n                </a>\n            </div>`)}));let i=document.querySelector("#product-direct");i&&(i.innerHTML+=s.join(""))}(),function(){if(/^([0-9]{1,3}\.)/i.test(location.hostname))return;let t=document.createElement("script");t.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2208954604036695",t.setAttribute("crossorigin","anonymous"),document.head.appendChild(t),(window.adsbygoogle=window.adsbygoogle||[]).push({})}()})();
+(() => {
+  class Api {
+    async getList() {
+      let list = await fetch("https://w.iee.one/api/mds/list").then(
+        async (res) => {
+          if (res.status != 200) return [];
+          let res0 = await res.json();
+          let data = res0.data || {};
+          return data.list || [];
+        }
+      );
+      console.info("list", list);
+      return list;
+    }
+  }
+  let api = new Api();
+
+  async function show() {
+    let list = await api.getList();
+    let html = [];
+    list.forEach((item) => {
+      if (item.type == "direct") {
+        html.push(`<div class="product-item">
+                <a href="${item.url}" target="_blank">
+                <div class="product-single">
+                    <div class="product-img">
+                        <img src="${item.images[0]}" alt="Product Image"/>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-title">
+                            <h2><a href="">${item.title}</a></h2>
+                        </div>
+                        <div class="product-ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+      
+                    </div>
+                </div>
+                </a>
+            </div>`);
+      }
+    });
+    let mw = document.querySelector("#product-direct");
+    //console.info("mw", mw, html);
+    if (mw) {
+      mw.innerHTML += html.join("");
+    }
+  }
+  function showGoogle() {
+    if (/^([0-9]{1,3}\.)/i.test(location.hostname)) return;
+    let script = document.createElement("script");
+    script.src =
+      "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2208954604036695";
+    script.setAttribute("crossorigin", "anonymous");
+    document.head.appendChild(script);
+    (window["adsbygoogle"] = window["adsbygoogle"] || []).push({});
+  }
+  show();
+  showGoogle();
+})();

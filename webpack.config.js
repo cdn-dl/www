@@ -52,7 +52,7 @@ const config = {
       __dirname: false,
    },
    resolve: {
-      extensions: [".tsx", ".ts", ".js", ".vue"],
+      extensions: [".tsx", ".ts", ".vue"],
       alias: {
          // 配置目录别名，来确保模块引入变得更简单
          // 在任意目录下require('components/example') 相当于require('项目根目录/src/components/example')
@@ -144,7 +144,7 @@ const config = {
             },
             generator: {
                // [ext]前面自带"."
-               filename: "images/[name][ext]", //自定义输出目录
+               filename: "img/[name][ext]", //自定义输出目录
             },
          },
 
@@ -183,7 +183,7 @@ const config = {
       new CopyPlugin({
          patterns: [
             //{ from: path.resolve("node_modules/@ai-lion/liondb/dist/prebuilds"), to: "service/prebuilds" },
-            { from: "src", to: "", filter: (v) => /\.(js|css|html|jpg|jpeg|png|gif|ico|md)/i.test(v) },
+            { from: "src", to: "", filter: (v) => /\.(js|css|html|jpg|jpeg|png|gif|ico|md|zip)/i.test(v) },
             //node_modules\node-analyzer\lib\dict
          ],
       }),
@@ -196,27 +196,7 @@ const config = {
          raw: true,
          include: [/lib/], //包含哪些文件需要添加头部
       }), */
-      new FileManagerPlugin({
-         // https://www.npmjs.com/package/filemanager-webpack-plugin
-         events: {
-            onEnd: {
-               delete: [
-                  "public/m.js", //
-                  //"dist-ext/firefox", //
-                  //"dist-ext/" + appName + ".zip", //
-               ],
-               //move: [{ source: "dist-ext/chrome/js/mds.js", destination: "dist-ext/mds.js" }],
-               /*  copy: [
-                 // { source: "dist-ext/chrome", destination: "dist-ext/edge" },
-               ], */
-               //move: [{ source: "dist-ext/content-script-no.js", destination: "dist-ext/chrome-no/js/content-script.js" }],
-               //mkdir: ["/path/to/directory/", "/another/directory/"],
-               /*   archive: [
-                  //{ source: "dist-ext/chrome", destination: "dist-ext/" + appName + ".zip" },
-               ], */
-            },
-         },
-      }),
+      
    ],
    optimization: {
       minimize: false, //isProduction ? true : false,

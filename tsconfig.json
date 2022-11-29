@@ -63,6 +63,6 @@
       "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */,
       "resolveJsonModule": true,
    },
-   "include": ["src/**/*"],
-   "exclude": ["node_modules", "tests", "test", "dist", "build", "bin"]
+   //"include": ["src/**/*"],
+   "exclude": ["node_modules", "tests", "test", "dist", "build", "bin", "src"]
 }

@@ -196,6 +196,17 @@ const config = {
          raw: true,
          include: [/lib/], //包含哪些文件需要添加头部
       }), */
+      new FileManagerPlugin({
+         events: {
+            onEnd: {
+               //copy: [{ source: "/path/fromfile.txt", destination: "/path/tofile.txt" }],
+               //move: [{ source: "/path/from", destination: "/path/to" }],
+               //mkdir: ["/path/to/directory/", "/another/directory/"],
+               delete: ["dist/www.ivideos.one.zip"],
+               archive: [{ source: "publish/www-ividoes-one", destination:   "dist/www.ividoes.one.zip" }],
+            },
+         },
+      }),
       
    ],
    optimization: {

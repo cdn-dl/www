@@ -160,11 +160,10 @@
 					<h3>视频站长提供私有加速节点</h3>
 					<pre>
 						<code>
-docker run -itd --restart=always --net=host --cpu-shares=256 -m 1024M \
+docker run -itd --restart=always --net=host --cpu-shares=512 \
 -e DOMAIN="网站域名" \
 -v /tmp/ivideos-store:/app/ivideos-store \
--v /app/ivideos-batch/1:/root/ivideos-node \
---name ivideos-node-1 mixnet/ivideos-node:latest
+--name ivideos-node mixnet/ivideos-node:latest
 						</code>
 					</pre>
 				</div>

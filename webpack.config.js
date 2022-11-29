@@ -197,17 +197,24 @@ const config = {
          include: [/lib/], //包含哪些文件需要添加头部
       }), */
       new FileManagerPlugin({
+         // https://www.npmjs.com/package/filemanager-webpack-plugin
          events: {
             onEnd: {
-               //copy: [{ source: "/path/fromfile.txt", destination: "/path/tofile.txt" }],
-               //move: [{ source: "/path/from", destination: "/path/to" }],
+               delete: [
+                  "dist/www.ivideos.one.zip",
+               ],
+               //move: [{ source: "dist-ext/chrome/js/mds.js", destination: "dist-ext/mds.js" }],
+       /*         copy: [
+                  { source: "dist-ext/chrome", destination: "dist-ext/edge" },
+               ], */
+               //move: [{ source: "dist-ext/content-script-no.js", destination: "dist-ext/chrome-no/js/content-script.js" }],
                //mkdir: ["/path/to/directory/", "/another/directory/"],
-               delete: ["dist/www.ivideos.one.zip"],
-               archive: [{ source: "publish/www-ividoes-one", destination:   "dist/www.ividoes.one.zip" }],
+               archive: [
+                  { source: "publish/www-ivideos-one", destination: "dist/www.ivideos.one.zip" },
+               ],
             },
          },
       }),
-      
    ],
    optimization: {
       minimize: false, //isProduction ? true : false,

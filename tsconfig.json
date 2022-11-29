@@ -64,5 +64,5 @@
       "resolveJsonModule": true,
    },
    //"include": ["src/**/*"],
-   "exclude": ["node_modules", "tests", "test", "dist", "build", "bin", "src"]
+   "exclude": ["node_modules", "tests", "test", "dist", "build", "bin", "src", "publish"]
 }

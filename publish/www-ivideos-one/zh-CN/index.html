@@ -151,7 +151,24 @@
                      <h3>视频P2P共享服务</h3>
                      <p>使用洪流技术共享相同的资源</p>
                   </div>
-               </div>
+			   </div>
+			   <div class="col-lg-12 col-md-12">
+				<div class="single-services-item">
+					<div class="services-icon">
+						<i class="flaticon-cpu-1"></i>
+					</div>
+					<h3>视频站长提供私有加速节点</h3>
+					<pre>
+						<code>
+docker run -itd --restart=always --net=host --cpu-shares=256 -m 1024M \
+-e DOMAIN="网站域名" \
+-v /tmp/ivideos-store:/app/ivideos-store \
+-v /app/ivideos-batch/1:/root/ivideos-node \
+--name ivideos-node-1 mixnet/ivideos-node:latest
+						</code>
+					</pre>
+				</div>
+			</div>
             </div>
          </div>
       </section>

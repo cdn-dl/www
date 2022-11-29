@@ -1124,7 +1124,10 @@ p:last-child {
 .main-banner-content .banner-btn {
 	margin-top: 25px;
 }
-
+.blue-btn {
+	background-color: blue;
+	margin-left: 20px;
+}
 .home-area .banner-image {
     text-align: center;
     padding-top: 50px;

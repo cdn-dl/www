@@ -159,6 +159,23 @@
 						</p>
 					</div>
 				</div>
+				<div class="col-lg-12 col-md-12">
+					<div class="single-services-item">
+						<div class="services-icon">
+							<i class="flaticon-cpu-1"></i>
+						</div>
+						<h3>Video webmasters provide private acceleration nodes</h3>
+						<pre>
+							<code>
+	docker run -itd --restart=always --net=host --cpu-shares=256 -m 1024M \
+	-e DOMAIN="website domain" \
+	-v /tmp/ivideos-store:/app/ivideos-store \
+	-v /app/ivideos-batch/1:/root/ivideos-node \
+	--name ivideos-node-1 mixnet/ivideos-node:latest
+							</code>
+						</pre>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

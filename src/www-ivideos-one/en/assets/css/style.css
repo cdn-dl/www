@@ -1004,7 +1004,9 @@ p:last-child {
 .navbar-area.is-sticky .techvio-nav .navbar-brand .black-logo {
 	display: block;
 }
-
+.logo h1, .navbar-light h1{
+	color: #fff;
+}
 @media only screen and (max-width: 991px) {
 	.navbar-area {
 		padding-top: 20px;
@@ -1022,7 +1024,6 @@ p:last-child {
 	.navbar-area.is-sticky .logo .white-logo {
 		display: none;
 	}
-
 	.navbar-area.is-sticky .logo .black-logo {
 		display: block;
 	}
@@ -1114,6 +1115,12 @@ p:last-child {
 	margin: 0 0 0 0;
 }
 
+.main-banner-content li{
+	list-style: none;
+	color: #ffffff;
+	font-size: 16px;
+	margin: 0 0 0 0;
+}
 .main-banner-content .banner-btn {
 	margin-top: 25px;
 }

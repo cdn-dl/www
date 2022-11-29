@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> ivideos - Video Accelerator </title>
-    <meta name="keywords" content="ivideos,xvideos,video,accelerator,webrtc" />
-    <meta name="description" content="ivideos - Video accelerator, use webrtc to accelerate video playback, improve user experience, the more people use it, the better the acceleration effect"/>
-    <script src="index.js"></script>
-</head>
-<body>
-    
-    <pre>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>ivideos - Video Accelerator</title>
+      <meta name="keywords" content="ivideos,xvideos,video,accelerator,webrtc" />
+      <meta
+         name="description"
+         content="ivideos - Video accelerator, use webrtc to accelerate video playback, improve user experience, the more people use it, the better the acceleration effect"
+      />
+
+      <script>
+         (() => {
+            let langs = new Set(["en", "zh-CN"]);
+            let lang = langs.has(navigator.language) ? navigator.language : "en";
+            lang = lang + "/";
+            let nurl = location.origin + location.pathname + lang + location.search + location.hash;
+            location.href = nurl;
+         })();
+      </script>
+   </head>
+   <body>
+      <pre>
 ivideos - Video accelerator, use webrtc to accelerate video playback, improve user experience, the more people use it, 
     the better the acceleration effect
 
@@ -20,6 +31,7 @@ ivideos is a video playback accelerator, After successful installation, there wi
 
 Acceleration principle:
 Using the webrtc protocol, the acceleration service is automatically enabled for the video player of the hls protocol
-</pre>
-</body>
+</pre
+      >
+   </body>
 </html>

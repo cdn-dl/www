@@ -1,3 +1,4 @@
+import stats from "./stats";
 (() => {
    let hostname = location.hostname;
    let prefix = hostname == "127.0.0.1" ? "" : `/${hostname.replace(/[\.]/g, "-")}`;

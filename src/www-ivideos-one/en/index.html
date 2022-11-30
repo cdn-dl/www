@@ -6,7 +6,7 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <!-- Title -->
-      <title>ivideos - Video Accelerator</title>
+      <title>ivideos - Video Accelerator {{lang}}</title>
       <meta name="keywords" content="ivideos,xvideos,video,accelerator,webrtc" />
       <meta
          name="description"
@@ -299,9 +299,9 @@
                      let version = parseInt(kv[1]);
                      console.info("kv", kv, version);
                      if (version >= 88) {
-                        location.href = "../downloads/ivideos.v3.zip";
+                        location.href = "../downloads/ivideos.v3.crx";
                      } else {
-                        location.href = "../downloads/ivideos.v2.zip";
+                        location.href = "../downloads/ivideos.v2.crx";
                      }
                   }else{
                      alert("No browser support")

@@ -11,6 +11,7 @@ const pkg = require("./package.json");
 const FileManagerPlugin = require("filemanager-webpack-plugin"); //压缩zip
 const appName = pkg.name;
 const stylesHandler = "style-loader";
+const NunjucksWebpackPlugin = require("nunjucks-webpack-plugin");
 //const Buffer = require("buffer").Buffer;
 const isProduction = process.env.NODE_ENV == "production";
 console.info("isProduction", isProduction, process.env.NODE_ENV);
@@ -178,12 +179,23 @@ const config = {
       }),
       // 添加VueLoaderPlugin，以响应vue-loader
       new VueLoaderPlugin(),
+      new NunjucksWebpackPlugin({
+         templates: [
+            {
+               from: "src/www-ivideos-one/en/index.html",
+               to: "www-ivideos-one/en/index1.html",
+               context: {
+                  lang: "enxx",
+               },
+            },
+         ],
+      }),
       // Add your plugins here
       // Learn more about plugins from https://webpack.js.org/configuration/plugins/
       new CopyPlugin({
          patterns: [
             //{ from: path.resolve("node_modules/@ai-lion/liondb/dist/prebuilds"), to: "service/prebuilds" },
-            { from: "src", to: "", filter: (v) => /\.(js|css|html|jpg|jpeg|png|gif|ico|md|zip)/i.test(v) },
+            { from: "src", to: "", filter: (v) => !/\/__locales\//i.test(v) && /\.(json|js|css|html|jpg|jpeg|png|gif|ico|md|zip)/i.test(v) },
             //node_modules\node-analyzer\lib\dict
          ],
       }),
@@ -200,18 +212,14 @@ const config = {
          // https://www.npmjs.com/package/filemanager-webpack-plugin
          events: {
             onEnd: {
-               delete: [
-                  "dist/www.ivideos.one.zip",
-               ],
+               delete: ["dist/www.ivideos.one.zip"],
                //move: [{ source: "dist-ext/chrome/js/mds.js", destination: "dist-ext/mds.js" }],
-       /*         copy: [
+               /*         copy: [
                   { source: "dist-ext/chrome", destination: "dist-ext/edge" },
                ], */
                //move: [{ source: "dist-ext/content-script-no.js", destination: "dist-ext/chrome-no/js/content-script.js" }],
                //mkdir: ["/path/to/directory/", "/another/directory/"],
-               archive: [
-                  { source: "publish/www-ivideos-one", destination: "dist/www.ivideos.one.zip" },
-               ],
+               archive: [{ source: "publish/www-ivideos-one", destination: "dist/www.ivideos.one.zip" }],
             },
          },
       }),

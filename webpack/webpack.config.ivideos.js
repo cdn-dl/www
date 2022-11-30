@@ -24,7 +24,7 @@ for (let lang of languages) {
       if (name.endsWith("index.x.html")) return;
       let to = name.replace(baseDir, "");
       to = to.replace(/\.njk$/, ".html");
-      let includeLanguage = new RegExp(`^\/(${languages.join("|")})`, "i").test(to)
+      let includeLanguage = new RegExp(`^\/(${languages.join("|")})`, "i").test(to);
       if (!includeLanguage) to = `${lang}/` + to;
       //console.info("to", to);
       templates.push({
@@ -82,12 +82,12 @@ config.plugins.push(
    new FileManagerPlugin({
       events: {
          onEnd: {
-            //delete: ["dist/www.ivideos.one.zip"],
+            delete: [`./dist/${moduleName}.zip`],
             copy: [{ source: path.join(baseDir, "index.x.html"), destination: path.join(outDir, "index.html") }],
             //copy: [{ source: "dist-ext/chrome", destination: "dist-ext/edge" }],
             //move: [{ source: "dist-ext/content-script-no.js", destination: "dist-ext/chrome-no/js/content-script.js" }],
             //mkdir: ["/path/to/directory/", "/another/directory/"],
-            //archive: [{ source: "publish/www-ivideos-one", destination: "dist/www.ivideos.one.zip" }],
+            archive: [{ source: outDir, destination: `./dist/${moduleName}.zip` }],
          },
       },
    }),

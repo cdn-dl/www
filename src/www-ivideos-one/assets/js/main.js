@@ -232,9 +232,9 @@
          var minutes = Math.floor((timeLeft - days * 86400 - hours * 3600) / 60);
          var seconds = Math.floor(timeLeft - days * 86400 - hours * 3600 - minutes * 60);
 
-         let sHours=hours+"";
-         let sMinutes=minutes+"";
-         let sSeconds = seconds+"";
+         let sHours = hours + "";
+         let sMinutes = minutes + "";
+         let sSeconds = seconds + "";
          if (hours < 10) {
             sHours = "0" + hours;
          }

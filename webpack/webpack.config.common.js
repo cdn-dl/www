@@ -7,20 +7,17 @@ const { VueLoaderPlugin } = require("vue-loader");
 const webpack = require("webpack");
 const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const pkg = require("./package.json");
+const pkg = require("../package.json");
 const FileManagerPlugin = require("filemanager-webpack-plugin"); //压缩zip
 const appName = pkg.name;
 const stylesHandler = "style-loader";
 const NunjucksWebpackPlugin = require("nunjucks-webpack-plugin");
-//const Buffer = require("buffer").Buffer;
-const isProduction = process.env.NODE_ENV == "production";
+//const isProduction = process.env.NODE_ENV == "production";
+const isProduction = process.env.NODE_ENV != "development";
 
-const ivideosLocales = require("./src/www-ivideos-one/__locales");
-
-console.info("isProduction", isProduction, process.env.NODE_ENV);
 const config = {
    entry: {
-      index: {
+     /*  index: {
          import: "./src/index.ts",
          filename: "index.js",
          library: {
@@ -29,7 +26,7 @@ const config = {
             type: "var",
             //umdNamedDefine: false,
          },
-      },
+      }, */
    },
    output: {
       path: path.resolve(__dirname, "publish"),
@@ -59,14 +56,9 @@ const config = {
       extensions: [".tsx", ".ts", ".vue"],
       alias: {
          // 配置目录别名，来确保模块引入变得更简单
-         // 在任意目录下require('components/example') 相当于require('项目根目录/src/components/example')
-         //components: path.join(root, 'src/components'),
-         //views: path.join(root, 'src/views'),
-         //styles: path.join(root, 'src/styles'),
-         //store: path.join(root, 'src/store')
-         "@": path.resolve("src"),
-         "@coms": path.resolve("src/coms"),
-         "@public": path.resolve("public"),
+         //"@": path.resolve("src"),
+         //"@coms": path.resolve("src/coms"),
+         //"@public": path.resolve("public"),
          //process: "process/browser",
       },
       fallback: {
@@ -158,11 +150,6 @@ const config = {
    },
 
    plugins: [
-      // 目标为 nodejs 环境使用
-      /*       new webpack.ProvidePlugin({
-         Buffer: ["buffer", "Buffer"],
-      }), 
-      */
       new webpack.ProvidePlugin({
          process: "process",
          Buffer: ["buffer", "Buffer"],
@@ -174,25 +161,15 @@ const config = {
             appVersion: mainfest.version,
          }),
       }), */
-      new HtmlWebpackPlugin({
+      /*       new HtmlWebpackPlugin({
          template: "index.html",
          filename: "background.html", // 打包输出后该html文件的名称
          title: "ividoes-bg",
          chunks: ["background"], // 数组元素为chunk名称，即entry属性值为对象的时候指定的名称，index页面只引入 view.js
-      }),
-      // 添加VueLoaderPlugin，以响应vue-loader
-      new VueLoaderPlugin(),
-      new NunjucksWebpackPlugin({
-         templates: [
-            {
-               from: "src/www-ivideos-one/en/index.html",
-               to: "www-ivideos-one/en/index1.html",
-               context: {
-                  locales: JSON.stringify(ivideosLocales),
-               },
-            },
-         ],
-         configure: {
+      }), */
+     /*  new NunjucksWebpackPlugin({
+         templates: templates,
+                 configure: {
             tags: {
                blockStart: "<%",
                blockEnd: "%>",
@@ -201,17 +178,17 @@ const config = {
                commentStart: "<#",
                commentEnd: "#>",
             },
-         },
-      }),
+         }, 
+      }), */
       // Add your plugins here
       // Learn more about plugins from https://webpack.js.org/configuration/plugins/
-      new CopyPlugin({
+      /*       new CopyPlugin({
          patterns: [
             //{ from: path.resolve("node_modules/@ai-lion/liondb/dist/prebuilds"), to: "service/prebuilds" },
-            { from: "src", to: "", filter: (v) => !/\/__locales\//i.test(v) && /\.(json|js|css|html|jpg|jpeg|png|gif|ico|md|zip)/i.test(v) },
+            //{ from: "src", to: "", filter: (v) => !/\/__locales\//i.test(v) && /\.(json|js|css|html|jpg|jpeg|png|gif|ico|md|zip)/i.test(v) },
             //node_modules\node-analyzer\lib\dict
          ],
-      }),
+      }), */
       /*   new webpack.BannerPlugin({
          banner: "*! https://www.ivideos.one *",
          raw: true,
@@ -221,24 +198,21 @@ const config = {
          raw: true,
          include: [/lib/], //包含哪些文件需要添加头部
       }), */
-      new FileManagerPlugin({
-         // https://www.npmjs.com/package/filemanager-webpack-plugin
+      /*       new FileManagerPlugin({
          events: {
             onEnd: {
                delete: ["dist/www.ivideos.one.zip"],
                //move: [{ source: "dist-ext/chrome/js/mds.js", destination: "dist-ext/mds.js" }],
-               /*         copy: [
-                  { source: "dist-ext/chrome", destination: "dist-ext/edge" },
-               ], */
+               //copy: [{ source: "dist-ext/chrome", destination: "dist-ext/edge" }],
                //move: [{ source: "dist-ext/content-script-no.js", destination: "dist-ext/chrome-no/js/content-script.js" }],
                //mkdir: ["/path/to/directory/", "/another/directory/"],
                archive: [{ source: "publish/www-ivideos-one", destination: "dist/www.ivideos.one.zip" }],
             },
          },
-      }),
+      }), */
    ],
    optimization: {
-      minimize: false, //isProduction ? true : false,
+      minimize: isProduction ? true : false,
       minimizer: [
          new TerserPlugin({
             extractComments: false, //不将注释提取到单独的文件中
@@ -252,7 +226,7 @@ const config = {
    },
 };
 
-module.exports = () => {
+/* module.exports = () => {
    if (isProduction) {
       config.mode = "production";
    } else {
@@ -260,3 +234,5 @@ module.exports = () => {
    }
    return config;
 };
+ */
+module.exports = config;

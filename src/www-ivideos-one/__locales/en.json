@@ -1,0 +1,46 @@
+{
+   "language": "en",
+   "header": {
+      "title": "ivideos - Video Accelerator",
+      "keywords": "ivideos,xvideos,video,accelerator,webrtc",
+      "desc": "ivideos - Video accelerator, use webrtc to accelerate video playback, improve user experience, the more people use it, the better the acceleration effect"
+   },
+   "btn": {
+      "download": "Download",
+      "install": "Install"
+   },
+   "s404": {
+      "main": "Page Not Found",
+      "desc": "The page you are looking for might have been removed had its name changed or is temporarily unavailable.",
+      "goHome": "Go to Home"
+   },
+   "index": {
+      "s1": {
+         "title": "Video acceleration solutions & Video cache sharing services",
+         "list": [
+            "Use indexed technology to cache and share video resources",
+            "Use webrtc technology to accelerate video resource download and resource sharing",
+            "Accelerated node docker deployment solution for video sites to provide services"
+         ]
+      },
+      "s2": {
+          "title": "What We Provide",
+          "stitle": "Video acceleration solutions",
+
+          "s11": "Video Acceleration Services",
+          "s12": "Accelerate video download speed with webrtc technology",
+
+          "s21": "Video Caching Services",
+          "s22": "User nodes and specialized servers provide caching capabilities",
+
+          "s31": "Video P2P Sharing Services",
+          "s32": "Share the same resources using torrent technology",
+
+          "s41": "Video webmasters provide private acceleration nodes",
+          "s42": "docker run -itd --restart=always --net=host --cpu-shares=512 -e DOMAIN=websitedomain -v /tmp/ivideos-store:/app/ivideos-store --name ivideos-node mixnet/ivideos-node:latest"
+      },
+      "s3": {
+          "title": "Website"
+      }
+   }
+}

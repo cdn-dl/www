@@ -1,0 +1,47 @@
+{
+    "language": "zh-CN",
+    "header": {
+       "title": "ivideos - 视频加速器",
+       "keywords": "ivideos,xvideos,video,accelerator,webrtc",
+       "desc": "ivideos - 视频加速器, Video accelerator, use webrtc to accelerate video playback, improve user experience, the more people use it, the better the acceleration effect"
+    },
+    "btn": {
+       "download": "下载",
+       "install": "安装"
+    },
+    "s404": {
+       "main": "页面找不到",
+       "desc": "你要找的页面可能已经被删除,改变或暂时无法使用。",
+       "goHome": "首页"
+    },
+    "index": {
+       "s1": {
+          "title": "视频加速解决方案和视频缓存共享服务",
+          "list": [
+             "使用indexed技术来缓存和共享视频资源",
+             "利用webrtc技术加速视频资源下载和资源共享",
+             "加速节点docker部署解决方案，为视频网站提供服务"
+          ]
+       },
+       "s2": {
+           "title": "我们提供什么",
+           "stitle": "视频加速解决方案",
+ 
+           "s11": "视频加速服务",
+           "s12": "利用webrtc技术加快视频下载速度",
+ 
+           "s21": "视频缓存服务",
+           "s22": "用户节点和专门的服务器提供缓存功能",
+ 
+           "s31": "视频P2P共享服务",
+           "s32": "使用洪流技术共享相同的资源",
+ 
+           "s41": "视频站长提供私有加速节点",
+           "s42": "docker run -itd --restart=always --net=host --cpu-shares=512 -e DOMAIN=websitedomain -v /tmp/ivideos-store:/app/ivideos-store --name ivideos-node mixnet/ivideos-node:latest"
+       },
+       "s3": {
+           "title": "网站"
+       }
+    }
+ }
+ 

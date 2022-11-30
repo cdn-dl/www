@@ -1,92 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv='content-language' content='en'>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <title>ivideos - Video Accelerator  </title>
-        <meta property="og:title" content="ivideos - Video Accelerator"/>
-        <meta name="keywords" content=""/>
-        <meta name="description" content="The page you are looking for might have been removed had its name changed or is temporarily unavailable."/> 
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="../assets/logos/icon.png"/> 
-        <!-- jQuery Min JS -->
-        <script src="../assets/js/jquery.min.js"></script>
+{% extends "./__widget/default.njk" %}
+{% block head %} {% endblock %}
+{% block body %}
 
-         
-
-         <!-- Favicon -->
-        <!-- Bootstrap Min CSS -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-        <!-- Animate Min CSS -->
-        <link rel="stylesheet" href="../assets/css/animate.min.css" />
-        <!-- FlatIcon CSS -->
-        <link rel="stylesheet" href="../assets/css/flaticon.css" />
-        <!-- Font Awesome Min CSS -->
-        <link rel="stylesheet" href="../assets/css/fontawesome.min.css" />
-        <!-- Mran Menu CSS -->
-        <link rel="stylesheet" href="../assets/css/meanmenu.css" />
-        <!-- Magnific Popup Min CSS -->
-        <link rel="stylesheet" href="../assets/css/magnific-popup.min.css" />
-        <!-- Nice Select Min CSS -->
-        <link rel="stylesheet" href="../assets/css/nice-select.min.css" />
-        <!-- Swiper Min CSS -->
-        <link rel="stylesheet" href="../assets/css/swiper.min.css" />
-        <!-- Owl Carousel Min CSS -->
-        <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="../assets/css/style.css" />
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="../assets/css/responsive.css" />
-
-         
-    </head>
-    <body>
-        <!-- Start Preloader Area -->
-<div class="preloader">
-    <div class="loader">
-        <div class="shadow"></div>
-        <div class="box"></div>
-    </div>
-</div>
-<!-- End Preloader Area -->
-<!-- Start Navbar Area -->
-<div class="navbar-area">
-    <div class="techvio-responsive-nav">
-        <div class="container">
-            <div class="techvio-responsive-menu">
-                <div class="logo white-logo">
-                    <a href="./">
-                        <h1>IVIDEOS</h1>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="techvio-nav">
-        <div class="container">
-            <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="./">
-                    <h1>IVIDEOS</h1>
-                </a>
-
-                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-						<ul class="navbar-nav">
-							
-						</ul>
-						<div class="other-option">
-                                                            <a class="color-white" href="../en/">en</a>
-                                                            <a class="color-white" href="../zh-CN/">zh-CN</a>
-                            						</div>
-					</div>
-            </nav>
-        </div>
-    </div>
-</div>
-<!-- End Navbar Area -->
-        <!-- body -->
-        <div class="mainbody">        
-            
     <!-- Start Home Area -->
     <div class="home-area">
         <div class="d-table">
@@ -95,24 +10,20 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-md-12">
                             <div class="main-banner-content">
-                                <h1>Video acceleration solutions &amp; Video cache sharing services</h1>
-                                                                    
-                                    <li>1 Use indexed technology to cache and share video resources</li>
+                                <h1>{$ $t.index.s1.title $}</h1>
+                                 {% for v in $t.index.s1.list %}
                                    
-                                                                   
-                                    <li>2 Use webrtc technology to accelerate video resource download and resource sharing</li>
+                                    <li>{$ loop.index $} {$ v $}</li>
                                    
-                                                                   
-                                    <li>3 Accelerated node docker deployment solution for video sites to provide services</li>
-                                   
-                                                                
+                                {% endfor %}
+                                
                                 <div class="banner-btn">
                                     <a href="javascript:void" id="download" class="default-btn-one">
-                                        Download
+                                        {$ $t.btn.download $}
                                         <span></span>
                                     </a>
                                     <a class="default-btn" id="install" href="javascript:void">
-                                        Install
+                                        {$ $t.btn.install $}
                                         <span></span>
                                     </a>
                                     <!-- a class="default-btn blue-btn" href="../downloads/ivideos.firefox-360.zip"> Firefox/360 <span></span> </a -->
@@ -139,8 +50,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="section-title">
-                        <h6>What We Provide}</h6>
-                        <h2>Video acceleration solutions</h2>
+                        <h6>{$ $t.index.s2.title $}}</h6>
+                        <h2>{$ $t.index.s2.stitle $}</h2>
                     </div>
                 </div>
             </div>
@@ -150,8 +61,8 @@
                         <div class="services-icon">
                             <i class="flaticon-project-management"></i>
                         </div>
-                        <h3>Video Acceleration Services</h3>
-                        <p> Accelerate video download speed with webrtc technology </p>
+                        <h3>{$ $t.index.s2.s11 $}</h3>
+                        <p> {$ $t.index.s2.s12 $} </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -159,8 +70,8 @@
                         <div class="services-icon">
                             <i class="flaticon-programming"></i>
                         </div>
-                        <h3> Video Caching Services </h3>
-                        <p> User nodes and specialized servers provide caching capabilities </p>
+                        <h3> {$ $t.index.s2.s21 $} </h3>
+                        <p> {$ $t.index.s2.s22 $} </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -168,8 +79,8 @@
                         <div class="services-icon">
                             <i class="flaticon-cpu-1"></i>
                         </div>
-                        <h3> Video P2P Sharing Services </h3>
-                        <p> Share the same resources using torrent technology </p>
+                        <h3> {$ $t.index.s2.s31 $} </h3>
+                        <p> {$ $t.index.s2.s32 $} </p>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
@@ -177,8 +88,8 @@
                         <div class="services-icon">
                             <i class="flaticon-cpu-1"></i>
                         </div>
-                        <h3> Video webmasters provide private acceleration nodes </h3>
-                        <code>docker run -itd --restart=always --net=host --cpu-shares=512 -e DOMAIN=websitedomain -v /tmp/ivideos-store:/app/ivideos-store --name ivideos-node mixnet/ivideos-node:latest</code>
+                        <h3> {$ $t.index.s2.s41 $} </h3>
+                        <code>{$ $t.index.s2.s42 $}</code>
                     </div>
                 </div>
             </div>
@@ -190,7 +101,7 @@
         <div class="container">
             <div class="partner-title">
                 <h6></h6>
-                <h2>Website</h2>
+                <h2>{$ $t.index.s3.title $}</h2>
             </div>
             <div class="partner-list">
                 <div class="partner-item">
@@ -287,33 +198,5 @@
         });
         })(jQuery);
     </script>
-        </div>
+{% endblock %}
 
-        <!-- Start Footer & Subscribe Section -->
-<section class="footer-subscribe-wrapper"></section>
-<!-- End Footer & Subscribe Section -->
-<!-- Start Copy Right Section -->
-<div class="copyright-area">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-6">
-                <p>
-                    <i class="far fa-copyright"></i>
-                    2022 ivideos - All Rights Reserved.</p>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Copy Right Section -->
-<!-- Start Go Top Section -->
-<div class="go-top">
-    <i class="fas fa-chevron-up"></i>
-    <i class="fas fa-chevron-up"></i>
-</div>
-<!-- End Go Top Section -->    </body>
-</html>

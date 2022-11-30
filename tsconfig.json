@@ -64,5 +64,5 @@
       "resolveJsonModule": true,
    },
    //"include": ["src/**/*"],
-   "exclude": ["node_modules", "tests", "test", "dist", "build", "bin", "src", "publish", "webpack.config.js"]
+   "exclude": ["node_modules", "tests", "test", "dist", "build", "bin", "src", "publish", "webpack", "webpack.config.js"]
 }

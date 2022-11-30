@@ -106,6 +106,10 @@ dl, ol, ul {
 	background-color: #fafbfc;
 }
 
+.color-white{
+	color: white
+}
+
 .section-padding {
 	padding: 100px 0;
 }

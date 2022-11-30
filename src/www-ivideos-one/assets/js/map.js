@@ -1,6 +1,5 @@
 /*START CONTACT MAP JS*/
-(($, google)=>{
-
+(($, google) => {
    if ($(".map-canvas").length) {
       // Specify features and elements to define styles.
       var styles = [
@@ -17,7 +16,7 @@
             ],
          },
       ];
-   
+
       var mapOptions = {
          center: new google.maps.LatLng(40.7143528, -74.0059731),
          zoom: 12,
@@ -45,6 +44,5 @@
       initMap();
       google.maps.event.addDomListener(window, "load resize", initMap);
    }
-   
 })(globalThis.jQuery, globalThis.google);
 /*END CONTACT MAP JS*/

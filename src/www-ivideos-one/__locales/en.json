@@ -7,7 +7,8 @@
    },
    "btn": {
       "download": "Download",
-      "install": "Install"
+      "install": "Install",
+      "player": "Player"
    },
    "s404": {
       "main": "Page Not Found",

@@ -13,17 +13,21 @@
         <!-- jQuery Min JS -->
         <script src="../assets/js/jquery.min.js"></script>
         <!-- Bootstrap Min JS -->
-        <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/bootstrap.js"></script>
         {# plugin name="share" %} {% endplugin #} 
 
          <!-- Favicon -->
         <!-- Bootstrap Min CSS -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../assets/css/bootstrap.css" />
         <!-- Style CSS -->
         <link rel="stylesheet" href="../assets/css/style.css" />
 
         {% block head %}{% endblock %}
-
+        <script>
+            jQuery(($)=>{
+                 $(".preloader").addClass("preloader-deactivate");
+            })
+        </script>
     </head>
     <body>
         {% include "./header.njk" %}

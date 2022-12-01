@@ -13,16 +13,20 @@
         <!-- jQuery Min JS -->
         <script src="../assets/js/jquery.min.js"></script>
         <!-- Bootstrap Min JS -->
-        <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/bootstrap.js"></script>
          
 
          <!-- Favicon -->
         <!-- Bootstrap Min CSS -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../assets/css/bootstrap.css" />
         <!-- Style CSS -->
         <link rel="stylesheet" href="../assets/css/style.css" />
 
- 
+         <script>
+            jQuery(($)=>{
+                 $(".preloader").addClass("preloader-deactivate");
+            })
+        </script>
     </head>
     <body>
 <!-- Start Preloader Area -->
@@ -96,6 +100,11 @@
                                     </a>
                                     <a class="default-btn" id="install" href="javascript:void">
                                         安装
+                                        <span></span>
+                                    </a>
+
+                                      <a class="red-btn" id="player" href="player.html" style="margin-left: 20px;">
+                                        
                                         <span></span>
                                     </a>
                                     <!-- a class="default-btn blue-btn" href="../downloads/ivideos.firefox-360.zip"> Firefox/360 <span></span> </a -->
@@ -206,9 +215,6 @@
     </section>
     <!-- End Partner section -->
 
-   
-    <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
     <script>
         (($) => {
         $(() => {

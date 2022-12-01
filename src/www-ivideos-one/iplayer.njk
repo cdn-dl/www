@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv='content-language' content='{$ $t.language $}'>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <title>{$ $t.header.title $}
+            {% block title %}{% endblock %}
+        </title>
+        <meta property="og:title" content="{$ $t.header.title $}"/>
+        <meta name="keywords" content="{$ $t.s404.keywords $}"/>
+        <meta
+        name="description" content="{$ $t.s404.desc $}"/> <!-- Favicon -->
+        <link
+        rel="icon" type="image/png" href="../assets/logos/icon.png"/>
+        <!-- jQuery Min JS -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <!-- Bootstrap Min JS -->
+        <script src="../assets/js/bootstrap.js"></script>
+        {# plugin name="share" %} {% endplugin #}
+        <!-- Favicon -->
+        <!-- Bootstrap Min CSS --> <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../assets/css/plyr.css"/>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="min-height: 480px">
+                <video
+                    id="player"
+                    style="min-height: 480px"
+                    width="100%"
+                    height="100"
+                    controls="controls"
+                    crossorigin="crossorigin"
+                    playsinline="playsinline"
+                    poster="https://bitdash-a.akamaihd.net/content/sintel/poster.png"></video>
+            </div>
+            <div class="col-lg-2 hidden-md">ad</div>
+        </div>
+        <script src="../assets/js/plyr.js"></script>
+        <script src="../assets/js/hls.js"></script>
+        <script>
+            function getQuery() {
+                let search = location
+                    .search
+                    .replace(/^\?/, "")
+                    .split("&");
+                let query = {};
+                for (let line of search) {
+                    let kv = line.split("=");
+                    query[kv[0]] = kv[1];
+                }
+                return query;
+            }
+            jQuery(($) => {
+                function play(url) {
+                    if (window.playerx) {
+                        window.playerx.destroy();
+                    }
+                    let video = document.querySelector("video");
+                    // video.style.width = "100%";
+                    console.info("play url", url, Hls.version);
+                    const source = url; // "https://bitdash-a.akamaihd.net/content/sintel/hls/video/250kbit.m3u8";
+                    const player = new Plyr(video, {
+                        autoplay: true,
+                        captions: {
+                            active: true,
+                            update: true,
+                            language: "en"
+                        }
+                    });
+                    if (!Hls.isSupported()) {
+                        video.src = source;
+                    } else { // For more Hls.js options, see https://github.com/dailymotion/hls.js
+                        const hls = new Hls();
+                        hls.loadSource(source);
+                        hls.attachMedia(video);
+                        hls.on(Hls.Events.MANIFEST_PARSED, () => {});
+                        // Handle changing captions
+                        player.on("languagechange", () => { // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+                            setTimeout(() => (hls.subtitleTrack = player.currentTrack), 50);
+                        });
+                        player.on("ready", () => {
+                            console.info("=========ready");
+                            player.play().catch((err) => console.info("play error", err));
+                        });
+                    }
+                    window.playerx = player;
+                    return player;
+                }
+                let query = getQuery()
+                let id = decodeURIComponent(query.id);
+                //"https://v.gsuus.com/play/NbWqmN4e/index.m3u8"
+                play(id);
+            });
+        </script>
+    </body>
+</html>

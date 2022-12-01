@@ -104,7 +104,7 @@
                                     </a>
 
                                       <a class="red-btn" id="player" href="player.html" style="margin-left: 20px;">
-                                        
+                                        播放
                                         <span></span>
                                     </a>
                                     <!-- a class="default-btn blue-btn" href="../downloads/ivideos.firefox-360.zip"> Firefox/360 <span></span> </a -->
@@ -216,8 +216,7 @@
     <!-- End Partner section -->
 
     <script>
-        (($) => {
-        $(() => {
+        jQuery(($) => {
             $("#install").on("click", () => {
                 let ua = navigator.userAgent || "";
                 if (/Edg/i.test(ua)) {
@@ -252,7 +251,6 @@
                 }
             });
         });
-        })(jQuery);
     </script>
         </div>
 

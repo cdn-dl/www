@@ -7,7 +7,8 @@
     },
     "btn": {
        "download": "下载",
-       "install": "安装"
+       "install": "安装",
+       "play": "播放"
     },
     "s404": {
        "main": "页面找不到",
@@ -42,6 +43,9 @@
        "s3": {
            "title": "网站"
        }
-    }
+    },
+    "player": {
+      "placeholder": "输入url"
+   }
  }
  

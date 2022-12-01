@@ -8,7 +8,7 @@
    "btn": {
       "download": "Download",
       "install": "Install",
-      "player": "Player"
+      "play": "Play"
    },
    "s404": {
       "main": "Page Not Found",
@@ -43,5 +43,8 @@
       "s3": {
           "title": "Website"
       }
+   },
+   "player": {
+      "placeholder": "input url"
    }
 }

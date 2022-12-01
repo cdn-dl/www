@@ -3,6 +3,8 @@ const path = require("path");
 const fs = require("fs");
 const Koa = require("koa");
 const koaStatic = require("koa-static");
+const nunjucks = require("nunjucks");
+const nunjucksEnv = require("./webpack/nunjucks");
 
 let args = {};
 process.argv.slice(2).forEach((vv) => {
@@ -13,17 +15,26 @@ process.argv.slice(2).forEach((vv) => {
 });
 console.info("args", args, process.env.NODE_ENV);
 let isDev = process.env.NODE_ENV == "development";
-let wwwPath = isDev ? "./src" : "./publish"
+let wwwPath = isDev ? "./src" : "./publish";
 let app = new Koa();
 
 app.use(async (ctx, next) => {
+   console.info("req", ctx.path);
    if (/^\/[a-z0-9_-]+$/i.test(ctx.path)) {
       let rurl = ctx.path + "/" + ctx.search;
       ctx.status = 302;
       ctx.set("Location", encodeURI(rurl));
       return;
    }
-   console.info("rea", ctx.url, ctx.path);
+/*    let file = path.join(__dirname, "src", ctx.path);
+   console.info("=======", file);
+   if (!/\.([a-z0-9]+)$/i.test(ctx.path)) {
+   }
+
+   if (/\.(html|htm|njk)$/i.test(ctx.path)) {
+      nunjucks.render(file);
+      return;
+   } */
 
    await next();
 });

@@ -1,8 +1,9 @@
 const nunjucks = require("nunjucks");
 
 var env = nunjucks.configure("", {
-   autoescape: true,
+   throwOnUndefined: false,
    trimBlocks: true,
+   lstripBlocks: true,
    noCache: false,
    tags: {
       blockStart: "{%",

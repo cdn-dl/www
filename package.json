@@ -9,6 +9,7 @@
     "test": "mocha 'tests/**/*.ts' ",
     "build": "webpack --mode=production --node-env=production",
     "build:ivideos": "webpack --config=./webpack/webpack.config.ivideos.js",
+    "build:iee": "webpack --config=./webpack/webpack.config.iee.js",
     "build:dev": "webpack --mode=none --node-env=none",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",

@@ -7,7 +7,7 @@ const config = require("./webpack.config.common");
 const isProduction = process.env.NODE_ENV != "development";
 const path = require("path");
 const fs = require("fs");
-const moduleName = "www-ivideos-one";
+const moduleName = "www-iee-one";
 const baseDir = path.resolve(`./src/${moduleName}`);
 const outDir = path.resolve(`./publish/${moduleName}`);
 const Locales = require(`${baseDir}/__locales`);

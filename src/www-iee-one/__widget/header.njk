@@ -1,0 +1,77 @@
+<!-- Start Preloader Area -->
+<div class="preloader">
+    <div class="loader">
+        <div class="shadow"></div>
+        <div class="box"></div>
+    </div>
+</div>
+<!-- End Preloader Area -->
+<!-- Start Navbar Area -->
+<div class="navbar-area">
+    <div class="techvio-responsive-nav">
+        <div class="container">
+            <div class="techvio-responsive-menu">
+                <div class="logo white-logo">
+                    <a href="./">
+                        <h1>IVIDEOS</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="techvio-nav">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="./">
+                    <h1>IVIDEOS</h1>
+                </a>
+
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+						<ul class="navbar-nav">
+							{#<li class="nav-item"> 
+								<a href="index-2.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"> 
+										<a href="index-2.html" class="nav-link">Home 1</a>
+									</li>
+									<li class="nav-item"> 
+										<a href="index-3.html" class="nav-link">Home 2</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="nav-item"> <a href="#" class="nav-link">
+                                        Blog 
+                                        <i class="fas fa-chevron-down"></i>
+                                    </a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"> <a href="blog-1.html" class="nav-link">
+                                                Blog Grid
+                                            </a>
+									</li>
+									<li class="nav-item"> <a href="blog-2.html" class="nav-link">
+                                                Blog Right Sidebar
+                                            </a>
+									</li>
+									<li class="nav-item"> <a href="single-blog.html" class="nav-link">
+                                                Blog Details
+                                            </a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item"> <a href="contact.html" class="nav-link">
+                                        Contact
+                                    </a>
+							</li->#}
+						</ul>
+						<div class="other-option">
+                            {% for lang in languages %}
+                                <a class="color-white" href="../{$ lang $}/">{$ lang $}</a>
+                            {% endfor %}
+						</div>
+					</div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- End Navbar Area -->

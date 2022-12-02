@@ -1,6 +1,7 @@
 {% extends "../__widget/default.njk" %}
+{% set title = "Technology Considerations for Office Relocations" %}
 {% block title %}
-    播放器
+    {$ title $}
 {% endblock %}
 {% block head %}
 {% endblock %}
@@ -11,7 +12,7 @@
 			<div class="d-table-cell">
 				<div class="container">
 					<div class="page-title-content">
-						<h2>Privacy Policy</h2>
+						<h2> {$ title $} </h2>
 					</div>
 				</div>
 			</div>
@@ -34,7 +35,7 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
 						</div>
 						
-						<div class="post-navigation">
+						<!--div class="post-navigation">
 							<div class="navigation-links">
 								<div class="nav-previous">
 									<a href="#"> <i class="fa fa-arrow-left"></i> Prev Post</a>
@@ -45,48 +46,12 @@
                                         </a>
 								</div>
 							</div>
-						</div>
+						</div-->
 		
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-12">
-					<aside class="widget-area" id="secondary">
-
-						<section class="widget widget_techvio_posts_thumb">
-							<h3 class="widget-title">Popular Posts</h3>
-							<article class="item">
-								<a href="#" class="thumb"> <span class="fullimage cover bg1" role="img"></span>
-								</a>
-								<div class="info">
-									<span>June 10, 2021</span>
-									<h4 class="title usmall">
-                                            <a href="#">5 Technology Considerations for Office Relocations</a>
-                                        </h4>
-								</div>
-							</article>
-							<article class="item">
-								<a href="#" class="thumb"> <span class="fullimage cover bg2" role="img"></span>
-								</a>
-								<div class="info">
-									<span>June 15, 2021</span>
-									<h4 class="title usmall">
-                                            <a href="#">Everything you need to know about geo-blocking</a>
-                                        </h4>
-								</div>
-							</article>
-							<article class="item">
-								<a href="#" class="thumb"> <span class="fullimage cover bg3" role="img"></span>
-								</a>
-								<div class="info">
-									<span>June 25, 2021</span>
-									<h4 class="title usmall">
-                                            <a href="#">Machine Learning Applications for Every Industry</a>
-                                        </h4>
-								</div>
-							</article>
-						</section>
-			  
-					</aside>
+					{% include "./widget.rec.njk" %}
 				</div>
 			</div>
 		</div>

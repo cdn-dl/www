@@ -11,15 +11,16 @@
         <meta
         name="description" content="{$ $t.s404.desc $}"/> <!-- Favicon -->
         <link
-        rel="icon" type="image/png" href="../assets/logos/icon.png"/>
+        rel="icon" type="image/png" href="{$ $static('../assets/logos/icon.png', path) $}"/>
         <!-- jQuery Min JS -->
-        <script src="../assets/js/jquery.min.js"></script>
+        <script src="{$ $static('../assets/js/jquery.min.js', path) $}"></script>
         <!-- Bootstrap Min JS -->
-        <script src="../assets/js/bootstrap.js"></script>
+        <script src="{$ $static('../assets/js/bootstrap.js', path) $}"></script>
         {# plugin name="share" %} {% endplugin #}
         <!-- Favicon -->
-        <!-- Bootstrap Min CSS --> <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
-        <link rel="stylesheet" href="../assets/css/plyr.css"/>
+        <!-- Bootstrap Min CSS --> 
+        <link rel="stylesheet" href="{$ $static('../assets/css/bootstrap.css', path) $}"/>
+        <link rel="stylesheet" href="{$ $static('../assets/css/plyr.css', path) $}"/>
         <style>
             .mds {
                 padding: 0;
@@ -29,6 +30,11 @@
             .mds li {
                 height: 150px;
                 max-height: 150px;
+                overflow: hidden;
+                padding: 0px 2px 5px 2px;
+            }
+            .mds li img {
+                width: 100%;
             }
             .video {
                 min-height: 600px;
@@ -40,7 +46,7 @@
     </head>
     <body>
         <div class="row">
-            <div class="col-lg-10 col-md-12 col-sm-12" style="padding-right: 0;">
+            <div class="col-lg-10 col-md-10 col-sm-12" style="padding-right: 0;">
                 <video
                     id="player"
                     class="video"
@@ -49,17 +55,21 @@
                     playsinline="playsinline"
                     poster="https://bitdash-a.akamaihd.net/content/sintel/poster.png"></video>
             </div>
-            <div class="col-lg-2 hidden-md hidden-sm hedden-sx" style="padding-left: 0;">
+            <div class="col-lg-2 col-md-2 hidden-sm hedden-sx" style="padding-left: 0;">
                 <ul class="mds">
-                    <li>a</li>
+                    <li>
+                        <a href="iplayer.html?id=https%3A%2F%2Fv.gsuus.com%2Fplay%2FoeE07Pmd%2Findex.m3u8" target="_self">
+                        <img src="{$ $static('../assets/img/m-txch.jpg', path) $}"/>
+                        </a>
+                    </li>
                     <li>b</li>
                     <li>c</li>
                     <li>d</li>
                 </ul>
             </div>
         </div>
-        <script src="../assets/js/plyr.js"></script>
-        <script src="../assets/js/hls.js"></script>
+        <script src="{$ $static('../assets/js/plyr.js', path) $}"></script>
+        <script src="{$ $static('../assets/js/hls.js', path) $}"></script>
         <script>
             function getQuery() {
                 let search = location

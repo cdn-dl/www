@@ -45,6 +45,7 @@
       }
    },
    "player": {
+      "title": "m3u8 hls player",
       "placeholder": "input url"
    }
 }

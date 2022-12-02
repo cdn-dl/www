@@ -1,6 +1,6 @@
 const FileManagerPlugin = require("filemanager-webpack-plugin"); //压缩zip
 const NunjucksWebpackPlugin = require("nunjucks-webpack-plugin");
-const nunjuckEnv = require("./nunjucks");
+const njkenv = require("./njkenv");
 const CopyPlugin = require("copy-webpack-plugin");
 const config = require("./webpack.config.common");
 //const isProduction = process.env.NODE_ENV == "production";
@@ -16,7 +16,7 @@ config.output.path = outDir;
 
 console.info("out", outDir, path.join(outDir, "index.x.html"));
 console.info("env", baseDir, isProduction);
-
+const nunjuckEnv = njkenv({baseDir: baseDir});
 const templates = [];
 for (let lang of languages) {
    let map = Locales[lang];
@@ -33,6 +33,7 @@ for (let lang of languages) {
          context: {
             $t: map,
             languages: languages,
+            path: name
          },
       });
    });

@@ -9,18 +9,18 @@
         <meta name="keywords" content="{$ $t.s404.keywords $}"/>
         <meta name="description" content="{$ $t.s404.desc $}"/> 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="../assets/logos/icon.png"/> 
+        <link rel="icon" type="image/png" href="{$ $static('../assets/logos/icon.png', path) $}"/> 
         <!-- jQuery Min JS -->
-        <script src="../assets/js/jquery.min.js"></script>
+        <script src="{$ $static('../assets/js/jquery.min.js', path) $}"></script>
         <!-- Bootstrap Min JS -->
-        <script src="../assets/js/bootstrap.js"></script>
+        <script src="{$ $static('../assets/js/bootstrap.js', path) $}"></script>
         {# plugin name="share" %} {% endplugin #} 
 
          <!-- Favicon -->
         <!-- Bootstrap Min CSS -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+        <link rel="stylesheet" href="{$ $static('../assets/css/bootstrap.css', path) $}" />
         <!-- Style CSS -->
-        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="{$ $static('../assets/css/style.css', path) $}" />
 
         {% block head %}{% endblock %}
         <script>

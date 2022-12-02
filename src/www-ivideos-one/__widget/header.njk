@@ -66,7 +66,7 @@
 						</ul>
 						<div class="other-option">
                             {% for lang in languages %}
-                                <a class="color-white" href="../{$ lang $}/">{$ lang $}</a>
+                                <a class="color-white" href="{$ $static('../'+lang, path) $}/">{$ lang $}</a>
                             {% endfor %}
 						</div>
 					</div>

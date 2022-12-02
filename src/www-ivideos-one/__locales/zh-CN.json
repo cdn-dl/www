@@ -45,6 +45,7 @@
        }
     },
     "player": {
+      "title": "m3u8 hls 播放器",
       "placeholder": "输入url"
    }
  }

@@ -12,8 +12,8 @@
         <div class="container">
             <div class="techvio-responsive-menu">
                 <div class="logo white-logo">
-                    <a href="./">
-                        <h1>IVIDEOS</h1>
+                    <a href="{$ $static('./', path) $}">
+                        <h1> {$ $t.header.title $} </h1>
                     </a>
                 </div>
             </div>
@@ -22,8 +22,8 @@
     <div class="techvio-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="./">
-                    <h1>IVIDEOS</h1>
+                <a class="navbar-brand" href="{$ $static('./', path) $}">
+                    <h1>{$ $t.header.title $} </h1>
                 </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -58,15 +58,14 @@
                                             </a>
 									</li>
 								</ul>
-							</li>
-							<li class="nav-item"> <a href="contact.html" class="nav-link">
-                                        Contact
-                                    </a>
-							</li->#}
+							</li>#}
+							
+                        
 						</ul>
 						<div class="other-option">
+                            
                             {% for lang in languages %}
-                                <a class="color-white" href="../{$ lang $}/">{$ lang $}</a>
+                                <a class="color-white" href="{$ $static('../'+lang, path) $}/">{$ lang $}</a>
                             {% endfor %}
 						</div>
 					</div>
@@ -74,4 +73,14 @@
         </div>
     </div>
 </div>
+<script>
+    jQuery(($) => {
+        $(".install").on("click", () => {
+            install();
+        });
+        $(".download").on("click", () => {
+            download();
+        });
+    });
+</script>
 <!-- End Navbar Area -->

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% set modalId="modal-"+util.rid() %}
         <meta charset="utf-8">
         <meta http-equiv='content-language' content='{$ $t.language $}'>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -9,38 +10,29 @@
         <meta name="keywords" content="{$ $t.s404.keywords $}"/>
         <meta name="description" content="{$ $t.s404.desc $}"/> 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="../assets/logos/icon.png"/> 
-        <!-- jQuery Min JS -->
-        <script src="../assets/js/jquery.min.js"></script>
-
-        {# plugin name="share" %} {% endplugin #} 
-
+        <link rel="icon" type="image/png" href="{$ $static('../assets/logos/icon.png', path) $}"/> 
+    
          <!-- Favicon -->
         <!-- Bootstrap Min CSS -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-        <!-- Animate Min CSS -->
-        <link rel="stylesheet" href="../assets/css/animate.min.css" />
-        <!-- FlatIcon CSS -->
-        <link rel="stylesheet" href="../assets/css/flaticon.css" />
-        <!-- Font Awesome Min CSS -->
-        <link rel="stylesheet" href="../assets/css/fontawesome.min.css" />
-        <!-- Mran Menu CSS -->
-        <link rel="stylesheet" href="../assets/css/meanmenu.css" />
-        <!-- Magnific Popup Min CSS -->
-        <link rel="stylesheet" href="../assets/css/magnific-popup.min.css" />
-        <!-- Nice Select Min CSS -->
-        <link rel="stylesheet" href="../assets/css/nice-select.min.css" />
-        <!-- Swiper Min CSS -->
-        <link rel="stylesheet" href="../assets/css/swiper.min.css" />
-        <!-- Owl Carousel Min CSS -->
-        <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="{$ $static('../assets/css/bootstrap.css', path) $}" />
         <!-- Style CSS -->
-        <link rel="stylesheet" href="../assets/css/style.css" />
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="../assets/css/responsive.css" />
+        <link rel="stylesheet" href="{$ $static('../assets/css/style.css', path) $}" />
+
+        <!-- jQuery Min JS -->
+        <script src="{$ $static('../assets/js/jquery.min.js', path) $}"></script>
+        <!-- Bootstrap Min JS -->
+        <script src="{$ $static('../assets/js/bootstrap.js', path) $}"></script>
+        <!-- common JS -->
+        <script src="{$ $static('../assets/js/common.js', path) $}"></script>
+        {# plugin name="share" %} {% endplugin #} 
+
 
         {% block head %}{% endblock %}
-
+        <script>
+            jQuery(($)=>{
+                 $(".preloader").addClass("preloader-deactivate");
+            })
+        </script>
     </head>
     <body>
         {% include "./header.njk" %}
@@ -51,5 +43,8 @@
         </div>
 
         {% include "./footer.njk" %}
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2208954604036695"
+     crossorigin="anonymous"></script>
     </body>
 </html>

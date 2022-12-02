@@ -1,13 +1,14 @@
 {
     "language": "zh-CN",
     "header": {
-       "title": "ivideos - 视频加速器",
+       "title": "IVIDEOS - 视频加速器",
        "keywords": "ivideos,xvideos,video,accelerator,webrtc",
-       "desc": "ivideos - 视频加速器, Video accelerator, use webrtc to accelerate video playback, improve user experience, the more people use it, the better the acceleration effect"
+       "desc": "IVIDEOS - 视频加速器, Video accelerator, use webrtc to accelerate video playback, improve user experience, the more people use it, the better the acceleration effect"
     },
     "btn": {
        "download": "下载",
-       "install": "安装"
+       "install": "安装",
+       "play": "播放"
     },
     "s404": {
        "main": "页面找不到",
@@ -42,6 +43,10 @@
        "s3": {
            "title": "网站"
        }
-    }
+    },
+    "player": {
+      "title": "m3u8 hls 播放器",
+      "placeholder": "输入url"
+   }
  }
  

@@ -26,7 +26,12 @@ module.exports = (options) => {
       return ps + file; //.replace(url, "");
    });
    env.addGlobal("util", {
-      time: Date.now
+      time: Date.now,
+      rid: () => {
+         let list = "abcdefghijklmnopqrstuvwxyz".split("");
+         let s = list[Math.floor(Math.random() * list.length)];
+         return s + Math.random().toString(36).slice(2, 9);
+      },
    });
    return env;
 };

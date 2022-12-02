@@ -1,1482 +1,215 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
     <head>
-        <title>T.LY - URL Shortener, Custom Domain &amp; Short Link Management</title>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width,initial-scale=1.0" name="viewport">
-        <meta name="csrf-token" content="WivH4UXAIcJrvZ9JqZ9bd72rM9HHbniuBkiGzUBn">
-        <meta name="google-site-verification" content="E-8wTC_iQ_XL7MVGQrV0vMLepQK7csuDVGhPZ2jZyvc">
-        <link rel="icon" type="image/png" siz`es="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <meta http-equiv='content-language' content='en'>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <title>IEE - Short link generator  </title>
+        <meta property="og:title" content="IEE - Short link generator"/>
+        <meta name="keywords" content=""/>
+        <meta name="description" content="The page you are looking for might have been removed had its name changed or is temporarily unavailable."/> 
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="../assets/logos/icon.png"/> 
+    
+         <!-- Favicon -->
+        <!-- Bootstrap Min CSS -->
+        <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css" />
 
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-            media="all"
-            onload="this.media='all'"
-            rel="stylesheet"
-            type="text/css">
-        <link rel="canonical" href="https://t.ly">
-        <meta
-            name="description"
-            content="Free URL shortener to create short URLs to track, brand, and share short
-                        links in one simple click">
-        <meta
-            name="keywords"
-            content="short, free, link retargeting, pixel, shortest, URL, tiny, secure, safe, t.ly, short, bit.ly, goo.gl, t.co,
-                link, long url shortened, custom domain">
-        <meta
-            name="twitter:description"
-            content="Free URL shortener to create short URLs to track, brand, and share short
-                        links in one simple click">
-        <meta name="twitter:site" content="@TLYShortener">
-        <meta name="twitter:image" content="https://t.ly/img/promo/tly-promo.png">
-        <meta
-            name="twitter:image:alt"
-            content="Free URL shortener to create short URLs to track, brand, and share short
-                        links in one simple click">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:creator" content="@TLYShortener">
-        <meta
-            name="twitter:title"
-            content="T.LY - URL Shortener, Custom Domain &amp; Short Link Management URL Shortener, Custom Domain &amp; Short Link
-                Management">
-        <meta property="og:url" content="https://t.ly">
-        <meta
-            property="og:title"
-            content="T.LY - URL Shortener, Custom Domain &amp; Short Link Management URL Shortener, Custom Domain &amp; Short Link
-                Management">
-        <meta
-            property="og:description"
-            content="Free URL shortener to create short URLs to track, brand, and share short
-                        links in one simple click">
-        <meta property="og:image" content="https://t.ly/img/promo/tly-promo.png">
-       
-        <script type="text/javascript">
-            var _baseUrl = 'https://t.ly/';
-            var _apiUrl = 'https://t.ly/api/';
-            var _defaultShortDomain = 'https://t.ly/';
-            var _googleRecaptchaSiteKey = '6LcKDjUfAAAAAKDNtGiKmobr84PSjnUGfCJhgtv7';
-        </script>
-        <link href="../assets/css/app.css?id=092ab7e428d41274c893" rel="stylesheet">
-        <script>
-            window.Spark = {
-                "translations": {
-                    ":trialDays Day Trial": ":trialDays Day Trial",
-                    "A fresh verification link has been sent to your email address.": "A fresh verification link has been sent to your email address.",
-                    "API": "API",
-                    "API Token": "API Token",
-                    "API Tokens": "API Tokens",
-                    "Action Button Text": "Action Button Text",
-                    "Your application's dashboard.": "Your application's Dashboard",
-                    "Dashboard": "Dashboard",
-                    "Action Button URL": "Action Button URL",
-                    "Add Discount": "Add Discount",
-                    "Address": "Address",
-                    "Address Line 2": "Address Line 2",
-                    "After logging in via your emergency token, two-factor authentication will be disabled for your account. If you would like to maintain two-factor authentication security, you should re-enable it after logging in.": "After logging in via your emergency token, two-factor authentication will be disabled for your account. If you would lik" +
-                            "e to maintain two-factor authentication security, you should re-enable it after logging in.",
-                    "All subscription plan prices are excluding applicable VAT.": "All subscription plan prices are excluding applicable VAT.",
-                    "All subscription plan prices include applicable VAT.": "All subscription plan prices include applicable VAT.",
-                    "Amount": "Amount",
-                    "Announcement": "Announcement",
-                    "Announcements": "Announcements",
-                    "Announcements you create here will be sent to the \"Product Announcements\" section of the notifications modal window, informing your users about new features and improvements to your application.": "Announcements you create here will be sent to the \"Product Announcements\" section of the notifications modal window, i" +
-                            "nforming your users about new features and improvements to your application.",
-                    "Apply Discount": "Apply Discount",
-                    "Applying": "Applying",
-                    "Are you sure you want to cancel your subscription?": "Are you sure you want to cancel your subscription?",
-                    "Are you sure you want to delete this announcement?": "Are you sure you want to delete this announcement?",
-                    "Are you sure you want to switch to the :planName plan?": "Are you sure you want to switch to the :planName plan?",
-                    "Are you sure you want to delete this token? If deleted, API requests that attempt to authenticate using this token will no longer be accepted.": "Are you sure you want to delete this token? If deleted, API requests that attempt to authenticate using this token will " +
-                            "no longer be accepted.",
-                    "Assign All Abilities": "Assign All Abilities",
-                    "Authentication Token": "Authentication Token",
-                    "Back To My Account": "Back To My Account",
-                    "Before proceeding, please check your email for a verification link.": "Before proceeding, please check your email for a verification link.",
-                    "Billing": "Billing",
-                    "Billing Information": "Billing Information",
-                    "Cancel": "Cancel",
-                    "Cancel Subscription": "Cancel Subscription",
-                    "Cancelling": "Cancelling",
-                    "Card": "Card",
-                    "Cardholder's Name": "Cardholder's Name",
-                    "City": "City",
-                    "Click here to reset your password:": "Click here to reset your password:",
-                    "Close": "Close",
-                    "Confirm Password": "Confirm Password",
-                    "Contact Information": "Contact Information",
-                    "Copy To Clipboard": "Copy To Clipboard",
-                    "Country": "Country",
-                    "Country Code": "Country Code",
-                    "Coupon": "Coupon",
-                    "Coupon Code": "Coupon Code",
-                    "Coupon accepted! The discount will be applied to your next invoice.": "Coupon accepted! The discount will be applied to your next invoice.",
-                    "Create": "Create",
-                    "Create API Token": "Create API Token",
-                    "Create Announcement": "Create Announcement",
-                    "Created": "Created",
-                    "Current Password": "Current Password",
-                    "click here to request another": "click here to request another",
-                    "Daily Volume": "Daily Volume",
-                    "Date": "Date",
-                    "Day Trial": "Day Trial",
-                    "Delete Announcement": "Delete Announcement",
-                    "Delete Token": "Delete Token",
-                    "Deleting": "Deleting",
-                    "Developer": "Developer",
-                    "Disable Two-Factor Authentication": "Disable Two-Factor Authentication",
-                    "Disabling": "Disabling",
-                    "Download PDF": "Download PDF",
-                    "Duration": "Duration",
-                    "E-Mail": "E-Mail",
-                    "E-Mail Address": "E-Mail Address",
-                    "Edit Token": "Edit Token",
-                    "Email Address": "Email Address",
-                    "Email Us": "Email Us",
-                    "Emergency Token": "Emergency Token",
-                    "Enable": "Enable",
-                    "Enabling": "Enabling",
-                    "Expiration": "Expiration",
-                    "Extra Billing Information": "Extra Billing Information",
-                    "Features": "Features",
-                    "Forever": "Forever",
-                    "Forgot Your Password?": "Forgot Your Password?",
-                    "Free": "Free",
-                    "Go To Login": "Go To Login",
-                    "Got It!": "Got It!",
-                    "Hello!": "Hello!",
-                    "Here is your new API token.": "Here is your new API token.",
-                    "Hi :name": "Hi :name",
-                    "Hi!": "Hi!",
-                    "I Accept :linkOpen The Terms Of Service :linkClose": "I Accept :linkOpen The Terms Of Service :linkClose",
-                    "If you do not already have an account, you may click the following link to get started:": "If you do not already have an account, you may click the following link to get started:",
-                    "If you lose your two-factor authentication device, you may use this emergency reset token to disable two-factor authentication on your account.": "If you lose your two-factor authentication device, you may use this emergency reset token to disable two-factor authenti" +
-                            "cation on your account.",
-                    "Impersonate": "Impersonate",
-                    "Impersonation": "Impersonation",
-                    "In order to use two-factor authentication, you must install the :authyLink application on your smartphone. Authy is available for iOS and Android.": "In order to use two-factor authentication, you must install the :authyLink application on your smartphone. Authy is avai" +
-                            "lable for iOS and Android.",
-                    "Invoices": "Invoices",
-                    "Joined": "Joined",
-                    "Kiosk": "Kiosk",
-                    "Last Used": "Last Used",
-                    "Loading": "Loading",
-                    "Loading Notifications": "Loading Notifications",
-                    "Login": "Login",
-                    "Login Via Emergency Token": "Login Via Emergency Token",
-                    "Logout": "Logout",
-                    "Lost Your Device?": "Lost Your Device?",
-                    "Mailed Invitations": "Mailed Invitations",
-                    "Membership": "Membership",
-                    "Message": "Message",
-                    "Metrics": "Metrics",
-                    "Monthly": "Monthly",
-                    "monthly": "monthly",
-                    "mo": "mo",
-                    "Yearly": "Yearly",
-                    "yearly": "yearly",
-                    "yr": "yr",
-                    "Monthly Recurring Revenue": "Monthly Recurring Revenue",
-                    "Search By Name Or E-Mail Address...": "Search By Name Or E-Mail Address...",
-                    "Months": "Months",
-                    "Multiple Months": "Multiple Months",
-                    "N\/A": "N\/A",
-                    "Name": "Name",
-                    "Never": "Never",
-                    "New Invitation!": "New Invitation!",
-                    "New Users": "New Users",
-                    "State": "State",
-                    "Postal Code": "Postal Code",
-                    "No customer support request recipient is defined.": "No customer support request recipient is defined.",
-                    "No users matched the given criteria.": "No users matched the given criteria.",
-                    "No, Go Back": "No, Go Back",
-                    "None": "None",
-                    "Notifications": "Notifications",
-                    "On Generic Trial": "On Generic Trial",
-                    "Once": "Once",
-                    "Owner": "Owner",
-                    "Password": "Password",
-                    "Payment Method": "Payment Method",
-                    "Pending Invitations": "Pending Invitations",
-                    "Percentage": "Percentage",
-                    "Phone Number": "Phone Number",
-                    "Please select at least one ability.": "Please select at least one ability.",
-                    "Profile": "Profile",
-                    "Profile Photo": "Profile Photo",
-                    "Recent Announcements": "Recent Announcements",
-                    "Recurring Revenue": "Recurring Revenue",
-                    "Redeem": "Redeem",
-                    "Redeem Coupon": "Redeem Coupon",
-                    "Redeeming": "Redeeming",
-                    "Register": "Register",
-                    "Registering": "Registering",
-                    "Remember Me": "Remember Me",
-                    "Remove All Abilities": "Remove All Abilities",
-                    "Reset Password": "Reset Password",
-                    "Reset Password Notification": "Reset Password Notification",
-                    "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account.",
-                    "If you did not request a password reset, no further action is required.": "If you did not request a password reset, no further action is required.",
-                    "Resume": "Resume",
-                    "Resume Subscription": "Resume Subscription",
-                    "Resuming": "Resuming",
-                    "Role": "Role",
-                    "Search Results": "Search Results",
-                    "Searching": "Searching",
-                    "Security": "Security",
-                    "Security Code": "Security Code",
-                    "See you soon!": "See you soon!",
-                    "Select All": "Select All",
-                    "Send": "Send",
-                    "Send Invitation": "Send Invitation",
-                    "Send Password Reset Link": "Send Password Reset Link",
-                    "Sending": "Sending",
-                    "Session Expired": "Session Expired",
-                    "Settings": "Settings",
-                    "Since you already have an account, you may accept the invitation from your account settings screen.": "Since you already have an account, you may accept the invitation from your account settings screen.",
-                    "Something went wrong!": "Something went wrong!",
-                    "Something went wrong. Please try again or contact customer support.": "Something went wrong. Please try again or contact customer support.",
-                    "State & ZIP \/ Postal Code": "State & ZIP \/ Postal Code",
-                    "Subject": "Subject",
-                    "Subscribe": "Subscribe",
-                    "Subscribers": "Subscribers",
-                    "Subscribing": "Subscribing",
-                    "Subscription": "Subscription",
-                    "Support": "Support",
-                    "Support Request: ": "Support Request: ",
-                    "Switch": "Switch",
-                    "Tax": "Tax",
-                    "Terms Of Service": "Terms Of Service",
-                    "Thanks for your continued support. We've attached a copy of your invoice for your records. Please let us know if you have any questions or concerns!": "Thanks for your continued support. We've attached a copy of your invoice for your records. Please let us know if you hav" +
-                            "e any questions or concerns!",
-                    "Thanks!": "Thanks!",
-                    "The benefits of your subscription will continue until your current billing period ends on :date. You may resume your subscription at no extra cost until the end of the billing period.": "The benefits of your subscription will continue until your current billing period ends on :date. You may resume your sub" +
-                            "scription at no extra cost until the end of the billing period.",
-                    "The coupon :value discount will be applied to your subscription!": "The coupon :value discount will be applied to your subscription!",
-                    "The emergency token was invalid.": "The emergency token was invalid.",
-                    "The given password does not match our records.": "The given password does not match our records.",
-                    "The invitation has been sent!": "The invitation has been sent!",
-                    "This country does not match the origin country of your card.": "This country does not match the origin country of your card.",
-                    "This coupon code is invalid.": "This coupon code is invalid.",
-                    "This information will appear on all of your receipts, and is a great place to add your full business name, VAT number, or address of record. Do not include any confidential or financial information such as credit card numbers.": "This information will appear on all of your receipts, and is a great place to add your full business name, VAT number, o" +
-                            "r address of record. Do not include any confidential or financial information such as credit card numbers.",
-                    "This invitation code is invalid.": "This invitation code is invalid.",
-                    "This is the only time the token will ever be displayed, so be sure not to lose it!": "This is the only time the token will ever be displayed, so be sure not to lose it!",
-                    "This is the only time this token will be displayed, so be sure not to lose it!": "This is the only time this token will be displayed, so be sure not to lose it!",
-                    "This plan has been discontinued, but you may continue your subscription to this plan as long as you wish. If you cancel your subscription and later want to begin a new subscription, you will need to choose from one of the active plans listed below.": "This plan has been discontinued, but you may continue your subscription to this plan as long as you wish. If you cancel " +
-                            "your subscription and later want to begin a new subscription, you will need to choose from one of the active plans liste" +
-                            "d below.",
-                    "This team has too many team members for the selected plan.": "This team has too many team members for the selected plan.",
-                    "This team is not eligible for this plan.": "This team is not eligible for this plan.",
-                    "This user has a discount of :discountAmount for a single invoice.": "This user has a discount of :discountAmount for a single invoice.",
-                    "This user has a discount of :discountAmount for all invoices during the next :months months.": "This user has a discount of :discountAmount for all invoices during the next :months months.",
-                    "This user has a discount of :discountAmount for all invoices during the next month.": "This user has a discount of :discountAmount for all invoices during the next month.",
-                    "This user has a discount of :discountAmount forever.": "This user has a discount of :discountAmount forever.",
-                    "Toggle Navigation": "Toggle Navigation",
-                    "Token Can": "Token Can",
-                    "Token Name": "Token Name",
-                    "Total Price Including Tax": "Total Price Including Tax",
-                    "Total Revenue": "Total Revenue",
-                    "Total Volume": "Total Volume",
-                    "Trial": "Trial",
-                    "Trialing": "Trialing",
-                    "Two-Factor Authentication": "Two-Factor Authentication",
-                    "Two-Factor Authentication Reset Code": "Two-Factor Authentication Reset Code",
-                    "Type": "Type",
-                    "Update": "Update",
-                    "Update Announcement": "Update Announcement",
-                    "Update Password": "Update Password",
-                    "Update Payment Method": "Update Payment Method",
-                    "Update Photo": "Update Photo",
-                    "Update Subscription": "Update Subscription",
-                    "Update VAT ID": "Update VAT ID",
-                    "Updating": "Updating",
-                    "Users": "Users",
-                    "Users Currently Trialing": "Users Currently Trialing",
-                    "VAT ID": "VAT ID",
-                    "Verify": "Verify",
-                    "Verify Your Email Address": "Verify Your Email Address",
-                    "View Invitations": "View Invitations",
-                    "We don't have anything to show you right now! But when we do, we'll be sure to let you know. Talk to you soon!": "We don't have anything to show you right now! But when we do, we'll be sure to let you know. Talk to you soon!",
-                    "We had trouble updating your card. It's possible your card provider is preventing us from charging the card. Please contact your card provider or customer support.": "We had trouble updating your card. It's possible your card provider is preventing us from charging the card. Please cont" +
-                            "act your card provider or customer support.",
-                    "We had trouble updating your payment method. It's possible your payment provider is preventing us from charging the payment method. Please contact your payment provider or customer support.": "We had trouble updating your payment method. It's possible your payment provider is preventing us from charging the paym" +
-                            "ent method. Please contact your payment provider or customer support.",
-                    "We had trouble validating your card. It's possible your card provider is preventing us from charging the card. Please contact your card provider or customer support.": "We had trouble validating your card. It's possible your card provider is preventing us from charging the card. Please co" +
-                            "ntact your card provider or customer support.",
-                    "We have received your message and will respond soon!": "We have received your message and will respond soon!",
-                    "We were not able to enable two-factor authentication for this phone number.": "We were not able to enable two-factor authentication for this phone number.",
-                    "We were unable to update your subscription. Please contact customer support.": "We were unable to update your subscription. Please contact customer support.",
-                    "Whoops!": "Whoops!",
-                    "Whoops! This coupon code is invalid.": "Whoops! This coupon code is invalid.",
-                    "Whoops! This invitation code is invalid.": "Whoops! This invitation code is invalid.",
-                    "Yearly Recurring Revenue": "Yearly Recurring Revenue",
-                    "Yes, Cancel": "Yes, Cancel",
-                    "Yes, Delete": "Yes, Delete",
-                    "Yes, I'm Sure": "Yes, I'm Sure",
-                    "Yes, Leave": "Yes, Leave",
-                    "Yes, Remove": "Yes, Remove",
-                    "You": "You",
-                    "You are currently subscribed to the :planName plan.": "You are currently subscribed to the :planName plan.",
-                    "You are currently within your free trial period. Your trial will expire on :date.": "You are currently within your free trial period. Your trial will expire on :date.",
-                    "You are not eligible for this plan.": "You are not eligible for this plan.",
-                    "You currently have :count invitation(s) remaining.": "You currently have :count invitation(s) remaining.",
-                    "You currently receive a discount of :discountAmount for a single invoice.": "You currently receive a discount of :discountAmount for a single invoice.",
-                    "You currently receive a discount of :discountAmount for all invoices during the next :months billing cycles.": "You currently receive a discount of :discountAmount for all invoices during the next :months billing cycles.",
-                    "You currently receive a discount of :discountAmount for all invoices during the next :months months.": "You currently receive a discount of :discountAmount for all invoices during the next :months months.",
-                    "You currently receive a discount of :discountAmount for all invoices during the next billing cycle.": "You currently receive a discount of :discountAmount for all invoices during the next billing cycle.",
-                    "You currently receive a discount of :discountAmount for all invoices during the next month.": "You currently receive a discount of :discountAmount for all invoices during the next month.",
-                    "You currently receive a discount of :discountAmount forever.": "You currently receive a discount of :discountAmount forever.",
-                    "You have cancelled your subscription to the :planName plan.": "You have cancelled your subscription to the :planName plan.",
-                    "You may revoke the token at any time from your API settings.": "You may revoke the token at any time from your API settings.",
-                    "Your Email Address": "Your Email Address",
-                    "Your Settings": "Your Settings",
-                    "Your VAT ID has been updated!": "Your VAT ID has been updated!",
-                    "Your billing information has been updated!": "Your billing information has been updated!",
-                    "Your card has been updated.": "Your card has been updated.",
-                    "Your contact information has been updated!": "Your contact information has been updated!",
-                    "Your password has been updated!": "Your password has been updated!",
-                    "Your payment method has been updated.": "Your payment method has been updated.",
-                    "Your session has expired. Please login again to continue.": "Your session has expired. Please login again to continue.",
-                    "Your trial period will expire on ": "Your trial period will expire on ",
-                    "ZIP \/ Postal Code": "ZIP \/ Postal Code",
-                    "Your current plan doesn't allow you to invite more members, please upgrade your subscription.": "Your current plan doesn't allow you to invite more members, please upgrade your subscription.",
-                    "please upgrade your subscription": "please upgrade your subscription",
-                    "second address line": "second address line",
-                    "Alabama": "Alabama",
-                    "Alaska": "Alaska",
-                    "Arizona": "Arizona",
-                    "Arkansas": "Arkansas",
-                    "California": "California",
-                    "Colorado": "Colorado",
-                    "Connecticut": "Connecticut",
-                    "Delaware": "Delaware",
-                    "District of Columbia": "District of Columbia",
-                    "Federated States Of Micronesia": "Federated States Of Micronesia",
-                    "Florida": "Florida",
-                    "Hawaii": "Hawaii",
-                    "Idaho": "Idaho",
-                    "Illinois": "Illinois",
-                    "Indiana": "Indiana",
-                    "Iowa": "Iowa",
-                    "Kansas": "Kansas",
-                    "Kentucky": "Kentucky",
-                    "Louisiana": "Louisiana",
-                    "Maine": "Maine",
-                    "Maryland": "Maryland",
-                    "Massachusetts": "Massachusetts",
-                    "Michigan": "Michigan",
-                    "Minnesota": "Minnesota",
-                    "Mississippi": "Mississippi",
-                    "Missouri": "Missouri",
-                    "Montana": "Montana",
-                    "Nebraska": "Nebraska",
-                    "Nevada": "Nevada",
-                    "New Hampshire": "New Hampshire",
-                    "New Jersey": "New Jersey",
-                    "New Mexico": "New Mexico",
-                    "New York": "New York",
-                    "North Carolina": "North Carolina",
-                    "North Dakota": "North Dakota",
-                    "Ohio": "Ohio",
-                    "Oklahoma": "Oklahoma",
-                    "Oregon": "Oregon",
-                    "Pennsylvania": "Pennsylvania",
-                    "Rhode Island": "Rhode Island",
-                    "South Carolina": "South Carolina",
-                    "South Dakota": "South Dakota",
-                    "Tennessee": "Tennessee",
-                    "Texas": "Texas",
-                    "Utah": "Utah",
-                    "Vermont": "Vermont",
-                    "Virgin Islands": "Virgin Islands",
-                    "Virginia": "Virginia",
-                    "Washington": "Washington",
-                    "West Virginia": "West Virginia",
-                    "Wisconsin": "Wisconsin",
-                    "Wyoming": "Wyoming",
-                    "Armed Forces Africa \/ Canada \/ Europe \/ Middle East": "Armed Forces Africa \/ Canada \/ Europe \/ Middle East",
-                    "Armed Forces America (Except Canada)": "Armed Forces America (Except Canada)",
-                    "Armed Forces Pacific": "Armed Forces Pacific",
-                    "Alberta": "Alberta",
-                    "British Columbia": "British Columbia",
-                    "Manitoba": "Manitoba",
-                    "New Brunswick": "New Brunswick",
-                    "Newfoundland and Labrador": "Newfoundland and Labrador",
-                    "Northwest Territories": "Northwest Territories",
-                    "Nova Scotia": "Nova Scotia",
-                    "Nunavut": "Nunavut",
-                    "Ontario": "Ontario",
-                    "Prince Edward Island": "Prince Edward Island",
-                    "Quebec": "Quebec",
-                    "Saskatchewan": "Saskatchewan",
-                    "Yukon": "Yukon",
-                    "Afghanistan": "Afghanistan",
-                    "\u00c5land Islands": "\u00c5land Islands",
-                    "Albania": "Albania",
-                    "Algeria": "Algeria",
-                    "American Samoa": "American Samoa",
-                    "Andorra": "Andorra",
-                    "Angola": "Angola",
-                    "Anguilla": "Anguilla",
-                    "Antarctica": "Antarctica",
-                    "Antigua and Barbuda": "Antigua and Barbuda",
-                    "Argentina": "Argentina",
-                    "Armenia": "Armenia",
-                    "Aruba": "Aruba",
-                    "Australia": "Australia",
-                    "Austria": "Austria",
-                    "Azerbaijan": "Azerbaijan",
-                    "Bahamas": "Bahamas",
-                    "Bahrain": "Bahrain",
-                    "Bangladesh": "Bangladesh",
-                    "Barbados": "Barbados",
-                    "Belarus": "Belarus",
-                    "Belgium": "Belgium",
-                    "Belize": "Belize",
-                    "Benin": "Benin",
-                    "Bermuda": "Bermuda",
-                    "Bhutan": "Bhutan",
-                    "Bolivia, Plurinational State of": "Bolivia, Plurinational State of",
-                    "Bosnia and Herzegovina": "Bosnia and Herzegovina",
-                    "Botswana": "Botswana",
-                    "Bouvet Island": "Bouvet Island",
-                    "Brazil": "Brazil",
-                    "British Indian Ocean Territory": "British Indian Ocean Territory",
-                    "Brunei Darussalam": "Brunei Darussalam",
-                    "Bulgaria": "Bulgaria",
-                    "Burkina Faso": "Burkina Faso",
-                    "Burundi": "Burundi",
-                    "Cambodia": "Cambodia",
-                    "Cameroon": "Cameroon",
-                    "Canada": "Canada",
-                    "Cape Verde": "Cape Verde",
-                    "Cayman Islands": "Cayman Islands",
-                    "Central African Republic": "Central African Republic",
-                    "Chad": "Chad",
-                    "Chile": "Chile",
-                    "China": "China",
-                    "Christmas Island": "Christmas Island",
-                    "Cocos (Keeling) Islands": "Cocos (Keeling) Islands",
-                    "Colombia": "Colombia",
-                    "Comoros": "Comoros",
-                    "Congo": "Congo",
-                    "Congo, the Democratic Republic of the": "Congo, the Democratic Republic of the",
-                    "Cook Islands": "Cook Islands",
-                    "Costa Rica": "Costa Rica",
-                    "C\u00f4te d'Ivoire": "C\u00f4te d'Ivoire",
-                    "Croatia": "Croatia",
-                    "Cuba": "Cuba",
-                    "Cyprus": "Cyprus",
-                    "Czech Republic": "Czech Republic",
-                    "Denmark": "Denmark",
-                    "Djibouti": "Djibouti",
-                    "Dominica": "Dominica",
-                    "Dominican Republic": "Dominican Republic",
-                    "Ecuador": "Ecuador",
-                    "Egypt": "Egypt",
-                    "El Salvador": "El Salvador",
-                    "Equatorial Guinea": "Equatorial Guinea",
-                    "Eritrea": "Eritrea",
-                    "Estonia": "Estonia",
-                    "Ethiopia": "Ethiopia",
-                    "Falkland Islands (Malvinas)": "Falkland Islands (Malvinas)",
-                    "Faroe Islands": "Faroe Islands",
-                    "Fiji": "Fiji",
-                    "Finland": "Finland",
-                    "France": "France",
-                    "French Guiana": "French Guiana",
-                    "French Polynesia": "French Polynesia",
-                    "French Southern Territories": "French Southern Territories",
-                    "Gabon": "Gabon",
-                    "Gambia": "Gambia",
-                    "Georgia": "Georgia",
-                    "Germany": "Germany",
-                    "Ghana": "Ghana",
-                    "Gibraltar": "Gibraltar",
-                    "Greece": "Greece",
-                    "Greenland": "Greenland",
-                    "Grenada": "Grenada",
-                    "Guadeloupe": "Guadeloupe",
-                    "Guam": "Guam",
-                    "Guatemala": "Guatemala",
-                    "Guernsey": "Guernsey",
-                    "Guinea": "Guinea",
-                    "Guinea-Bissau": "Guinea-Bissau",
-                    "Guyana": "Guyana",
-                    "Haiti": "Haiti",
-                    "Heard Island and McDonald Islands": "Heard Island and McDonald Islands",
-                    "Holy See (Vatican City State)": "Holy See (Vatican City State)",
-                    "Honduras": "Honduras",
-                    "Hong Kong": "Hong Kong",
-                    "Hungary": "Hungary",
-                    "Iceland": "Iceland",
-                    "India": "India",
-                    "Indonesia": "Indonesia",
-                    "Iran, Islamic Republic of": "Iran, Islamic Republic of",
-                    "Iraq": "Iraq",
-                    "Ireland": "Ireland",
-                    "Isle of Man": "Isle of Man",
-                    "Israel": "Israel",
-                    "Italy": "Italy",
-                    "Jamaica": "Jamaica",
-                    "Japan": "Japan",
-                    "Jersey": "Jersey",
-                    "Jordan": "Jordan",
-                    "Kazakhstan": "Kazakhstan",
-                    "Kenya": "Kenya",
-                    "Kiribati": "Kiribati",
-                    "Korea, Democratic People's Republic of": "Korea, Democratic People's Republic of",
-                    "Korea, Republic of": "Korea, Republic of",
-                    "Kuwait": "Kuwait",
-                    "Kyrgyzstan": "Kyrgyzstan",
-                    "Lao People's Democratic Republic": "Lao People's Democratic Republic",
-                    "Latvia": "Latvia",
-                    "Lebanon": "Lebanon",
-                    "Lesotho": "Lesotho",
-                    "Liberia": "Liberia",
-                    "Libyan Arab Jamahiriya": "Libyan Arab Jamahiriya",
-                    "Liechtenstein": "Liechtenstein",
-                    "Lithuania": "Lithuania",
-                    "Luxembourg": "Luxembourg",
-                    "Macao": "Macao",
-                    "Macedonia, the former Yugoslav Republic of": "Macedonia, the former Yugoslav Republic of",
-                    "Madagascar": "Madagascar",
-                    "Malawi": "Malawi",
-                    "Malaysia": "Malaysia",
-                    "Maldives": "Maldives",
-                    "Mali": "Mali",
-                    "Malta": "Malta",
-                    "Marshall Islands": "Marshall Islands",
-                    "Martinique": "Martinique",
-                    "Mauritania": "Mauritania",
-                    "Mauritius": "Mauritius",
-                    "Mayotte": "Mayotte",
-                    "Mexico": "Mexico",
-                    "Micronesia, Federated States of": "Micronesia, Federated States of",
-                    "Moldova, Republic of": "Moldova, Republic of",
-                    "Monaco": "Monaco",
-                    "Mongolia": "Mongolia",
-                    "Montenegro": "Montenegro",
-                    "Montserrat": "Montserrat",
-                    "Morocco": "Morocco",
-                    "Mozambique": "Mozambique",
-                    "Myanmar": "Myanmar",
-                    "Namibia": "Namibia",
-                    "Nauru": "Nauru",
-                    "Nepal": "Nepal",
-                    "Netherlands": "Netherlands",
-                    "Netherlands Antilles": "Netherlands Antilles",
-                    "New Caledonia": "New Caledonia",
-                    "New Zealand": "New Zealand",
-                    "Nicaragua": "Nicaragua",
-                    "Niger": "Niger",
-                    "Nigeria": "Nigeria",
-                    "Niue": "Niue",
-                    "Norfolk Island": "Norfolk Island",
-                    "Northern Mariana Islands": "Northern Mariana Islands",
-                    "Norway": "Norway",
-                    "Oman": "Oman",
-                    "Pakistan": "Pakistan",
-                    "Palau": "Palau",
-                    "Palestinian Territory, Occupied": "Palestinian Territory, Occupied",
-                    "Panama": "Panama",
-                    "Papua New Guinea": "Papua New Guinea",
-                    "Paraguay": "Paraguay",
-                    "Peru": "Peru",
-                    "Philippines": "Philippines",
-                    "Pitcairn": "Pitcairn",
-                    "Poland": "Poland",
-                    "Portugal": "Portugal",
-                    "Puerto Rico": "Puerto Rico",
-                    "Qatar": "Qatar",
-                    "R\u00e9union": "R\u00e9union",
-                    "Romania": "Romania",
-                    "Russian Federation": "Russian Federation",
-                    "Rwanda": "Rwanda",
-                    "Saint Barth\u00e9lemy": "Saint Barth\u00e9lemy",
-                    "Saint Helena": "Saint Helena",
-                    "Saint Kitts and Nevis": "Saint Kitts and Nevis",
-                    "Saint Lucia": "Saint Lucia",
-                    "Saint Martin (French part)": "Saint Martin (French part)",
-                    "Saint Pierre and Miquelon": "Saint Pierre and Miquelon",
-                    "Saint Vincent and the Grenadines": "Saint Vincent and the Grenadines",
-                    "Samoa": "Samoa",
-                    "San Marino": "San Marino",
-                    "Sao Tome and Principe": "Sao Tome and Principe",
-                    "Saudi Arabia": "Saudi Arabia",
-                    "Senegal": "Senegal",
-                    "Serbia": "Serbia",
-                    "Seychelles": "Seychelles",
-                    "Sierra Leone": "Sierra Leone",
-                    "Singapore": "Singapore",
-                    "Slovakia": "Slovakia",
-                    "Slovenia": "Slovenia",
-                    "Solomon Islands": "Solomon Islands",
-                    "Somalia": "Somalia",
-                    "South Africa": "South Africa",
-                    "South Georgia and the South Sandwich Islands": "South Georgia and the South Sandwich Islands",
-                    "Spain": "Spain",
-                    "Sri Lanka": "Sri Lanka",
-                    "Sudan": "Sudan",
-                    "Suriname": "Suriname",
-                    "Svalbard and Jan Mayen": "Svalbard and Jan Mayen",
-                    "Swaziland": "Swaziland",
-                    "Sweden": "Sweden",
-                    "Switzerland": "Switzerland",
-                    "Syrian Arab Republic": "Syrian Arab Republic",
-                    "Taiwan, Province of China": "Taiwan, Province of China",
-                    "Tajikistan": "Tajikistan",
-                    "Tanzania, United Republic of": "Tanzania, United Republic of",
-                    "Thailand": "Thailand",
-                    "Timor-Leste": "Timor-Leste",
-                    "Togo": "Togo",
-                    "Tokelau": "Tokelau",
-                    "Tonga": "Tonga",
-                    "Trinidad and Tobago": "Trinidad and Tobago",
-                    "Tunisia": "Tunisia",
-                    "Turkey": "Turkey",
-                    "Turkmenistan": "Turkmenistan",
-                    "Turks and Caicos Islands": "Turks and Caicos Islands",
-                    "Tuvalu": "Tuvalu",
-                    "Uganda": "Uganda",
-                    "Ukraine": "Ukraine",
-                    "United Arab Emirates": "United Arab Emirates",
-                    "United Kingdom": "United Kingdom",
-                    "United States": "United States",
-                    "United States Minor Outlying Islands": "United States Minor Outlying Islands",
-                    "Uruguay": "Uruguay",
-                    "Uzbekistan": "Uzbekistan",
-                    "Vanuatu": "Vanuatu",
-                    "Venezuela, Bolivarian Republic of": "Venezuela, Bolivarian Republic of",
-                    "Viet Nam": "Viet Nam",
-                    "Virgin Islands, British": "Virgin Islands, British",
-                    "Virgin Islands, U.S.": "Virgin Islands, U.S.",
-                    "Wallis and Futuna": "Wallis and Futuna",
-                    "Western Sahara": "Western Sahara",
-                    "Yemen": "Yemen",
-                    "Zambia": "Zambia",
-                    "Zimbabwe": "Zimbabwe",
-                    "Please :linkOpen confirm your payment :linkClose to activate your subscription!": "Please :linkOpen confirm your payment :linkClose to activate your subscription!",
-                    "teams.team": " Team",
-                    "teams.member": " Member"
-                },
-                "cardUpFront": false,
-                "collectsBillingAddress": false,
-                "collectsEuropeanVat": false,
-                "createsAdditionalTeams": false,
-                "csrfToken": "WivH4UXAIcJrvZ9JqZ9bd72rM9HHbniuBkiGzUBn",
-                "currency": "usd",
-                "currencyLocale": "en",
-                "env": "production",
-                "roles": [],
-                "state": {
-                    "user": null,
-                    "teams": [],
-                    "currentTeam": null
-                },
-                "stripeApiVersion": "2020-08-27;link_beta=v1",
-                "stripeKey": "pk_live_0qQFbLX1w4fAePCvhuGzNTBO00SVonLme1",
-                "cashierPath": "stripe",
-                "teamsPrefix": "teams",
-                "teamsIdentifiedByPath": false,
-                "userId": null,
-                "usesApi": true,
-                "usesTeams": true,
-                "usesStripe": true,
-                "chargesUsersPerSeat": false,
-                "seatName": null,
-                "chargesTeamsPerSeat": false,
-                "teamSeatName": null,
-                "chargesUsersPerTeam": false,
-                "chargesTeamsPerMember": false
-            };
-        </script>
-        <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
-        <script>
-            function gtag_report_conversion(value, url) { // Send event to Google Analytics
-                gtag('event', 'subscribe', {
-                    send_to: 'UA-89207177-8',
-                    event_category: 'user',
-                    event_label: 'subscription',
-                    value: value ?? 60.0,
-                    'currency': 'USD'
-                });
-                // Send event to Google Ads
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-10875945736/luSJCMvh_a0DEIiGh8Io',
-                    'value': value ?? 60.0,
-                    'currency': 'USD'
-                });
-                return false;
-            }
-        </script>
-        <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-10875945736"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'AW-10875945736');
-        </script>
-        <style>
-            .croppie-container {
-                height: 100%;
-                width: 100%
-            }
-            .croppie-container .cr-image {
-                left: 0;
-                max-height: none;
-                max-width: none;
-                position: absolute;
-                top: 0;
-                transform-origin: 0 0;
-                z-index: -1
-            }
-            .croppie-container .cr-boundary {
-                height: 100%;
-                margin: 0 auto;
-                overflow: hidden;
-                position: relative;
-                width: 100%;
-                z-index: 1
-            }
-            .croppie-container .cr-resizer,
-            .croppie-container .cr-viewport {
-                border: 2px solid #fff;
-                bottom: 0;
-                box-shadow: 0 0 2000px 2000px rgba(0, 0, 0, .5);
-                left: 0;
-                margin: auto;
-                position: absolute;
-                right: 0;
-                top: 0;
-                z-index: 0
-            }
-            .croppie-container .cr-resizer {
-                box-shadow: none;
-                pointer-events: none;
-                z-index: 2
-            }
-            .croppie-container .cr-resizer-horisontal,
-            .croppie-container .cr-resizer-vertical {
-                pointer-events: all;
-                position: absolute
-            }
-            .croppie-container .cr-resizer-horisontal:after,
-            .croppie-container .cr-resizer-vertical:after {
-                background: #fff;
-                border: 1px solid #000;
-                box-sizing: border-box;
-                content: "";
-                display: block;
-                height: 10px;
-                position: absolute;
-                width: 10px
-            }
-            .croppie-container .cr-resizer-vertical {
-                bottom: -5px;
-                cursor: row-resize;
-                height: 10px;
-                width: 100%
-            }
-            .croppie-container .cr-resizer-vertical:after {
-                left: 50%;
-                margin-left: -5px
-            }
-            .croppie-container .cr-resizer-horisontal {
-                cursor: col-resize;
-                height: 100%;
-                right: -5px;
-                width: 10px
-            }
-            .croppie-container .cr-resizer-horisontal:after {
-                margin-top: -5px;
-                top: 50%
-            }
-            .croppie-container .cr-original-image {
-                display: none
-            }
-            .croppie-container .cr-vp-circle {
-                border-radius: 50%
-            }
-            .croppie-container .cr-overlay {
-                cursor: move;
-                position: absolute;
-                touch-action: none;
-                z-index: 1
-            }
-            .croppie-container .cr-slider-wrap {
-                margin: 15px auto;
-                text-align: center;
-                width: 75%
-            }
-            .croppie-result {
-                overflow: hidden;
-                position: relative
-            }
-            .croppie-result img {
-                position: absolute
-            }
-            .croppie-container .cr-image,
-            .croppie-container .cr-overlay,
-            .croppie-container .cr-viewport {
-                transform: translateZ(0)
-            }
-            .cr-slider {
-                -webkit-appearance: none;
-                background-color: transparent;
-                max-width: 100%;
-                padding-bottom: 8px;
-                padding-top: 8px;
-                width: 300px
-            }
-            .cr-slider::-webkit-slider-runnable-track {
-                background: rgba(0, 0, 0, .5);
-                border: 0;
-                border-radius: 3px;
-                height: 3px;
-                width: 100%
-            }
-            .cr-slider::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                background: #ddd;
-                border: none;
-                border-radius: 50%;
-                height: 16px;
-                margin-top: -6px;
-                width: 16px
-            }
-            .cr-slider:focus {
-                outline: none
-            }
-            .cr-slider::-moz-range-track {
-                background: rgba(0, 0, 0, .5);
-                border: 0;
-                border-radius: 3px;
-                height: 3px;
-                width: 100%
-            }
-            .cr-slider::-moz-range-thumb {
-                background: #ddd;
-                border: none;
-                border-radius: 50%;
-                height: 16px;
-                margin-top: -6px;
-                width: 16px
-            }
-            .cr-slider:-moz-focusring {
-                outline: 1px solid #fff;
-                outline-offset: -1px
-            }
-            .cr-slider::-ms-track {
-                background: transparent;
-                border-color: transparent;
-                border-width: 6px 0;
-                color: transparent;
-                height: 5px;
-                width: 100%
-            }
-            .cr-slider::-ms-fill-lower,
-            .cr-slider::-ms-fill-upper {
-                background: rgba(0, 0, 0, .5);
-                border-radius: 10px
-            }
-            .cr-slider::-ms-thumb {
-                background: #ddd;
-                border: none;
-                border-radius: 50%;
-                height: 16px;
-                margin-top: 1px;
-                width: 16px
-            }
-            .cr-slider:focus::-ms-fill-lower,
-            .cr-slider:focus::-ms-fill-upper {
-                background: rgba(0, 0, 0, .5)
-            }
-            .cr-rotate-controls {
-                bottom: 5px;
-                left: 5px;
-                position: absolute;
-                z-index: 1
-            }
-            .cr-rotate-controls button {
-                background: none;
-                border: 0
-            }
-            .cr-rotate-controls i:before {
-                display: inline-block;
-                font-size: 22px;
-                font-style: normal;
-                font-weight: 900
-            }
-            .cr-rotate-l i:before {
-                content: "↺"
-            }
-            .cr-rotate-r i:before {
-                content: "↻"
-            }
-        </style>
-        <style type="text/css">
-            .resize-observer[data-v-8859cc6c] {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                width: 100%;
-                height: 100%;
-                border: none;
-                background-color: transparent;
-                pointer-events: none;
-                display: block;
-                overflow: hidden;
-                opacity: 0
-            }
-            .resize-observer[data-v-8859cc6c] object {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                overflow: hidden;
-                pointer-events: none;
-                z-index: -1
-            }
-        </style><meta
-            http-equiv="origin-trial"
-            content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta
-            http-equiv="origin-trial"
-            content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"> <script
-            type="text/javascript"
-            async=""
-            src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/10875945736/?random=1669875067250&amp;cv=11&amp;fst=1669875067250&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=2oabu0&amp;u_w=1500&amp;u_h=1000&amp;hn=www.googleadservices.com&amp;frm=0&amp;url=https%3A%2F%2Ft.ly%2F&amp;ref=https%3A%2F%2Ft.ly%2F&amp;tiba=T.LY%20-%20URL%20Shortener%2C%20Custom%20Domain%20%26%20Short%20Link%20Management&amp;auid=1318217168.1669875022&amp;uaa=x86&amp;uab=64&amp;uafvl=Microsoft%2520Edge%3B107.0.1418.56%7CChromium%3B107.0.5304.110%7CNot%253DA%253FBrand%3B24.0.0.0&amp;uap=Windows&amp;uapv=10.0.0&amp;uaw=0&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=4"></script>
-        <style>
-            [data-v-bc511a8a]:export {
-                primary: #284243;
-                secondary: #aea79f;
-                info: #17a2b8;
-                warning: #e95420
-            }
-            .home-page-spacer[data-v-bc511a8a] {
-                margin-bottom: 25px;
-                margin-top: 25px
-            }
-        </style>
-        <style>:export
-        {
-            primary: #284243;
-            secondary: #aea79f;
-            info: #17a2b8;
-            warning: #e95420
-        }
-        .short-links-wrapper .alert {
-            line-height: 34px
-        }
-        .short-links-wrapper .qrCode {
-            display: inline-block;
-            height: 30px;
-            vertical-align: middle;
-            width: 30px
-        }
-        .short-links-wrapper .qrCode canvas {
-            height: 30px !important;
-            width: 30px !important
-        }
-    </style>
-    <style>
-        [data-v-59b1dd14]:export {
-            primary: #284243;
-            secondary: #aea79f;
-            info: #17a2b8;
-            warning: #e95420
-        }
-    </style>
+        <!-- jQuery Min JS -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <!-- Bootstrap Min JS -->
+        <script src="../assets/js/bootstrap.js"></script>
+        <!-- common JS -->
+        <script src="../assets/js/common.js"></script>
+         
 
-    <style>:export
-    {
-        primary: #284243;
-        secondary: #aea79f;
-        info: #17a2b8;
-        warning: #e95420
-    }
-    .recent-blog-post-wrapper img {
-        height: 200px !important;
-        -o-object-fit: cover;
-        object-fit: cover
-    }
-    .recent-blog-post-wrapper a.custom-card,
-    .recent-blog-post-wrapper a.custom-card:hover {
-        color: inherit
-    }
-</style></head><body>
-<div id="spark-app">
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary guest-nav">
-        <!--div class="container">
-            <a href="/" class="navbar-brand text-white"><img alt="T.LY Logo" width="50" height="50" src="/img/tly-logo-sm.png"> T.LY</a>
-            <button
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                class="navbar-toggler">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-      
-        </div-->
-    </nav>
-    <main class="py-2">
-        <div data-v-bc511a8a="">
-            <div data-v-bc511a8a="" class="homepage-background"></div>
-            <div data-v-bc511a8a="" class="container">
-               
-                <div data-v-bc511a8a="" class="row home-page-spacer">
-                    <div data-v-bc511a8a="" class="col-md-12">
-                        <div data-v-59b1dd14="" data-v-bc511a8a="" class="row mb-2">
-                            <div data-v-59b1dd14="" class="col-md-12">
-                                <form data-v-59b1dd14="" novalidate="novalidate">
-                                    <div data-v-59b1dd14="" class="input-group input-group-lg"><input
-                                            data-v-59b1dd14=""
-                                            type="url"
-                                            spellcheck="false"
-                                            autocomplete="off"
-                                            autocorrect="off"
-                                            autocapitalize="none"
-                                            required="required"
-                                            placeholder="Shorten your link"
-                                            class="form-control input-lg">
-                                        <div data-v-59b1dd14="" class="input-group-append">
-                                            <button data-v-59b1dd14="" type="submit" class="btn btn-primary btn-lg">
-                                                <span data-v-59b1dd14="" class="d-none d-md-inline-block">Shorten</span>
-                                                <i data-v-59b1dd14="" aria-hidden="true" class="fa fa-chevron-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <!---->
-                                </form>
-                                <div data-v-59b1dd14="">
-                                    <div
-                                        class="grecaptcha-badge"
-                                        data-style="bottomright"
-                                        style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right:
-                                            -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
-                                        <div class="grecaptcha-logo">
-                                            <iframe
-                                                title="reCAPTCHA"
-                                                src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcKDjUfAAAAAKDNtGiKmobr84PSjnUGfCJhgtv7&amp;co=aHR0cHM6Ly90Lmx5OjQ0Mw..&amp;hl=zh-CN&amp;v=Km9gKuG06He-isPsP6saG8cn&amp;size=invisible&amp;cb=mlvisnsmkkys"
-                                                width="256"
-                                                height="60"
-                                                role="presentation"
-                                                name="a-936tdvduqi4m"
-                                                frameborder="0"
-                                                scrolling="no"
-                                                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals
-                                                    allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"></iframe>
-                                        </div>
-                                        <div class="grecaptcha-error"></div>
-                                        <textarea
-                                            id="g-recaptcha-response"
-                                            name="g-recaptcha-response"
-                                            class="g-recaptcha-response"
-                                            style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none;
-                                                display: none;"></textarea>
-                                    </div>
-                                    <iframe style="display: none;"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-bc511a8a="" class="short-links-wrapper">
-                            <div role="alert" class="alert alert-info">
-                                <div class="inline-block"><img alt="https://www.qq.com" src="https://www.google.com/s2/favicons?domain=www.qq.com" class="d-none d-md-inline">
-                                    <span class="d-none d-sm-inline d-md-none">https://www.qq....</span>
-                                    <span class="d-none d-md-inline d-lg-none">https://www.qq.com</span>
-                                    <span class="d-none d-lg-inline">https://www.qq.com</span>
-                                    <a href="https://t.ly/p5JB" target="_blank" class="alert-link d-inline d-sm-none">https://t.ly/p5JB</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="https://t.ly/p5JB" target="_blank" class="alert-link mr-2 d-none d-sm-inline">t.ly/p5JB</a>
-                                    <a href="/qr-code-generator?url=https://t.ly/p5JB">
-                                        <div value="https://t.ly/p5JB" level="H" background="#fff" foreground="#000" class="qrCode">
-                                            <canvas height="600" width="600" style="width: 300px; height: 300px;"></canvas>
-                                        </div>
-                                    </a>
-                                    <button type="button" class="btn btn-primary">
-                                        <i aria-hidden="true" class="fa fa-copy"></i>
-                                        <span class="d-none d-sm-none d-md-inline">Copy</span>
-                                    </button>
-                                    <a role="button" href="https://t.ly/p5JB+" target="_blank" class="btn btn-secondary text-white">
-                                        <i aria-hidden="true" class="fa fa-line-chart"></i>
-                                        <span class="d-none d-sm-none d-md-inline">Stats</span>
-                                    </a>
-                                    <a role="button" href="/register?ref=edit-link" class="btn btn-secondary text-white">
-                                        <i aria-hidden="true" class="fa fa-edit"></i>
-                                        <span class="d-none d-sm-none d-md-inline">Edit</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-           
-                <div data-v-bc511a8a="" class="recent-blog-post-wrapper">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="/blog/best-url-shortener-api" target="_blank" class="custom-card">
-                                <div class="card pointer"><img
-                                        alt="Best URL Shortener API"
-                                        class="card-img-top img-hover"
-                                        data-src="https://blog.t.ly/wp-content/uploads/2022/11/URL-Shortener-API.jpg"
-                                        src="https://blog.t.ly/wp-content/uploads/2022/11/URL-Shortener-API.jpg"
-                                        lazy="loaded">
-                                    <div class="card-body">
-                                        <div class="card-title">Best URL Shortener API</div>
-                                        <p class="card-text">A URL shortener API can be an extremely useful tool for businesses and w...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="/blog/how-to-fix-the-dns_probe_finished_bad_config-error-code" target="_blank" class="custom-card">
-                                <div class="card pointer"><img
-                                        alt="How to Fix the DNS_PROBE_FINISHED_BAD_CONFIG Error Code?"
-                                        class="card-img-top img-hover"
-                                        data-src="https://blog.t.ly/wp-content/uploads/2022/11/How-to-Fix-the-DNS_PROBE_FINISHED_BAD_CONFIG-Error-Code.jpg"
-                                        src="https://blog.t.ly/wp-content/uploads/2022/11/How-to-Fix-the-DNS_PROBE_FINISHED_BAD_CONFIG-Error-Code.jpg"
-                                        lazy="loaded">
-                                    <div class="card-body">
-                                        <div class="card-title">How to Fix the DNS_PROBE_FINIS...</div>
-                                        <p class="card-text">The DNS_PROBE_FINISHED_BAD_CONFIG error code indicates that your compute...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="/blog/the-keys-to-engagement-on-social-media" target="_blank" class="custom-card">
-                                <div class="card pointer"><img
-                                        alt="The Keys to Engagement on Social Media"
-                                        class="card-img-top img-hover"
-                                        data-src="https://blog.t.ly/wp-content/uploads/2022/11/The-Keys-to-Engagement-on-Social-Media.jpg"
-                                        src="https://blog.t.ly/wp-content/uploads/2022/11/The-Keys-to-Engagement-on-Social-Media.jpg"
-                                        lazy="loaded">
-                                    <div class="card-body">
-                                        <div class="card-title">The Keys to Engagement on Soci...</div>
-                                        <p class="card-text">Plan Ahead Know what you want to accomplish before you start posting. If...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="/blog/organic-marketing-the-basics" target="_blank" class="custom-card">
-                                <div class="card pointer"><img
-                                        alt="Organic Marketing: The Basics"
-                                        class="card-img-top img-hover"
-                                        data-src="https://blog.t.ly/wp-content/uploads/2022/11/Organic-Marketing-The-Basics.jpg"
-                                        src="https://blog.t.ly/wp-content/uploads/2022/11/Organic-Marketing-The-Basics.jpg"
-                                        lazy="loaded">
-                                    <div class="card-body">
-                                        <div class="card-title">Organic Marketing: The Basics</div>
-                                        <p class="card-text">If you want to increase website traffic without spending money on ads, t...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="/blog/how-do-i-shorten-a-url-for-free" target="_blank" class="custom-card">
-                                <div class="card pointer"><img
-                                        alt="How do I shorten a URL for free?"
-                                        class="card-img-top img-hover"
-                                        data-src="https://blog.t.ly/wp-content/uploads/2022/11/How-do-I-shorten-a-URL-for-free.jpg"
-                                        src="https://blog.t.ly/wp-content/uploads/2022/11/How-do-I-shorten-a-URL-for-free.jpg"
-                                        lazy="loaded">
-                                    <div class="card-body">
-                                        <div class="card-title">How do I shorten a URL for fre...</div>
-                                        <p class="card-text">Back in 2018, Google shut down its URL Shortener service, but users are ...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="/blog/why-did-google-discontinue-url-shortener" target="_blank" class="custom-card">
-                                <div class="card pointer"><img
-                                        alt="Why did Google Discontinue its URL Shortener?"
-                                        class="card-img-top img-hover"
-                                        data-src="https://blog.t.ly/wp-content/uploads/2022/11/Why-did-Google-discontinue-URL-shortener.jpg"
-                                        src="https://blog.t.ly/wp-content/uploads/2022/11/Why-did-Google-discontinue-URL-shortener.jpg"
-                                        lazy="loaded">
-                                    <div class="card-body">
-                                        <div class="card-title">Why did Google Discontinue its...</div>
-                                        <p class="card-text">Google discontinued its URL shortener service in 2019. The URL shortener...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="/blog/are-url-shorteners-safe" target="_blank" class="custom-card">
-                                <div class="card pointer"><img
-                                        alt="Are URL Shorteners Safe?"
-                                        class="card-img-top img-hover"
-                                        data-src="https://blog.t.ly/wp-content/uploads/2022/11/Are-URL-Shorteners-Safe.jpg"
-                                        src="https://blog.t.ly/wp-content/uploads/2022/11/Are-URL-Shorteners-Safe.jpg"
-                                        lazy="loaded">
-                                    <div class="card-body">
-                                        <div class="card-title">Are URL Shorteners Safe?</div>
-                                        <p class="card-text">URL shorteners are a popular way to make long, complicated URLs more man...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="/blog/what-makes-up-a-url" target="_blank" class="custom-card">
-                                <div class="card pointer"><img
-                                        alt="What Makes Up a URL?"
-                                        class="card-img-top img-hover"
-                                        data-src="https://blog.t.ly/wp-content/uploads/2022/11/What-Makes-Up-a-URL.jpg"
-                                        src="https://blog.t.ly/wp-content/uploads/2022/11/What-Makes-Up-a-URL.jpg"
-                                        lazy="loaded">
-                                    <div class="card-body">
-                                        <div class="card-title">What Makes Up a URL?</div>
-                                        <p class="card-text">If you’re involved in digital marketing, it’s important to understand ho...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="/blog/how-to-choose-a-good-domain-name" target="_blank" class="custom-card">
-                                <div class="card pointer"><img
-                                        alt="How to Choose a Good Domain Name"
-                                        class="card-img-top img-hover"
-                                        data-src="https://blog.t.ly/wp-content/uploads/2022/11/How-to-Choose-a-Good-Domain-Name.jpg"
-                                        src="https://blog.t.ly/wp-content/uploads/2022/11/How-to-Choose-a-Good-Domain-Name.jpg"
-                                        lazy="loaded">
-                                    <div class="card-body">
-                                        <div class="card-title">How to Choose a Good Domain Na...</div>
-                                        <p class="card-text">Choosing a domain name may seem like a simple task, but it’s important t...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div tabindex="-1" role="dialog" id="max-free-links" class="modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary text-white text-center">
-                        <h5 class="modal-title" style="width: 100%;">Upgrade Your Links</h5>
-                    </div>
-                    <div class="modal-body">
-                        <p class="lead text-center">
-                            You've reached your limit for new short links. You need an account to create additional short links. It will only take a
-                            few seconds.
-                        </p>
-                        <div class="text-center">
-                            <a href="/register" role="button" aria-disabled="true" class="btn btn-primary btn-lg">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+
+        <script>
+            jQuery(($)=>{
+                 $(".preloader").addClass("preloader-deactivate");
+            })
+        </script>
+    </head>
+    <body>
+<!-- Start Preloader Area -->
+<div class="preloader">
+    <div class="loader">
+        <div class="shadow"></div>
+        <div class="box"></div>
+    </div>
 </div>
-<footer class="footer py-4 text-white">
-    <div class="container">
-        <div class="row ">
-            <div class="col-md-4">
-                <h4>Features</h4>
-                <ul class="list-unstyled mb-0">
-                    <li>
-                        <a href="https://t.ly/extension">Extension</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/docs">API Docs</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/faq">FAQ</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/qr-code-generator">QR Code Generator</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/tools">Recommended Tools</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/register">Sign Up</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h4>Resources</h4>
-                <ul class="list-unstyled mb-0">
-                    <li>
-                        <a href="mailto:support@t.ly?Subject=Report%20Link" target="_top">Report Link</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/what-is-my-ip">My IP Address</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/affiliates">Affiliates</a>
-                    </li>
-                    <li>
-                        <a class="text-muted" href="https://t.ly/privacy">Privacy</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/terms">Terms</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h4>Company</h4>
-                <ul class="list-unstyled mb-0">
-                    <li>
-                        <a href="/blog">Blog</a>
-                    </li>
-                    <li>
-                        <a href="mailto:support@t.ly?Subject=Contact+Support" target="_blank">Contact</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/twitter">Twitter</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/facebook">Facebook</a>
-                    </li>
-                    <li>
-                        <a href="https://t.ly/linkedin">LinkedIn</a>
-                    </li>
-                </ul>
+<!-- End Preloader Area -->
+<!-- Start Navbar Area -->
+<div class="navbar-area">
+    <div class="techvio-responsive-nav">
+        <div class="container">
+            <div class="techvio-responsive-menu">
+                <div class="logo white-logo">
+                    <a href="./">
+                        <h1> IEE - Short link generator </h1>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</footer>
+    <div class="techvio-nav">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="./">
+                    <h1>IEE - Short link generator </h1>
+                </a>
 
-<div class="modal" tabindex="-1" role="dialog" id="before-you-go">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <p class="lead text-center">Quickly shorten and share long URLs in one easy click using URL Shortener Extension right in
-                    your Browser!</p>
-                <div class="text-center">
-                    <a href="https://t.ly/extension-install-cta" class="btn btn-primary btn-lg" role="button" aria-disabled="true">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                        Add to
-                        Microsoft Edge - It's Free!</a>
-                    <p>
-                        <b>400,000+</b>
-                        active users</p>
-                </div>
-                <hr>
-                <ul class="list-inline text-center">
-                    <li class="list-inline-item">
-                        <a href="https://chrome.google.com/webstore/detail/url-shortener/oodfdmglhbbkkcngodjjagblikmoegpa">
-                            <img alt="Chrome Link Shortener Extension" class="img-responsive" src="https://t.ly/img/browser/chrome_64x64.png">
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://addons.mozilla.org/en-US/firefox/addon/link-shortener/"><img alt="Firefox Link Shortener Extension" class="img-responsive" src="https://t.ly/img/browser/firefox_64x64.png ">
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://addons.opera.com/en/extensions/details/url-shortener-4/"><img alt="Opera Link Shortener Extension" class="img-responsive" src="https://t.ly/img/browser/opera_64x64.png">
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://microsoftedge.microsoft.com/addons/detail/ajedojkedficaboemnhahoclgfnooelm"><img alt="Edge Link Shortener Extension" class="img-responsive" src="https://t.ly/img/browser/edge_64x64.png">
-                        </a>
-                    </li>
-                </ul>
-                <p class="text-center">Supports Chrome, Firefox, Opera, and Edge!</p>
-            </div>
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+						<ul class="navbar-nav">
+							
+							
+                        
+						</ul>
+						<div class="other-option">
+                            
+                                <a class="color-white" href="../en/">en</a>
+                                <a class="color-white" href="../zh-CN/">zh-CN</a>
+						</div>
+					</div>
+            </nav>
         </div>
     </div>
 </div>
-<script src="/js/app.js"></script>
-<script src="https://t.ly/js/sweetalert.min.js"></script>
-<div class="hidden loading" id="full-page-loader">Loading…</div>
 <script>
-    (function () {
-        var js = "window['__CF$cv$params']={r:'7729a8b69adbc36c',m:'hqjU1.abm3r42cJtvqo1I6bWstOi.Fi04iaJjFNY6Bo-1669875019-0-AdVi+L22fRtLu" +
-                "9L1+pT8QeU5lpOqs2hoemBRiiyZpOqJ5WcDcSLDzwqTuZVm1pHTqdUyH+PCImU2SPaymS/oC3eWDamhjwdlm7Ew95H3GZImT/tOM1Y/lfj3XZQWhKwM8Q=='" +
-                ",s:[0xb132a52320,0x6e539b2154],u:'/cdn-cgi/challenge-platform/h/b'};var now=Date.now()/1000,offset=14400,ts=''+(Math.flo" +
-                "or(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platfor" +
-                "m/h/b/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";
-        var _0xh = document.createElement('iframe');
-        _0xh.height = 1;
-        _0xh.width = 1;
-        _0xh.style.position = 'absolute';
-        _0xh.style.top = 0;
-        _0xh.style.left = 0;
-        _0xh.style.border = 'none';
-        _0xh.style.visibility = 'hidden';
-        document.body.appendChild(_0xh);
-        function handler() {
-            var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;
-            if (_0xi) {
-                var _0xj = _0xi.createElement('script');
-                _0xj.nonce = '';
-                _0xj.innerHTML = js;
-                _0xi.getElementsByTagName('head')[0].appendChild(_0xj);
-            }
-        }
-        if (document.readyState !== 'loading') {
-            handler();
-        } else if (window.addEventListener) {
-            document.addEventListener('DOMContentLoaded', handler);
-        } else {
-            var prev = document.onreadystatechange || function () {};
-            document.onreadystatechange = function (e) {
-                prev(e);
-                if (document.readyState !== 'loading') {
-                    document.onreadystatechange = prev;
-                    handler();
-                }
-            };
-        }
-    })();
+    jQuery(($) => {
+        $(".install").on("click", () => {
+            install();
+        });
+        $(".download").on("click", () => {
+            download();
+        });
+    });
 </script>
-<iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
-<style type="text/css" data-typed-js-css="true">
-    .typed-cursor {
-        opacity: 1;
-    }
-    .typed-cursor.typed-cursor--blink {
-        animation: typedjsBlink 0.7s infinite;
-        -webkit-animation: typedjsBlink 0.7s infinite;
-        animation: typedjsBlink 0.7s infinite;
-    }
-    @keyframes typedjsBlink {
-        50% {
-            opacity: 0.0;
-        }
-    }
-    @-webkit-keyframes typedjsBlink {
-        0% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-</style>
-<div style="visibility: hidden; position: absolute; width: 100%; top: -10000px; left: 0px; right: 0px; transition: visibility
-        0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0;">
-    <div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255,
-        255, 255); opacity: 0.5;"></div>
-    <div style="margin: 0px auto; top: 0px; left: 0px; right: 0px; position: absolute; border: 1px solid rgb(204, 204, 204);
-            z-index: 2000000000; background-color: rgb(255, 255, 255); overflow: hidden;">
-        <iframe
-            title="reCAPTCHA 验证将于 2 分钟后过期"
-            src="https://www.google.com/recaptcha/api2/bframe?hl=zh-CN&amp;v=Km9gKuG06He-isPsP6saG8cn&amp;k=6LcKDjUfAAAAAKDNtGiKmobr84PSjnUGfCJhgtv7"
-            name="c-936tdvduqi4m"
-            frameborder="0"
-            scrolling="no"
-            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals
-                allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-            style="width: 100%; height: 100%;"></iframe>
+<!-- End Navbar Area -->
+        <!-- body -->
+        <div class="mainbody">        
+    <!-- Start Home Area -->
+    <div class="home-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="offset-2 col-lg-8 col-md-8">
+                            <form role="form">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="url" placeholder="input url">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary btn-gen" type="button" data-bs-toggle="modal" data-bs-target="#modal-ndrezhyo">btn-gen</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="creative-shape">
+            <img src="../assets/img/home-bottom-shape.png" alt="svg shape"/>
+        </div>
     </div>
-</div></body></html>
+    <!-- End Home Area -->
+    <!-- Start Services Section -->
+    <section class="services-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-title">
+                        <h6>What We Provide}</h6>
+                        <h2>Video acceleration solutions</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-services-item">
+                        <div class="services-icon">
+                            <i class="flaticon-project-management"></i>
+                        </div>
+                        <h3>Video Acceleration Services</h3>
+                        <p>
+                            Accelerate video download speed with webrtc technology
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-services-item">
+                        <div class="services-icon">
+                            <i class="flaticon-programming"></i>
+                        </div>
+                        <h3>
+                            Video Caching Services
+                        </h3>
+                        <p>
+                            User nodes and specialized servers provide caching capabilities
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-services-item">
+                        <div class="services-icon">
+                            <i class="flaticon-cpu-1"></i>
+                        </div>
+                        <h3>
+                            Video P2P Sharing Services
+                        </h3>
+                        <p>
+                            Share the same resources using torrent technology
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <div class="single-services-item">
+                        <div class="services-icon">
+                            <i class="flaticon-cpu-1"></i>
+                        </div>
+                        <h3>
+                            Video webmasters provide private acceleration nodes
+                        </h3>
+                        <code>docker run -itd --restart=always --net=host --cpu-shares=512 -e DOMAIN=websitedomain -v /tmp/ivideos-store:/app/ivideos-store --name ivideos-node mixnet/ivideos-node:latest</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Section -->
+        </div>
+
+<!-- Start Footer & Subscribe Section -->
+<section class="footer-subscribe-wrapper"></section>
+<!-- End Footer & Subscribe Section -->
+<!-- Start Copy Right Section -->
+<div class="copyright-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <p>
+                    <i class="far fa-copyright"></i>
+                    2022 ivideos - All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Copy Right Section -->
+<!-- Start Go Top Section -->
+<div class="go-top">
+    <i class="fas fa-chevron-up"></i>
+    <i class="fas fa-chevron-up"></i>
+</div>
+<!-- End Go Top Section -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2208954604036695"
+     crossorigin="anonymous"></script>
+    </body>
+</html>

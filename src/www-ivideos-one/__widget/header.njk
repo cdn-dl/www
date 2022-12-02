@@ -58,13 +58,28 @@
                                             </a>
 									</li>
 								</ul>
+							</li>#}
+							<li class="nav-item">
+                                <a href="{$ $static('./player.html', path) $}" class="nav-link">
+                                    {$ $t.btn.play $}
+                                </a>
 							</li>
-							<li class="nav-item"> <a href="contact.html" class="nav-link">
-                                        Contact
-                                    </a>
-							</li->#}
+                            {% set isPlayer =  path.includes("player.njk") %}
+                            
+                            <li class="nav-item">
+                                <a id="download" href="javascript:void" class="nav-link">
+                                        {$ $t.btn.download $}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="install" href="javascript:void" class="nav-link">
+                                    {$ $t.btn.install $}
+                                </a>
+                            </li>
+                        
 						</ul>
 						<div class="other-option">
+                            
                             {% for lang in languages %}
                                 <a class="color-white" href="{$ $static('../'+lang, path) $}/">{$ lang $}</a>
                             {% endfor %}
@@ -74,4 +89,14 @@
         </div>
     </div>
 </div>
+<script>
+    jQuery(($) => {
+        $("#install").on("click", () => {
+            install();
+        });
+        $("#download").on("click", () => {
+            download();
+        });
+    });
+</script>
 <!-- End Navbar Area -->

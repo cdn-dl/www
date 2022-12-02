@@ -1,7 +1,6 @@
 {% extends "./__widget/default.njk" %}
-{% block head %} {% endblock %}
+{% block head %}{% endblock %}
 {% block body %}
-
     <!-- Start Home Area -->
     <div class="home-area">
         <div class="d-table">
@@ -11,12 +10,9 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="main-banner-content">
                                 <h1>{$ $t.index.s1.title $}</h1>
-                                 {% for v in $t.index.s1.list %}
-                                   
+                                {% for v in $t.index.s1.list %}
                                     <li>{$ loop.index $} {$ v $}</li>
-                                   
                                 {% endfor %}
-                                
                                 <div class="banner-btn">
                                     <a href="javascript:void" id="download" class="default-btn-one">
                                         {$ $t.btn.download $}
@@ -26,8 +22,7 @@
                                         {$ $t.btn.install $}
                                         <span></span>
                                     </a>
-
-                                      <a class="red-btn" id="player" href="player.html" style="margin-left: 20px;">
+                                    <a class="red-btn" id="player" href="player.html" style="margin-left: 20px;">
                                         {$ $t.btn.play $}
                                         <span></span>
                                     </a>
@@ -67,7 +62,9 @@
                             <i class="flaticon-project-management"></i>
                         </div>
                         <h3>{$ $t.index.s2.s11 $}</h3>
-                        <p> {$ $t.index.s2.s12 $} </p>
+                        <p>
+                            {$ $t.index.s2.s12 $}
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -75,8 +72,12 @@
                         <div class="services-icon">
                             <i class="flaticon-programming"></i>
                         </div>
-                        <h3> {$ $t.index.s2.s21 $} </h3>
-                        <p> {$ $t.index.s2.s22 $} </p>
+                        <h3>
+                            {$ $t.index.s2.s21 $}
+                        </h3>
+                        <p>
+                            {$ $t.index.s2.s22 $}
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -84,8 +85,12 @@
                         <div class="services-icon">
                             <i class="flaticon-cpu-1"></i>
                         </div>
-                        <h3> {$ $t.index.s2.s31 $} </h3>
-                        <p> {$ $t.index.s2.s32 $} </p>
+                        <h3>
+                            {$ $t.index.s2.s31 $}
+                        </h3>
+                        <p>
+                            {$ $t.index.s2.s32 $}
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
@@ -93,7 +98,9 @@
                         <div class="services-icon">
                             <i class="flaticon-cpu-1"></i>
                         </div>
-                        <h3> {$ $t.index.s2.s41 $} </h3>
+                        <h3>
+                            {$ $t.index.s2.s41 $}
+                        </h3>
                         <code>{$ $t.index.s2.s42 $}</code>
                     </div>
                 </div>
@@ -139,42 +146,4 @@
     </section>
     <!-- End Partner section -->
 
-    <script>
-        jQuery(($) => {
-            $("#install").on("click", () => {
-                let ua = navigator.userAgent || "";
-                if (/Edg/i.test(ua)) {
-                    //edge浏览器
-                    location.href =
-                    "https://microsoftedge.microsoft.com/addons/detail/ivideos-%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F%E5%99%A8/ekpnmlnjmodhkdikdjjiidnfcbfchiel?hl=" +
-                    navigator.language;
-                } else if (/Chrome/i.test(ua)) {
-                    location.href =
-                    "https://chrome.google.com/webstore/detail/ivideos-%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F%E5%99%A8/gihpeahidbkanpjajihofclgjoppiika?utm_source=chrome-ntp-icon";
-                } else if (/Firefox/i.test(ua)) {
-                    location.href =
-                    "https://addons.mozilla.org/zh-CN/firefox/addon/ivideos-%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F%E5%99%A8/?utm_source=www.ivideos.one&utm_medium=referral";
-                }
-            });
-            $("#download").on("click", () => {
-                let ua = navigator.userAgent || "";
-                let ms = ua.match(/Chrome\/[0-9]+/) || [];
-                console.info("====ua", ua, ms);
-                if (ms && ms.length > 0) {
-                    let str = ms[0];
-                    let kv = str.split("/");
-                    let version = parseInt(kv[1]);
-                    console.info("kv", kv, version);
-                    if (version >= 88) {
-                    location.href = "../downloads/ivideos.v3.1.4.2.crx";
-                    } else {
-                    location.href = "../downloads/ivideos.v2.crx";
-                    }
-                }else{
-                    alert("No browser support")
-                }
-            });
-        });
-    </script>
 {% endblock %}
-

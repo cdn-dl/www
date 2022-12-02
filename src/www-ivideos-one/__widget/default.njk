@@ -10,17 +10,21 @@
         <meta name="description" content="{$ $t.s404.desc $}"/> 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="{$ $static('../assets/logos/icon.png', path) $}"/> 
-        <!-- jQuery Min JS -->
-        <script src="{$ $static('../assets/js/jquery.min.js', path) $}"></script>
-        <!-- Bootstrap Min JS -->
-        <script src="{$ $static('../assets/js/bootstrap.js', path) $}"></script>
-        {# plugin name="share" %} {% endplugin #} 
-
+    
          <!-- Favicon -->
         <!-- Bootstrap Min CSS -->
         <link rel="stylesheet" href="{$ $static('../assets/css/bootstrap.css', path) $}" />
         <!-- Style CSS -->
         <link rel="stylesheet" href="{$ $static('../assets/css/style.css', path) $}" />
+
+        <!-- jQuery Min JS -->
+        <script src="{$ $static('../assets/js/jquery.min.js', path) $}"></script>
+        <!-- Bootstrap Min JS -->
+        <script src="{$ $static('../assets/js/bootstrap.js', path) $}"></script>
+        <!-- common JS -->
+        <script src="{$ $static('../assets/js/common.js', path) $}"></script>
+        {# plugin name="share" %} {% endplugin #} 
+
 
         {% block head %}{% endblock %}
         <script>

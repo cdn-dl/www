@@ -10,19 +10,23 @@
         <meta name="description" content="你要找的页面可能已经被删除,改变或暂时无法使用。"/> 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="../assets/logos/icon.png"/> 
-        <!-- jQuery Min JS -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <!-- Bootstrap Min JS -->
-        <script src="../assets/js/bootstrap.js"></script>
-         
-
+    
          <!-- Favicon -->
         <!-- Bootstrap Min CSS -->
         <link rel="stylesheet" href="../assets/css/bootstrap.css" />
         <!-- Style CSS -->
         <link rel="stylesheet" href="../assets/css/style.css" />
 
-         <script>
+        <!-- jQuery Min JS -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <!-- Bootstrap Min JS -->
+        <script src="../assets/js/bootstrap.js"></script>
+        <!-- common JS -->
+        <script src="../assets/js/common.js"></script>
+         
+
+
+        <script>
             jQuery(($)=>{
                  $(".preloader").addClass("preloader-deactivate");
             })
@@ -60,8 +64,26 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
 						<ul class="navbar-nav">
 							
+							<li class="nav-item">
+                                <a href="./player.html" class="nav-link">
+                                    播放
+                                </a>
+							</li>
+                            
+                            <li class="nav-item">
+                                <a id="download" href="javascript:void" class="nav-link">
+                                        下载
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="install" href="javascript:void" class="nav-link">
+                                    安装
+                                </a>
+                            </li>
+                        
 						</ul>
 						<div class="other-option">
+                            
                                 <a class="color-white" href="../en/">en</a>
                                 <a class="color-white" href="../zh-CN/">zh-CN</a>
 						</div>
@@ -70,10 +92,19 @@
         </div>
     </div>
 </div>
+<script>
+    jQuery(($) => {
+        $("#install").on("click", () => {
+            install();
+        });
+        $("#download").on("click", () => {
+            download();
+        });
+    });
+</script>
 <!-- End Navbar Area -->
         <!-- body -->
         <div class="mainbody">        
-
     <!-- Start Home Area -->
     <div class="home-area">
         <div class="d-table">
@@ -83,16 +114,9 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="main-banner-content">
                                 <h1>视频加速解决方案和视频缓存共享服务</h1>
-                                   
                                     <li>1 使用indexed技术来缓存和共享视频资源</li>
-                                   
-                                   
                                     <li>2 利用webrtc技术加速视频资源下载和资源共享</li>
-                                   
-                                   
                                     <li>3 加速节点docker部署解决方案，为视频网站提供服务</li>
-                                   
-                                
                                 <div class="banner-btn">
                                     <a href="javascript:void" id="download" class="default-btn-one">
                                         下载
@@ -102,8 +126,7 @@
                                         安装
                                         <span></span>
                                     </a>
-
-                                      <a class="red-btn" id="player" href="player.html" style="margin-left: 20px;">
+                                    <a class="red-btn" id="player" href="player.html" style="margin-left: 20px;">
                                         播放
                                         <span></span>
                                     </a>
@@ -143,7 +166,9 @@
                             <i class="flaticon-project-management"></i>
                         </div>
                         <h3>视频加速服务</h3>
-                        <p> 利用webrtc技术加快视频下载速度 </p>
+                        <p>
+                            利用webrtc技术加快视频下载速度
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -151,8 +176,12 @@
                         <div class="services-icon">
                             <i class="flaticon-programming"></i>
                         </div>
-                        <h3> 视频缓存服务 </h3>
-                        <p> 用户节点和专门的服务器提供缓存功能 </p>
+                        <h3>
+                            视频缓存服务
+                        </h3>
+                        <p>
+                            用户节点和专门的服务器提供缓存功能
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -160,8 +189,12 @@
                         <div class="services-icon">
                             <i class="flaticon-cpu-1"></i>
                         </div>
-                        <h3> 视频P2P共享服务 </h3>
-                        <p> 使用洪流技术共享相同的资源 </p>
+                        <h3>
+                            视频P2P共享服务
+                        </h3>
+                        <p>
+                            使用洪流技术共享相同的资源
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
@@ -169,7 +202,9 @@
                         <div class="services-icon">
                             <i class="flaticon-cpu-1"></i>
                         </div>
-                        <h3> 视频站长提供私有加速节点 </h3>
+                        <h3>
+                            视频站长提供私有加速节点
+                        </h3>
                         <code>docker run -itd --restart=always --net=host --cpu-shares=512 -e DOMAIN=websitedomain -v /tmp/ivideos-store:/app/ivideos-store --name ivideos-node mixnet/ivideos-node:latest</code>
                     </div>
                 </div>
@@ -215,43 +250,6 @@
     </section>
     <!-- End Partner section -->
 
-    <script>
-        jQuery(($) => {
-            $("#install").on("click", () => {
-                let ua = navigator.userAgent || "";
-                if (/Edg/i.test(ua)) {
-                    //edge浏览器
-                    location.href =
-                    "https://microsoftedge.microsoft.com/addons/detail/ivideos-%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F%E5%99%A8/ekpnmlnjmodhkdikdjjiidnfcbfchiel?hl=" +
-                    navigator.language;
-                } else if (/Chrome/i.test(ua)) {
-                    location.href =
-                    "https://chrome.google.com/webstore/detail/ivideos-%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F%E5%99%A8/gihpeahidbkanpjajihofclgjoppiika?utm_source=chrome-ntp-icon";
-                } else if (/Firefox/i.test(ua)) {
-                    location.href =
-                    "https://addons.mozilla.org/zh-CN/firefox/addon/ivideos-%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F%E5%99%A8/?utm_source=www.ivideos.one&utm_medium=referral";
-                }
-            });
-            $("#download").on("click", () => {
-                let ua = navigator.userAgent || "";
-                let ms = ua.match(/Chrome\/[0-9]+/) || [];
-                console.info("====ua", ua, ms);
-                if (ms && ms.length > 0) {
-                    let str = ms[0];
-                    let kv = str.split("/");
-                    let version = parseInt(kv[1]);
-                    console.info("kv", kv, version);
-                    if (version >= 88) {
-                    location.href = "../downloads/ivideos.v3.1.4.2.crx";
-                    } else {
-                    location.href = "../downloads/ivideos.v2.crx";
-                    }
-                }else{
-                    alert("No browser support")
-                }
-            });
-        });
-    </script>
         </div>
 
 <!-- Start Footer & Subscribe Section -->

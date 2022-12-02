@@ -10,19 +10,23 @@
         <meta name="description" content="The page you are looking for might have been removed had its name changed or is temporarily unavailable."/> 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="../assets/logos/icon.png"/> 
-        <!-- jQuery Min JS -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <!-- Bootstrap Min JS -->
-        <script src="../assets/js/bootstrap.js"></script>
-         
-
+    
          <!-- Favicon -->
         <!-- Bootstrap Min CSS -->
         <link rel="stylesheet" href="../assets/css/bootstrap.css" />
         <!-- Style CSS -->
         <link rel="stylesheet" href="../assets/css/style.css" />
 
-         <script>
+        <!-- jQuery Min JS -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <!-- Bootstrap Min JS -->
+        <script src="../assets/js/bootstrap.js"></script>
+        <!-- common JS -->
+        <script src="../assets/js/common.js"></script>
+         
+
+
+        <script>
             jQuery(($)=>{
                  $(".preloader").addClass("preloader-deactivate");
             })
@@ -60,8 +64,26 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
 						<ul class="navbar-nav">
 							
+							<li class="nav-item">
+                                <a href="./player.html" class="nav-link">
+                                    Play
+                                </a>
+							</li>
+                            
+                            <li class="nav-item">
+                                <a id="download" href="javascript:void" class="nav-link">
+                                        Download
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="install" href="javascript:void" class="nav-link">
+                                    Install
+                                </a>
+                            </li>
+                        
 						</ul>
 						<div class="other-option">
+                            
                                 <a class="color-white" href="../en/">en</a>
                                 <a class="color-white" href="../zh-CN/">zh-CN</a>
 						</div>
@@ -70,10 +92,19 @@
         </div>
     </div>
 </div>
+<script>
+    jQuery(($) => {
+        $("#install").on("click", () => {
+            install();
+        });
+        $("#download").on("click", () => {
+            download();
+        });
+    });
+</script>
 <!-- End Navbar Area -->
         <!-- body -->
         <div class="mainbody">        
-
     <!-- Start Home Area -->
     <div class="home-area">
         <div class="d-table">
@@ -83,16 +114,9 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="main-banner-content">
                                 <h1>Video acceleration solutions &amp; Video cache sharing services</h1>
-                                   
                                     <li>1 Use indexed technology to cache and share video resources</li>
-                                   
-                                   
                                     <li>2 Use webrtc technology to accelerate video resource download and resource sharing</li>
-                                   
-                                   
                                     <li>3 Accelerated node docker deployment solution for video sites to provide services</li>
-                                   
-                                
                                 <div class="banner-btn">
                                     <a href="javascript:void" id="download" class="default-btn-one">
                                         Download
@@ -102,8 +126,7 @@
                                         Install
                                         <span></span>
                                     </a>
-
-                                      <a class="red-btn" id="player" href="player.html" style="margin-left: 20px;">
+                                    <a class="red-btn" id="player" href="player.html" style="margin-left: 20px;">
                                         Play
                                         <span></span>
                                     </a>
@@ -143,7 +166,9 @@
                             <i class="flaticon-project-management"></i>
                         </div>
                         <h3>Video Acceleration Services</h3>
-                        <p> Accelerate video download speed with webrtc technology </p>
+                        <p>
+                            Accelerate video download speed with webrtc technology
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -151,8 +176,12 @@
                         <div class="services-icon">
                             <i class="flaticon-programming"></i>
                         </div>
-                        <h3> Video Caching Services </h3>
-                        <p> User nodes and specialized servers provide caching capabilities </p>
+                        <h3>
+                            Video Caching Services
+                        </h3>
+                        <p>
+                            User nodes and specialized servers provide caching capabilities
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -160,8 +189,12 @@
                         <div class="services-icon">
                             <i class="flaticon-cpu-1"></i>
                         </div>
-                        <h3> Video P2P Sharing Services </h3>
-                        <p> Share the same resources using torrent technology </p>
+                        <h3>
+                            Video P2P Sharing Services
+                        </h3>
+                        <p>
+                            Share the same resources using torrent technology
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
@@ -169,7 +202,9 @@
                         <div class="services-icon">
                             <i class="flaticon-cpu-1"></i>
                         </div>
-                        <h3> Video webmasters provide private acceleration nodes </h3>
+                        <h3>
+                            Video webmasters provide private acceleration nodes
+                        </h3>
                         <code>docker run -itd --restart=always --net=host --cpu-shares=512 -e DOMAIN=websitedomain -v /tmp/ivideos-store:/app/ivideos-store --name ivideos-node mixnet/ivideos-node:latest</code>
                     </div>
                 </div>
@@ -215,43 +250,6 @@
     </section>
     <!-- End Partner section -->
 
-    <script>
-        jQuery(($) => {
-            $("#install").on("click", () => {
-                let ua = navigator.userAgent || "";
-                if (/Edg/i.test(ua)) {
-                    //edge浏览器
-                    location.href =
-                    "https://microsoftedge.microsoft.com/addons/detail/ivideos-%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F%E5%99%A8/ekpnmlnjmodhkdikdjjiidnfcbfchiel?hl=" +
-                    navigator.language;
-                } else if (/Chrome/i.test(ua)) {
-                    location.href =
-                    "https://chrome.google.com/webstore/detail/ivideos-%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F%E5%99%A8/gihpeahidbkanpjajihofclgjoppiika?utm_source=chrome-ntp-icon";
-                } else if (/Firefox/i.test(ua)) {
-                    location.href =
-                    "https://addons.mozilla.org/zh-CN/firefox/addon/ivideos-%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F%E5%99%A8/?utm_source=www.ivideos.one&utm_medium=referral";
-                }
-            });
-            $("#download").on("click", () => {
-                let ua = navigator.userAgent || "";
-                let ms = ua.match(/Chrome\/[0-9]+/) || [];
-                console.info("====ua", ua, ms);
-                if (ms && ms.length > 0) {
-                    let str = ms[0];
-                    let kv = str.split("/");
-                    let version = parseInt(kv[1]);
-                    console.info("kv", kv, version);
-                    if (version >= 88) {
-                    location.href = "../downloads/ivideos.v3.1.4.2.crx";
-                    } else {
-                    location.href = "../downloads/ivideos.v2.crx";
-                    }
-                }else{
-                    alert("No browser support")
-                }
-            });
-        });
-    </script>
         </div>
 
 <!-- Start Footer & Subscribe Section -->

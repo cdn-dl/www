@@ -22,7 +22,7 @@ module.exports = (options) => {
       let seqs = relativePath.split("/").filter((v) => !!v);
       seqs = seqs.slice(0, seqs.length - 1);
       let ps = seqs.map((v) => "../").join("");
-      console.info("url0", file, seqs, "==>", ps + file);
+      //console.info("url0", file, seqs, "==>", ps + file);
       return ps + file; //.replace(url, "");
    });
    env.addGlobal("util", {

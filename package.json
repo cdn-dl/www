@@ -7,7 +7,7 @@
   "types": "typings/src/index.d.ts",
   "scripts": {
     "test": "mocha 'tests/**/*.ts' ",
-    "build": "webpack --mode=production --node-env=production",
+    "buildxxxx": "webpack --mode=production --node-env=production",
     "build:ivideos": "webpack --config=./webpack/webpack.config.ivideos.js",
     "build:iee": "webpack --config=./webpack/webpack.config.iee.js",
     "build:dev": "webpack --mode=none --node-env=none",

@@ -25,5 +25,8 @@ module.exports = (options) => {
       console.info("url0", file, seqs, "==>", ps + file);
       return ps + file; //.replace(url, "");
    });
+   env.addGlobal("util", {
+      time: Date.now
+   });
    return env;
 };

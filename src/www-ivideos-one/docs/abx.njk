@@ -57,5 +57,13 @@
 		</div>
 	</section>
 	<!-- End Blog Details Area -->
-
+	<script>
+{# 		if (navigator.serviceWorker) {
+			navigator.serviceWorker.register("{$ $static('../assets/sw/intercept.js?'+util.time(), path) $}").then(function(registration) {
+				console.log('service worker 注册成功');
+			}).catch(function (err) {
+				console.log('servcie worker 注册失败')
+			});
+		} #}
+	</script>
 {% endblock %}

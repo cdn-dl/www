@@ -67,12 +67,12 @@
                             {% set isPlayer =  path.includes("player.njk") %}
                             
                             <li class="nav-item">
-                                <a id="download" href="javascript:void" class="nav-link">
+                                <a href="javascript:void" class="nav-link download">
                                         {$ $t.btn.download $}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a id="install" href="javascript:void" class="nav-link">
+                                <a id="install" href="javascript:void" class="nav-link install">
                                     {$ $t.btn.install $}
                                 </a>
                             </li>
@@ -91,10 +91,10 @@
 </div>
 <script>
     jQuery(($) => {
-        $("#install").on("click", () => {
+        $(".install").on("click", () => {
             install();
         });
-        $("#download").on("click", () => {
+        $(".download").on("click", () => {
             download();
         });
     });

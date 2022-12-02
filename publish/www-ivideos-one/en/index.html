@@ -71,12 +71,12 @@
 							</li>
                             
                             <li class="nav-item">
-                                <a id="download" href="javascript:void" class="nav-link">
+                                <a href="javascript:void" class="nav-link download">
                                         Download
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a id="install" href="javascript:void" class="nav-link">
+                                <a id="install" href="javascript:void" class="nav-link install">
                                     Install
                                 </a>
                             </li>
@@ -94,10 +94,10 @@
 </div>
 <script>
     jQuery(($) => {
-        $("#install").on("click", () => {
+        $(".install").on("click", () => {
             install();
         });
-        $("#download").on("click", () => {
+        $(".download").on("click", () => {
             download();
         });
     });
@@ -118,11 +118,11 @@
                                     <li>2 Use webrtc technology to accelerate video resource download and resource sharing</li>
                                     <li>3 Accelerated node docker deployment solution for video sites to provide services</li>
                                 <div class="banner-btn">
-                                    <a href="javascript:void" id="download" class="default-btn-one">
+                                    <a href="javascript:void" id="download" class="default-btn-one download">
                                         Download
                                         <span></span>
                                     </a>
-                                    <a class="default-btn" id="install" href="javascript:void">
+                                    <a class="default-btn install" id="install" href="javascript:void">
                                         Install
                                         <span></span>
                                     </a>

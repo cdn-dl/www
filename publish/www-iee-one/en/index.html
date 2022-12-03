@@ -101,11 +101,22 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="url" placeholder="input url">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-primary btn-gen" type="button" data-bs-toggle="modal" data-bs-target="#modal-ndrezhyo">btn-gen</button>
+                                            <button id="btnGen" class="btn btn-primary btn-gen" type="button" data-bs-toggle="modal" data-bs-target="#modal-ndrezhyo">btn-gen</button>
                                         </span>
                                     </div>
                                 </form>
                             </div>
+                        </div>
+                        <div class="offset-2 col-lg-8 col-md-8" style="height: 500px;margin-top: 20px;text-align: center;">
+                           <div>
+                               https://www.qq.com
+                           </div>
+                           <div style="margin-top: 20px;">
+                               <img src="../assets/img/portfolio/portfolio-1.jpg" />
+                           </div>
+                           <section class="services-section section-padding">
+                               ad
+                           </section>
                         </div>
                     </div>
                 </div>
@@ -180,6 +191,26 @@
         </div>
     </section>
     <!-- End Services Section -->
+    <script>
+        async function genShort(){
+            let ele = document.querySelector("#url");
+            let res = fetch(`https://w.iee.one/api/short`, {
+                method: "post",
+                body: JSON.stringify({
+                    url: ele.value
+                })
+            }).then(res=>{
+                if(res.status != 200)return {code: res.status, msg: res.statusText};
+                return res.json();
+            });
+            console.info("res", res);
+        }
+        jQuery(($)=>{
+            $("#btnGen").click(()=>{
+                genShort();
+            })
+        });
+    </script>
         </div>
 
 <!-- Start Footer & Subscribe Section -->

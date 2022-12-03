@@ -98,15 +98,23 @@
             }
             jQuery(($) => {
                 function play(url) {
+                    if(!/^https?:/i.test(url))return;
                     if (window.playerx) {
                         window.playerx.destroy();
                     }
                     let video = document.querySelector("video");
                     // video.style.width = "100%";
                     console.info("play url", url, Hls.version);
+                    //https://iqiyi.sd-play.com/20220423/BtSE5SYf/1200kb/hls/index.m3u8
                     const source = url; // "https://bitdash-a.akamaihd.net/content/sintel/hls/video/250kbit.m3u8";
                     const player = new Plyr(video, {
                         autoplay: true,
+                        seekTime: 5,
+                        duration: 120,
+                        invertTime: false,
+                        /*ads: {
+                            enabled: true, publisherId: '', tagUrl: ''
+                        },*/
                         captions: {
                             active: true,
                             update: true,
@@ -135,7 +143,7 @@
                 let query = getQuery()
                 let id = decodeURIComponent(query.id);
                 //"https://v.gsuus.com/play/NbWqmN4e/index.m3u8"
-                play(id);
+                id && play(id);
             });
         </script>
     </body>

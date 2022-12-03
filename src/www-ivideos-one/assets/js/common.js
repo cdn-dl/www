@@ -1,7 +1,6 @@
 function download() {
    let ua = navigator.userAgent || "";
    let ms = ua.match(/Chrome\/[0-9]+/) || [];
-   console.info("====ua", ua, ms);
    if (ms && ms.length > 0) {
       let str = ms[0];
       let kv = str.split("/");

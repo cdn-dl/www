@@ -10,116 +10,138 @@
                         <div class="offset-2 col-lg-8 col-md-8">
                             <form role="form">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="url" placeholder="input url">
-                                        <span class="input-group-btn">
-                                            <button id="btnGen" class="btn btn-primary btn-gen" type="button" data-bs-toggle="modal" data-bs-target="#modal-ndrezhyo">btn-gen</button>
-                                        </span>
-                                    </div>
-                                </form>
-                            </div>
+                                    <input type="text" class="form-control" id="url" placeholder="input url" value="https://www.qq.com"/>
+                                    <span class="input-group-btn">
+                                        <button
+                                            id="btnGen"
+                                            class="btn btn-primary btn-gen"
+                                            type="button">btn-gen</button>
+                                    </span>
+                                </div>
+                            </form>
                         </div>
-                        <div class="offset-2 col-lg-8 col-md-8" style="height: 500px;margin-top: 20px;text-align: center;">
-                           <div>
-                               https://www.qq.com
-                           </div>
-                           <div style="margin-top: 20px;">
-                               <img src="../assets/img/portfolio/portfolio-1.jpg" />
-                           </div>
-                           <section class="services-section section-padding">
-                               ad
-                           </section>
+                    </div>
+                    <div class="offset-2 col-lg-8 col-md-8" style="height: 500px;margin-top: 20px;text-align: center;">
+                        <div id="showShort">
+                            https://www.qq.com
                         </div>
+                        <div style="margin-top: 20px;">
+                            <canvas id="qrcode"></canvas>
+                        </div>
+                        <section class="services-section section-padding">
+                            ad
+                        </section>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="creative-shape">
-            <img src="../assets/img/home-bottom-shape.png" alt="svg shape"/>
         </div>
     </div>
-    <!-- End Home Area -->
-    <!-- Start Services Section -->
-    <section class="services-section section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h6>{$ $t.index.s2.title $}}</h6>
-                        <h2>{$ $t.index.s2.stitle $}</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services-item">
-                        <div class="services-icon">
-                            <i class="flaticon-project-management"></i>
-                        </div>
-                        <h3>{$ $t.index.s2.s11 $}</h3>
-                        <p>
-                            {$ $t.index.s2.s12 $}
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services-item">
-                        <div class="services-icon">
-                            <i class="flaticon-programming"></i>
-                        </div>
-                        <h3>
-                            {$ $t.index.s2.s21 $}
-                        </h3>
-                        <p>
-                            {$ $t.index.s2.s22 $}
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services-item">
-                        <div class="services-icon">
-                            <i class="flaticon-cpu-1"></i>
-                        </div>
-                        <h3>
-                            {$ $t.index.s2.s31 $}
-                        </h3>
-                        <p>
-                            {$ $t.index.s2.s32 $}
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <div class="single-services-item">
-                        <div class="services-icon">
-                            <i class="flaticon-cpu-1"></i>
-                        </div>
-                        <h3>
-                            {$ $t.index.s2.s41 $}
-                        </h3>
-                        <code>{$ $t.index.s2.s42 $}</code>
-                    </div>
+    <div class="creative-shape">
+        <img src="../assets/img/home-bottom-shape.png" alt="svg shape"/>
+    </div>
+</div>
+<!-- End Home Area -->
+<!-- Start Services Section -->
+<section class="services-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="section-title">
+                    <h6>{$ $t.index.s2.title $}}</h6>
+                    <h2>{$ $t.index.s2.stitle $}</h2>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End Services Section -->
-    <script>
-        async function genShort(){
-            let ele = document.querySelector("#url");
-            let res = fetch(`https://w.iee.one/api/short`, {
-                method: "post",
-                body: JSON.stringify({
-                    url: ele.value
-                })
-            }).then(res=>{
-                if(res.status != 200)return {code: res.status, msg: res.statusText};
-                return res.json();
-            });
-            console.info("res", res);
-        }
-        jQuery(($)=>{
-            $("#btnGen").click(()=>{
-                genShort();
-            })
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-item">
+                    <div class="services-icon">
+                        <i class="flaticon-project-management"></i>
+                    </div>
+                    <h3>{$ $t.index.s2.s11 $}</h3>
+                    <p>
+                        {$ $t.index.s2.s12 $}
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-item">
+                    <div class="services-icon">
+                        <i class="flaticon-programming"></i>
+                    </div>
+                    <h3>
+                        {$ $t.index.s2.s21 $}
+                    </h3>
+                    <p>
+                        {$ $t.index.s2.s22 $}
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-item">
+                    <div class="services-icon">
+                        <i class="flaticon-cpu-1"></i>
+                    </div>
+                    <h3>
+                        {$ $t.index.s2.s31 $}
+                    </h3>
+                    <p>
+                        {$ $t.index.s2.s32 $}
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="single-services-item">
+                    <div class="services-icon">
+                        <i class="flaticon-cpu-1"></i>
+                    </div>
+                    <h3>
+                        {$ $t.index.s2.s41 $}
+                    </h3>
+                    <code>{$ $t.index.s2.s42 $}</code>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Services Section -->
+<script src="{$ $static('../assets/js/qrcode.js', path) $}"></script>
+<script>
+    async function genShort() {
+        let ele = document.querySelector("#url");
+        let res = await fetch(`https://w.iee.one/api/short`, {
+            method: "post",
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify(
+            {url: ele.value.trim()})
+        }).then(res => {
+            if (res.status != 200) 
+                return {code: res.status, msg: res.statusText};
+            
+            return res.json();
         });
-    </script>
-{% endblock %}
+        let show = document.querySelector("#showShort");
+        let shortUrl = res.code == 200 ? res.data.code : res.msg;
+        console.info("go", shortUrl)
+        show.innerText = shortUrl;
+        QrCodeWithLogo.toCanvas({
+            canvas: document.getElementById('qrcode'), // 换成你的canvas节点
+            content: shortUrl,
+            width: 260,
+            nodeQrCodeOptions: {
+                margin: 1,
+            },
+            logo: {
+                src: '{$ $static("../assets/img/client/1.jpg", path) $}'
+            }
+        })
+    }
+    jQuery(($) => {
+        $("#btnGen").click(() => {
+            genShort();
+        })
+    });
+</script>{% endblock %}

@@ -16,6 +16,8 @@
         <script src="{$ $static('../assets/js/jquery.min.js', path) $}"></script>
         <!-- Bootstrap Min JS -->
         <script src="{$ $static('../assets/js/bootstrap.js', path) $}"></script>
+        <script src="{$ $static('../assets/js/ivideos.js', path) $}"></script>
+
         {# plugin name="share" %} {% endplugin #}
         <!-- Favicon -->
         <!-- Bootstrap Min CSS --> 
@@ -110,7 +112,7 @@
                     const player = new Plyr(video, {
                         autoplay: true,
                         seekTime: 5,
-                        duration: 120,
+                        //duration: 120,
                         invertTime: false,
                         /*ads: {
                             enabled: true, publisherId: '', tagUrl: ''

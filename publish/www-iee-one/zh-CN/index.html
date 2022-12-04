@@ -99,119 +99,142 @@
                         <div class="offset-2 col-lg-8 col-md-8">
                             <form role="form">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="url" placeholder="input url">
-                                        <span class="input-group-btn">
-                                            <button id="btnGen" class="btn btn-primary btn-gen" type="button" data-bs-toggle="modal" data-bs-target="#modal-ndrezhyo">btn-gen</button>
-                                        </span>
-                                    </div>
-                                </form>
-                            </div>
+                                    <input type="text" class="form-control" id="url" placeholder="input url" value="https://www.qq.com"/>
+                                    <span class="input-group-btn">
+                                        <button
+                                            id="btnGen"
+                                            class="btn btn-primary btn-gen"
+                                            type="button">btn-gen</button>
+                                    </span>
+                                </div>
+                            </form>
                         </div>
-                        <div class="offset-2 col-lg-8 col-md-8" style="height: 500px;margin-top: 20px;text-align: center;">
-                           <div>
-                               https://www.qq.com
-                           </div>
-                           <div style="margin-top: 20px;">
-                               <img src="../assets/img/portfolio/portfolio-1.jpg" />
-                           </div>
-                           <section class="services-section section-padding">
-                               ad
-                           </section>
+                    </div>
+                    <div class="offset-2 col-lg-8 col-md-8" style="height: 500px;margin-top: 20px;text-align: center;">
+                        <div id="showShort">
+                            https://www.qq.com
                         </div>
+                        <div style="margin-top: 20px;">
+                            <canvas id="qrcode"></canvas>
+                        </div>
+                        <section class="services-section section-padding">
+                            ad
+                        </section>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="creative-shape">
-            <img src="../assets/img/home-bottom-shape.png" alt="svg shape"/>
         </div>
     </div>
-    <!-- End Home Area -->
-    <!-- Start Services Section -->
-    <section class="services-section section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h6>我们提供什么}</h6>
-                        <h2>视频加速解决方案</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services-item">
-                        <div class="services-icon">
-                            <i class="flaticon-project-management"></i>
-                        </div>
-                        <h3>视频加速服务</h3>
-                        <p>
-                            利用webrtc技术加快视频下载速度
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services-item">
-                        <div class="services-icon">
-                            <i class="flaticon-programming"></i>
-                        </div>
-                        <h3>
-                            视频缓存服务
-                        </h3>
-                        <p>
-                            用户节点和专门的服务器提供缓存功能
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services-item">
-                        <div class="services-icon">
-                            <i class="flaticon-cpu-1"></i>
-                        </div>
-                        <h3>
-                            视频P2P共享服务
-                        </h3>
-                        <p>
-                            使用洪流技术共享相同的资源
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <div class="single-services-item">
-                        <div class="services-icon">
-                            <i class="flaticon-cpu-1"></i>
-                        </div>
-                        <h3>
-                            视频站长提供私有加速节点
-                        </h3>
-                        <code>docker run -itd --restart=always --net=host --cpu-shares=512 -e DOMAIN=websitedomain -v /tmp/ivideos-store:/app/ivideos-store --name ivideos-node mixnet/ivideos-node:latest</code>
-                    </div>
+    <div class="creative-shape">
+        <img src="../assets/img/home-bottom-shape.png" alt="svg shape"/>
+    </div>
+</div>
+<!-- End Home Area -->
+<!-- Start Services Section -->
+<section class="services-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="section-title">
+                    <h6>我们提供什么}</h6>
+                    <h2>视频加速解决方案</h2>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End Services Section -->
-    <script>
-        async function genShort(){
-            let ele = document.querySelector("#url");
-            let res = fetch(`https://w.iee.one/api/short`, {
-                method: "post",
-                body: JSON.stringify({
-                    url: ele.value
-                })
-            }).then(res=>{
-                if(res.status != 200)return {code: res.status, msg: res.statusText};
-                return res.json();
-            });
-            console.info("res", res);
-        }
-        jQuery(($)=>{
-            $("#btnGen").click(()=>{
-                genShort();
-            })
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-item">
+                    <div class="services-icon">
+                        <i class="flaticon-project-management"></i>
+                    </div>
+                    <h3>视频加速服务</h3>
+                    <p>
+                        利用webrtc技术加快视频下载速度
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-item">
+                    <div class="services-icon">
+                        <i class="flaticon-programming"></i>
+                    </div>
+                    <h3>
+                        视频缓存服务
+                    </h3>
+                    <p>
+                        用户节点和专门的服务器提供缓存功能
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-item">
+                    <div class="services-icon">
+                        <i class="flaticon-cpu-1"></i>
+                    </div>
+                    <h3>
+                        视频P2P共享服务
+                    </h3>
+                    <p>
+                        使用洪流技术共享相同的资源
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="single-services-item">
+                    <div class="services-icon">
+                        <i class="flaticon-cpu-1"></i>
+                    </div>
+                    <h3>
+                        视频站长提供私有加速节点
+                    </h3>
+                    <code>docker run -itd --restart=always --net=host --cpu-shares=512 -e DOMAIN=websitedomain -v /tmp/ivideos-store:/app/ivideos-store --name ivideos-node mixnet/ivideos-node:latest</code>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Services Section -->
+<script src="../assets/js/qrcode.js"></script>
+<script>
+    async function genShort() {
+        let ele = document.querySelector("#url");
+        let res = await fetch(`https://w.iee.one/api/short`, {
+            method: "post",
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify(
+            {url: ele.value.trim()})
+        }).then(res => {
+            if (res.status != 200) 
+                return {code: res.status, msg: res.statusText};
+            
+            return res.json();
         });
-    </script>
-        </div>
+        let show = document.querySelector("#showShort");
+        let shortUrl = res.code == 200 ? res.data.code : res.msg;
+        console.info("go", shortUrl)
+        show.innerText = shortUrl;
+        QrCodeWithLogo.toCanvas({
+            canvas: document.getElementById('qrcode'), // 换成你的canvas节点
+            content: shortUrl,
+            width: 260,
+            margin: 2,
+            nodeQrCodeOptions: {
+                margin: 1,
+            },
+            logo: {
+                src: '../assets/img/client/1.jpg'
+            }
+        })
+    }
+    jQuery(($) => {
+        $("#btnGen").click(() => {
+            genShort();
+        })
+    });
+</script>        </div>
 
 <!-- Start Footer & Subscribe Section -->
 <section class="footer-subscribe-wrapper"></section>

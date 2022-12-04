@@ -3,8 +3,6 @@ const path = require("path");
 const fs = require("fs");
 const Koa = require("koa");
 const koaStatic = require("koa-static");
-const nunjucks = require("nunjucks");
-const nunjucksEnv = require("./webpack/nunjucks");
 
 let args = {};
 process.argv.slice(2).forEach((vv) => {

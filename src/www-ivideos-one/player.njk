@@ -56,6 +56,26 @@
             }
             function goPlay(url) {
                 let ifa = document.querySelector("#ifaPlayer");
+                let eleP = ifa.parentElement;
+                eleP.removeChild(ifa);
+                ifa = document.createElement("iframe");
+                let attrs = {
+                    id: "ifaPlayer",
+                    width: "100%",
+                    height: "100",
+                    frameborder: "no",
+                    border: "0",
+                    marginwidth: "0",
+                    marginheight: "0",
+                    scrolling: "no",
+                    allowtransparency: "yes"
+                };
+                //ifa.scrolling = "no";
+                for(let key in attrs){
+                    ifa.setAttribute(key, attrs[key]);
+                }
+                ifa.style["min-height"]="600px";
+                eleP.appendChild(ifa);
                 let ele = document.querySelector("#url");
                 if (ele) 
                     ele.value = decodeURIComponent(url);

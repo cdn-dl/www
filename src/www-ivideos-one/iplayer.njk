@@ -24,10 +24,19 @@
         <link rel="stylesheet" href="{$ $static('../assets/css/bootstrap.css', path) $}"/>
         <link rel="stylesheet" href="{$ $static('../assets/css/plyr.css', path) $}"/>
         <style>
+            body{
+                background-color: #e8e5e5;
+            }
+            .wrap{
+                min-height: 600px;
+                height: 600px;
+                overflow: hidden;
+            }
             .mds {
                 padding: 0;
                 list-style: none;
                 background-color: #000;
+                
             }
             .mds li {
                 height: 150px;
@@ -48,7 +57,7 @@
         </style>
     </head>
     <body>
-        <div class="row">
+        <div class="row wrap">
             <div class="col-lg-10 col-md-10 col-sm-12" style="padding-right: 0;">
                 <video
                     id="player"

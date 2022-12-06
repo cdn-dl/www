@@ -15,7 +15,7 @@
         <script src="../assets/js/jquery.min.js"></script>
         <!-- Bootstrap Min JS -->
         <script src="../assets/js/bootstrap.js"></script>
-        <script src="../assets/js/ivideos.js"></script>
+        <script src="../assets/js/ivideos.js?1"></script>
         
         <!-- Favicon -->
         <!-- Bootstrap Min CSS --> <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
@@ -33,7 +33,6 @@
                 padding: 0;
                 list-style: none;
                 background-color: #000;
-                margin-top: 50px;
             }
             .mds li {
                 max-height: 150px;
@@ -117,7 +116,7 @@
             function setHeight() {
                 let eleWrap = document.querySelector(".wrap");
                 let eleVideo = document.querySelector("video");
-                let height = window.outerHeight - 50;
+                let height = window.outerHeight - 100;
                 if (eleWrap) 
                     eleWrap.style.height = height + "px";
                 

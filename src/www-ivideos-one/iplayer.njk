@@ -16,7 +16,7 @@
         <script src="{$ $static('../assets/js/jquery.min.js', path) $}"></script>
         <!-- Bootstrap Min JS -->
         <script src="{$ $static('../assets/js/bootstrap.js', path) $}"></script>
-        <script src="{$ $static('../assets/js/ivideos.js', path) $}"></script>
+        <script src="{$ $static('../assets/js/ivideos.js?1', path) $}"></script>
         {# plugin name="share" %} {% endplugin #}
         <!-- Favicon -->
         <!-- Bootstrap Min CSS --> <link rel="stylesheet" href="{$ $static('../assets/css/bootstrap.css', path) $}"/>
@@ -34,7 +34,6 @@
                 padding: 0;
                 list-style: none;
                 background-color: #000;
-                margin-top: 50px;
             }
             .mds li {
                 max-height: 150px;
@@ -118,7 +117,7 @@
             function setHeight() {
                 let eleWrap = document.querySelector(".wrap");
                 let eleVideo = document.querySelector("video");
-                let height = window.outerHeight - 50;
+                let height = window.outerHeight - 100;
                 if (eleWrap) 
                     eleWrap.style.height = height + "px";
                 

@@ -28,7 +28,12 @@
             .wrap {
                 min-height: 300px;
                 height: 600px;
+                margin: 0;
             }
+            .wrap .v-wrap {
+                padding: 0;
+            }
+
             .mds {
                 padding: 0;
                 list-style: none;
@@ -46,8 +51,8 @@
             }
             .video {
                 min-height: 300px;
-                height: 600px;
                 margin: 0 auto;
+                padding: 0;
                 width: 100%;
             }
             .d-table {
@@ -73,7 +78,7 @@
                             
                             ></video>
                     </div>
-                    <div class="col-lg-2 col-md-2 hidden-sm hedden-sx" style="padding-left: 0;">
+                    <div class="col-lg-2 col-md-2 hidden-sm hedden-sx v-wrap" style="padding-left: 0;">
                         <ul class="mds">
                             <li>
                                 <a href="./docs/abx.html" target="_top">
@@ -123,35 +128,28 @@
                 let isMobile = /iphone|android/i.test(ua);
                 let eleVideo = document.querySelector("video");
                 let eldMds = document.querySelector(".mds");
-                let eleWrap = document.querySelector(".wrap");
-                let dif = 150;
+                let dif = 0;
                 let height = window.outerHeight - dif;
                 let bi = window.outerWidth / window.outerHeight; 
-                eleVideo.style.height = height + "px";
-                eleWrap.style.height = height + "px";
-                eldMds.style.height = height + "px";
+                
+                //eleWrap.style.height = height + "px";
+                //eldMds.style.height = height + "px";
                 eldMds.style.display = "inline-block";
                 if(window.orientation != undefined){
                     console.info("orientation", window.orientation);
                     if (window.orientation == 180 || window.orientation == 0) { // alert("竖屏状态！")
-                        eldMds.style.height = "150px";
+                       
                     }
                     if (window.orientation == 90 || window.orientation == -90) { // alert("横屏状态！")
-                        height = window.outerHeight ;
-                        //eldMds.style.display = "none";
-                        eleVideo.style.height = height + "px";
-                        eldMds.style.height = height + "px";
+                        //eleVideo.style.height = height + "px";
                     }
                 }else{
-                    console.info("bi=", bi);
                     if(bi >= 1){
                         //eleVideo.style.height = height + "px";
                         //eleWrap.style.height = height + "px";
                         //
                     }else{
                         //eleVideo.style.height = height + "px";
-                        //eleWrap.style.height = height + "px";
-                        eldMds.style.height = "150px";
                     }
                 }
             }

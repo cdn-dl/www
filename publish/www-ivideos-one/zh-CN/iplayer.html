@@ -15,7 +15,7 @@
         <script src="../assets/js/jquery.min.js"></script>
         <!-- Bootstrap Min JS -->
         <script src="../assets/js/bootstrap.js"></script>
-        <script src="../assets/js/ivideos.js?1"></script>
+        <script src="../assets/js/ivideos.js?2"></script>
         
         <!-- Favicon -->
         <!-- Bootstrap Min CSS --> <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
@@ -62,7 +62,7 @@
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="row wrap">
-                    <div class="col-lg-10 col-md-10 col-sm-12" style="padding-right: 0;">
+                    <div class="col-lg-10 col-md-10 col-sm-12 v-wrap" style="padding-right: 0;">
                         <video
                             id="player"
                             class="video"
@@ -114,7 +114,7 @@
                 return query;
             }
             function setHeight() {
-                let eleWrap = document.querySelector(".wrap");
+                let eleWrap = document.querySelector(".v-wrap");
                 let eleVideo = document.querySelector("video");
                 let height = window.outerHeight - 100;
                 if (eleWrap) 

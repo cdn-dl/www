@@ -17,32 +17,29 @@
         <!-- Bootstrap Min JS -->
         <script src="{$ $static('../assets/js/bootstrap.js', path) $}"></script>
         <script src="{$ $static('../assets/js/ivideos.js', path) $}"></script>
-
         {# plugin name="share" %} {% endplugin #}
         <!-- Favicon -->
-        <!-- Bootstrap Min CSS --> 
-        <link rel="stylesheet" href="{$ $static('../assets/css/bootstrap.css', path) $}"/>
+        <!-- Bootstrap Min CSS --> <link rel="stylesheet" href="{$ $static('../assets/css/bootstrap.css', path) $}"/>
         <link rel="stylesheet" href="{$ $static('../assets/css/plyr.css', path) $}"/>
         <style>
-            body{
+            body {
                 background-color: #e8e5e5;
+                overflow: hidden;
             }
-            .wrap{
+            .wrap {
                 min-height: 600px;
                 height: 600px;
-                overflow: hidden;
             }
             .mds {
                 padding: 0;
                 list-style: none;
                 background-color: #000;
-                
+                margin-top: 50px;
             }
             .mds li {
-                height: 150px;
                 max-height: 150px;
                 overflow: hidden;
-                padding: 0px 2px 0px 2px;
+                padding: 0 2px;
                 margin-bottom: 5px;
             }
             .mds li img {
@@ -54,42 +51,53 @@
                 margin: 0 auto;
                 width: 100%;
             }
+            .d-table {
+                width: 100%;
+            }
+            .container {
+                padding: 0;
+                width: 100%;
+            }
         </style>
     </head>
     <body>
-        <div class="row wrap">
-            <div class="col-lg-10 col-md-10 col-sm-12" style="padding-right: 0;">
-                <video
-                    id="player"
-                    class="video"
-                    controls="controls"
-                    crossorigin="crossorigin"
-                    playsinline="playsinline"
-                    poster="{$ $static('../assets/img//video-bg.png', path) $}"></video>
-            </div>
-            <div class="col-lg-2 col-md-2 hidden-sm hedden-sx" style="padding-left: 0;">
-                <ul class="mds">
-                    <li>
-                        <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
-                            <img src="{$ $static('../assets/img/blog-details/1.jpg', path) $}"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
-                            <img src="{$ $static('../assets/img/blog-details/2.jpg', path) $}"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
-                            <img src="{$ $static('../assets/img/blog-details/3.jpg', path) $}"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
-                            <img src="{$ $static('../assets/img/blog/blog-6.jpg', path) $}"/>
-                        </a>
-                    </li>
-                </ul>
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="row wrap">
+                    <div class="col-lg-10 col-md-10 col-sm-12" style="padding-right: 0;">
+                        <video
+                            id="player"
+                            class="video"
+                            controls="controls"
+                            crossorigin="crossorigin"
+                            playsinline="playsinline"
+                            poster="{$ $static('../assets/img//video-bg.png', path) $}"></video>
+                    </div>
+                    <div class="col-lg-2 col-md-2 hidden-sm hedden-sx" style="padding-left: 0;">
+                        <ul class="mds">
+                            <li>
+                                <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
+                                    <img src="{$ $static('../assets/img/blog-details/1.jpg', path) $}"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
+                                    <img src="{$ $static('../assets/img/blog-details/2.jpg', path) $}"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
+                                    <img src="{$ $static('../assets/img/blog-details/3.jpg', path) $}"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
+                                    <img src="{$ $static('../assets/img/blog/blog-6.jpg', path) $}"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <script src="{$ $static('../assets/js/plyr.js', path) $}"></script>
@@ -107,25 +115,39 @@
                 }
                 return query;
             }
+            function setHeight() {
+                let eleWrap = document.querySelector(".wrap");
+                let eleVideo = document.querySelector("video");
+                let height = window.outerHeight - 50;
+                if (eleWrap) 
+                    eleWrap.style.height = height + "px";
+                
+                if (eleVideo) 
+                    eleVideo.style.height = height + "px";
+                
+            }
             jQuery(($) => {
+                setHeight();
                 function play(url) {
-                    if(!/^https?:/i.test(url))return;
+                    if (!/^https?:/i.test(url)) 
+                        return;
+                    
                     if (window.playerx) {
                         window.playerx.destroy();
                     }
                     let video = document.querySelector("video");
                     // video.style.width = "100%";
                     console.info("play url", url, Hls.version);
-                    //https://iqiyi.sd-play.com/20220423/BtSE5SYf/1200kb/hls/index.m3u8
+                    // https://iqiyi.sd-play.com/20220423/BtSE5SYf/1200kb/hls/index.m3u8
                     const source = url; // "https://bitdash-a.akamaihd.net/content/sintel/hls/video/250kbit.m3u8";
                     const player = new Plyr(video, {
                         autoplay: true,
                         seekTime: 5,
-                        //duration: 120,
+                        // duration: 120,
                         invertTime: false,
-                        /*ads: {
-                            enabled: true, publisherId: '', tagUrl: ''
-                        },*/
+                        /* ads: {
+    enabled: true, publisherId: '', tagUrl: ''
+   }, */
                         captions: {
                             active: true,
                             update: true,
@@ -153,9 +175,10 @@
                 }
                 let query = getQuery()
                 let id = decodeURIComponent(query.id);
-                //"https://v.gsuus.com/play/NbWqmN4e/index.m3u8"
+                // "https://v.gsuus.com/play/NbWqmN4e/index.m3u8"
                 id && play(id);
             });
+            setHeight();
         </script>
     </body>
 </html>

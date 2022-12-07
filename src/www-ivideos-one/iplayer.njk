@@ -79,22 +79,22 @@
                     <div class="row">
                         {% set mdsList= [
                                 {title: '', img: '../assets/img/blog-details/1.jpg', url: './docs/abx.html'},
-                                {title: '', img: '../assets/img/blog-details/1.jpg', url: './docs/abx.html'},
-                                {title: '', img: '../assets/img/blog-details/1.jpg', url: './docs/abx.html'},
-                                {title: '', img: '../assets/img/blog-details/1.jpg', url: './docs/abx.html'},
-                                {title: '', img: '../assets/img/blog-details/1.jpg', url: './docs/abx.html'},
-                                {title: '', img: '../assets/img/blog-details/1.jpg', url: './docs/abx.html'},
-                                {title: '', img: '../assets/img/blog-details/1.jpg', url: './docs/abx.html'},
-                                {title: '', img: '../assets/img/blog-details/1.jpg', url: './docs/abx.html'}
+                                {title: '', img: '../assets/img/blog-details/2.jpg', url: './docs/s36que.html'},
+                                {title: '', img: '../assets/img/blog-details/3.jpg', url: './docs/uyxopk.html'},
+                                {title: '', img: '../assets/img/blog/blog-2.jpg', url: './docs/abx.html'},
+                                {title: '', img: '../assets/img/blog/blog-3.jpg', url: './docs/s36que.html'},
+                                {title: '', img: '../assets/img/blog/blog-4.jpg', url: './docs/uyxopk.html'},
+                                {title: '', img: '../assets/img/blog/blog-5.jpg', url: './docs/abx.html'},
+                                {title: '', img: '../assets/img/blog/blog-6.jpg', url: './docs/s36que.html'}
                             ] 
                         %}
-                            {% for item in mdsList %}
-                            <div class="col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6 item" >
-                                <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
-                                    <img src="{$ $static('../assets/img/blog-details/1.jpg', path) $}"/>
-                                </a>
-                            </div>
-                            {% endfor %}
+                        {% for item in mdsList %}
+                        <div class="col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6 item" >
+                            <a href="{$ $static(item.url, path) $}" target="_top">
+                                <img src="{$ $static(item.img, path) $}"/>
+                            </a>
+                        </div>
+                        {% endfor %}
                             <!--div>
                                 <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
                                     <img src="{$ $static('../assets/img/blog-details/2.jpg', path) $}"/>

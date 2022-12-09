@@ -8,12 +8,12 @@ function download() {
       console.info("kv", kv, version);
       if (version >= 88) {
          if (/Edg/i.test(ua)) {
-            location.href = "../downloads/ivideos.v3.1.4.2.crx";
+            location.href = "../downloads/ivideos.v3.1.4.5.crx";
          } else {
-            location.href = "../downloads/ivideos.v3.1.4.2.zip";
+            location.href = "../downloads/ivideos.v3.1.4.5.zip";
          }
       } else {
-         location.href = "../downloads/ivideos.v2.crx";
+         location.href = "../downloads/ivideos.v2.1.4.5.crx";
       }
    } else {
       alert("No browser support");

@@ -17,12 +17,12 @@ function setHeight() {
     let ua = navigator.userAgent;
     let isMobile = /iphone|android/i.test(ua);
     let eleVideo = document.querySelector("video");
-    let eldMds = document.querySelector(".mds");
+    //let eldMds = document.querySelector(".mds");
     let dif = 0;
     let height = window.outerHeight - dif;
     let bi = window.outerWidth / window.outerHeight;
     // eleWrap.style.height = height + "px"; eldMds.style.height = height + "px";
-    eldMds.style.display = "inline-block";
+    //eldMds.style.display = "inline-block";
     if (window.orientation != undefined) {
         console.info("orientation", window.orientation);
         if (window.orientation == 180 || window.orientation == 0) { // alert("竖屏状态！")

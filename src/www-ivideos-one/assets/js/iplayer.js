@@ -46,57 +46,70 @@ jQuery(($) => {
       if (!/^https?:/i.test(url)) return;
       if (window.playerx) window.playerx.destroy();
       let m3u8Text = sessionStorage.getItem(url);
-      ivideos.open(async () => {
-         if (!m3u8Text) {
-            m3u8Text = await ivideos.fetch(url).then(async(res) =>{
-                let text = await res.text();
-                return text;
+      m3u8Text = await ivideos
+         .fetch(url)
+         .then(async (res) => {
+            let text = await res.text();
+            return text;
+         })
+         .catch((err) => "");
+      if (!m3u8Text) {
+         await new Promise((resolve) => {
+            ivideos.open(async () => {
+               m3u8Text = await ivideos
+                  .fetch(url)
+                  .then(async (res) => {
+                     let text = await res.text();
+                     return text;
+                  })
+                  .catch((err = ""));
+               resolve(m3u8Text);
             });
-         }
-         if (!m3u8Text) return;
-         m3u8Text = ivideos.parse.formatM3u8(url, m3u8Text);
-         sessionStorage.setItem(url, m3u8Text);
-         let blob = new Blob([Buffer.from(m3u8Text)], { type: "application/vnd.apple.mpegurl" });
-         url = URL.createObjectURL(blob);
-         let video = document.querySelector("video");
-         console.info("play url", url);
-         // https://iqiyi.sd-play.com/20220423/BtSE5SYf/1200kb/hls/index.m3u8
-         const source = url; // "https://bitdash-a.akamaihd.net/content/sintel/hls/video/250kbit.m3u8";
-         const player = new Plyr(video, {
-            autoplay: true,
-            seekTime: 5,
-            // duration: 120,
-            invertTime: false,
-            /* ads: {
+         });
+      }
+
+      if (!m3u8Text) return;
+      m3u8Text = ivideos.parse.formatM3u8(url, m3u8Text);
+      sessionStorage.setItem(url, m3u8Text);
+      let blob = new Blob([Buffer.from(m3u8Text)], { type: "application/vnd.apple.mpegurl" });
+      url = URL.createObjectURL(blob);
+      let video = document.querySelector("video");
+      console.info("play url", url);
+      // https://iqiyi.sd-play.com/20220423/BtSE5SYf/1200kb/hls/index.m3u8
+      const source = url; // "https://bitdash-a.akamaihd.net/content/sintel/hls/video/250kbit.m3u8";
+      const player = new Plyr(video, {
+         autoplay: true,
+         seekTime: 5,
+         // duration: 120,
+         invertTime: false,
+         /* ads: {
     enabled: true, publisherId: '', tagUrl: ''
     }, */
-            captions: {
-               active: true,
-               update: true,
-               language: "en",
-            },
-         });
-         if (!Hls.isSupported()) {
-            video.src = source;
-         } else {
-            // For more Hls.js options, see https://github.com/dailymotion/hls.js
-            const hls = new Hls();
-            hls.loadSource(source);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, () => {});
-            // Handle changing captions
-            player.on("languagechange", () => {
-               // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
-               setTimeout(() => (hls.subtitleTrack = player.currentTrack), 50);
-            });
-            player.on("ready", () => {
-               console.info("=========ready");
-               player.play().catch((err) => console.info("play error", err));
-            });
-         }
-         window.playerx = player;
-         return player;
+         captions: {
+            active: true,
+            update: true,
+            language: "en",
+         },
       });
+      if (!Hls.isSupported()) {
+         video.src = source;
+      } else {
+         // For more Hls.js options, see https://github.com/dailymotion/hls.js
+         const hls = new Hls();
+         hls.loadSource(source);
+         hls.attachMedia(video);
+         hls.on(Hls.Events.MANIFEST_PARSED, () => {});
+         // Handle changing captions
+         player.on("languagechange", () => {
+            // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+            setTimeout(() => (hls.subtitleTrack = player.currentTrack), 50);
+         });
+         player.on("ready", () => {
+            console.info("=========ready");
+            player.play().catch((err) => console.info("play error", err));
+         });
+      }
+      window.playerx = player;
    }
    let query = getQuery();
    let id = decodeURIComponent(query.id);

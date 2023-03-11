@@ -34,6 +34,9 @@
             .wrap .v-wrap {
                 padding: 0;
             }
+            .wrap .video{
+                margin-top: 30px;
+            }
             .mds {
                 list-style: none;
                 width: 96% !important;
@@ -50,11 +53,11 @@
                 padding: 0;
                 margin: 0;
             }
-            .video {
+            .plyr, .video {
                 min-height: 300px;
                 margin: 0 auto;
                 padding: 0;
-                width: 100%;
+                width: 96%;
             }
             .d-table {
                 width: 100%;
@@ -73,31 +76,7 @@
             <div class="d-table-cell">
                 <div class="row wrap">
                     <div class="v-wrap" style="padding-right: 0;">
-                        <video id="player" class="video" controls="controls" crossorigin="crossorigin" playsinline="playsinline"></video>
-                    </div>
-                    <div <div style="padding: 10px; background-color:#fff;">
-                        {# for item in mdsList %}
-                        <div class="col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6 item" >
-                            <a href="{$ $static(item.url, path) $}" target="_top">
-                                <img src="{$ $static(item.img, path) $}"/>
-                            </a>
-                        </div>
-                        {% endfor #}
-                            <!--div>
-                                <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
-                                    <img src="{$ $static('../assets/img/blog-details/2.jpg', path) $}"/>
-                                </a>
-                            </div>
-                            <div>
-                                <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
-                                    <img src="{$ $static('../assets/img/blog-details/3.jpg', path) $}"/>
-                                </a>
-                            </div>
-                            <div>
-                                <a href="{$ $static('./docs/abx.html', path) $}" target="_top">
-                                    <img src="{$ $static('../assets/img/blog/blog-6.jpg', path) $}"/>
-                                </a>
-                            </div-->
+                        <video id="player"  class="video" controls="controls" crossorigin="crossorigin" playsinline="playsinline"></video>
                     </div>
                 </div>
             </div>

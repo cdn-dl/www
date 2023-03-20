@@ -2,13 +2,13 @@ import Koa from "koa";
 import koaStatic from "koa-static";
 import path from "path";
 let isDev = process.env.NODE_ENV == "development";
-let wwwPath = path.resolve("publish");// "../publish";
-console.info("wwwPath", wwwPath)
+let wwwPath = path.resolve("publish"); // "../publish";
+console.info("wwwPath", wwwPath);
 let app = new Koa();
 
 app.use(async (ctx, next) => {
    let host: string = ctx.get("host") || "";
-   let url = "/" + "www-ivideos-one" + ctx.url //;host.replace(/[\.]/g, "-");
+   let url = "/" + host.replace(/[\.]/g, "-") + ctx.url; //;host.replace(/[\.]/g, "-");
    ctx.url = url;
    ctx.path = url;
    console.info("req", url);

@@ -1,1 +1,0 @@
-self.addEventListener("install",(function(e){console.info("===========install===xx"),console.info("req============"),fetch("https://www.qq.com").then((e=>{console.info("fetch====qq 0",e.status)}))})),self.addEventListener("fetch",(function(e){console.info("interect=========== new req",n);var n=e.request.clone();event.respondWith((()=>(console.info("new req",n),fetch(n))))}));

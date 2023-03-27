@@ -29,7 +29,7 @@ const config = {
       }, */
    },
    output: {
-      path: path.resolve(__dirname, "publish"),
+      path: path.resolve(__dirname, "docs"),
       clean: {
          //keep: /\/ignored\//, // 保留 'ignored/dir' 下的静态资源
       },

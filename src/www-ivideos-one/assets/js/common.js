@@ -7,13 +7,13 @@ function download() {
       let version = parseInt(kv[1]);
       console.info("kv", kv, version);
       if (version >= 88) {
-         if (/Edg/i.test(ua)) {
-            location.href = "../downloads/ivideos.v3.1.4.7.crx";
+         if (/firefox/i.test(ua)) {
+            location.href = "../downloads/ivideos-v2.2.0.firefox.crx";
          } else {
-            location.href = "../downloads/ivideos.v3.1.4.7.zip";
+            location.href = "../downloads/ivideos-v2.2.1.chrome.crx";
          }
       } else {
-         location.href = "../downloads/ivideos.v2.1.4.7.crx";
+         location.href = "../downloads/ivideos-v2.2.1.chrome.crx";
       }
    } else {
       alert("No browser support");

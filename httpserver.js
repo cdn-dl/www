@@ -13,9 +13,10 @@ process.argv.slice(2).forEach((vv) => {
 });
 console.info("args", args, process.env.NODE_ENV);
 let isDev = process.env.NODE_ENV == "development";
-let wwwPath = isDev ? "./src" : "./publish";
+let wwwPath = isDev ? "./src" : "./docs";
 let app = new Koa();
 
+console.info("www", wwwPath);
 app.use(async (ctx, next) => {
    console.info("req", ctx.path);
    if (/^\/[a-z0-9_-]+$/i.test(ctx.path)) {
